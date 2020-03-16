@@ -41,6 +41,5 @@ function subscribe()
 
 function test() {
 
-
     include 'view/mainPageView.php';
 }
