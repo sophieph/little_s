@@ -31,9 +31,9 @@
 
                 <!-- sign in/up -->
                 <div class="header-sign">
-                    <a href="form-sign-in.php">Sign in</a> 
+                    <a href="?action=signin">Sign in</a> 
                     <span class="two-dots">::</span> 
-                    <a href="form-sign-up.php">Sign up</a>
+                    <a href="?action=signup">Sign up</a>
                 </div>
                 <!-- basket -->
                 <div class="header-basket">
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <h1><a href="/littles">little.s</a></h1>
+            <h1><a href="/little">little.s</a></h1>
 
 
             <!-- search form -->
