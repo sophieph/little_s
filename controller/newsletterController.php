@@ -38,8 +38,3 @@ function subscribe()
     
     echo $response;
 }
-
-function test() {
-
-    include 'view/mainPageView.php';
-}

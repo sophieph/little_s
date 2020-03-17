@@ -137,7 +137,7 @@ function validateSignIn() {
             }
         }
 	};
-    xhr.open("GET", "sign-in.php?email=" + mail + "&pass=" + password , true);
+    xhr.open("GET", "index.php?action=signin&email=" + mail + "&pass=" + password , true);
     xhr.send(null);
 
     return false;

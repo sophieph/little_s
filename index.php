@@ -10,14 +10,10 @@ try {
             homepage();
         } else if ($_GET['action'] == 'subscribe') {
             subscribe();
-        } else if ($_GET['action'] == 'test') {
-            test();
         } else if ($_GET['action'] == 'signin') {
             signin();
         } else if ($_GET['action'] == 'signup') {
             signup();
-        } else {
-
         }
     } else {
         homePage();
