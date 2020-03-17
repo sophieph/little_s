@@ -9,12 +9,22 @@ require 'model/Membre.php';
  *
  * @return void
  * 
+ * Formulaire de connexion
+ */
+function signin() 
+{
+    include_once 'view/signinView.php';
+}
+
+/**
+ * SigninController
+ *
+ * @return void
+ * 
  * Connexion en tant que membre
  */
-function signin() {
-    
-    var_dump($_POST['email']);
-    var_dump($_GET['email']);
+function signinController() 
+{
 
     /* Connexion à la bdd pour inscrire un nouveau membre dans bdd */
     try {
@@ -38,13 +48,13 @@ function signin() {
             }
 
         } else {
-            $response = '<a href="form-sign-up.php">Incrivez-vous</a> pour vous connecter.';
+            $response = '<a href="index.php?action=signup">Inscrivez-vous</a> pour vous connecter.';
         }    
     }
 
     echo $response;
 
-    include 'view/signinView.php';
+    //include 'view/signinView.php';
 }
 
 /**
@@ -54,6 +64,7 @@ function signin() {
  * 
  * Inscription à 
  */
-function signup() {
+function signup() 
+{
     include 'view/signupView.php';
 }

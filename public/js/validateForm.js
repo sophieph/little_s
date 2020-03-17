@@ -129,17 +129,18 @@ function validateSignIn() {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            if (this.responseText) {
-                window.location = '/littles';
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            if (this.responseText == 1) {
+                window.location.replace('/little');
             } else {
                 document.getElementById("text-sign-in").innerHTML = this.responseText;
             }
         }
-	};
-    xhr.open("GET", "index.php?action=signin&email=" + mail + "&pass=" + password , true);
+    };
+    xhr.open("GET", "index.php?action=signinC&email=" + mail + "&pass=" + password , true);
     xhr.send(null);
 
-    return false;
+    document.getElementById("sign-in-pass").focus();
 
+    return false;
 }

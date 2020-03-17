@@ -12,6 +12,8 @@ try {
             subscribe();
         } else if ($_GET['action'] == 'signin') {
             signin();
+        } else if ($_GET['action'] == 'signinC') {
+            signinController();
         } else if ($_GET['action'] == 'signup') {
             signup();
         }
