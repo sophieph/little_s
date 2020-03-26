@@ -1,22 +1,53 @@
-/* GENERAL */
+/* reset */ 
+/* 16 * 62.5 = 1.000 */
+html {
+    font-size: 62.5%;
+}
 
 body {
+    font: 1.6rem sans-serif;
+    margin: 0;
+
+}
+
+h1,h2,h3,h4,figure,p,ul,ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: 100;
+}
+
+details,summary, a, input {
+    outline:none;
+    text-decoration: none;
+    color: #222;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root{
+    /* mes variables css*/
+    --color-default:#222;
+    --color-list: #ccc;
+    --color-page:#fff;
+    --color-button:#FF964D;
+    --color-placeholder:#9f9f9f;
+    --color-link:#FFA884;
+    --color-error:#DB8900;
+}
+
+/* theme */
+body {
     text-align:center;
-    font: 300 14px Geneva, 'Helvetica Neue', Helvetica, Arial, serif;
-    color: #000;
-    width: 100%;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     
 }
 
-.two-dots {
-    padding-right:20px;
-    padding-left:20px;
-}
-
-
 /* HEADER */
 
-
+/* admin */
 .mode-admin {
     background-color:#000;
     color:#fff;
@@ -26,56 +57,57 @@ body {
 }
 
 .mode-admin a {
-    color:#bd7100;
+    color:var(--color-button);
     letter-spacing:2px;
     text-transform:lowercase;
 }
 
 header {
-    text-align: center;
+ 
 }
 
 header h1 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 header h1 a {
     font-family: "Times New Roman";
-    font-size: 90px;
+    font-size: 10rem;
     font-style: italic;
-    color: #000;
-    letter-spacing: 4px;
+    color: var(--color-default);
+    letter-spacing: 1rem;
     text-decoration: none;
-
 }
 
+
 .research-items {
-    background-color: #ffffff;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right:3rem;
 }
 
 .research-items input[type=text] {
-    width: 400px;
-    height: 25px;
-    padding: 5px;
-    background-color: #ffffff;
+    width: 25rem;
+    height: 2rem;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: #9f9f9f 1px solid;
     transition: 0.6s linear;
-    color: #555050;
     letter-spacing: 2px;
     text-transform: lowercase;
 }
 
 
 .research-items input:focus {
-    border-bottom: #000 1px solid;
+    border-bottom: var(--color-default) 1px solid;
     outline: none;
-    color: #181717;
+    color: #171717;
+}
+
+.research-items button {
+    border: none;
 }
 
 ::placeholder {
@@ -87,63 +119,65 @@ header h1 a {
     /* Firefox */
 }
 
-
-.research-items input[type=submit] {
-    background: url('/public/images/btn-search.png') no-repeat;
-    border: none;
-}
-
 .header {
     display: flex;
     justify-content: flex-end;
-    padding-top: 20px;
-    font-size: 12px;
+    font-size: 1.1rem;
     text-transform: lowercase;
     align-items: center;
 }
 
 .header a {
     text-decoration: none;
-    letter-spacing: 2px;
-    padding: 20px;
-    color: #000000;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    color: var(--color-default);
 }
 
 .header a:hover {
     text-decoration: underline;
 }
 
+.signing-signin {
+    background-color:var(--color-button);
+    border: 1px var(--color-button) solid; 
+}
+.signing-signup {
+    border: 1px var(--color-button) solid; 
+}
 
 nav {
-    padding-top: 30px;
-    text-align: center;
+    padding-top: 2rem;
 }
 
 nav ul li {
     display: inline-block;
-    padding: 30px;
-
+    padding: 2rem;
 }
 
 nav ul a {
     font-family: "Times New Roman";
     text-transform: lowercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.2rem;
     font-weight: bold;
-    color: #000;
-    font-size: 20px;
+    color: var(--color-default);
+    font-size: 2.3rem;
     text-decoration: none;
+    transition: 0.3s linear;
 }
 
 nav ul a:hover {
     text-decoration: underline;
-
+    color:var(--color-link);
 }
 
+/* general */
 #wrapper {
     width:90%;
     margin: 0 auto;
 }
+
+/* error */
 
 .error {
     margin:200px;
@@ -175,11 +209,15 @@ button.error404{
 }
 
 
-/* MAIN IMAGE lol */
-
+/* main-image */
+.wrapper {
+    background-color: aqua;
+    height: 589px;
+    background-image: url('/public/images/main-img.png') center;
+}
 #main-image {
     height: 589px;
-    background-image: url('/public/images/main-image-bg.png') center;
+    background-image: url('/public/images/main-img.png') center;
     background-size: cover;
 }
 
@@ -189,19 +227,19 @@ button.error404{
     text-align: center;
     padding: 150px 0 40px 0;
     margin-bottom: 20px;
-    letter-spacing:2px;
-    font-size:25px;
+    letter-spacing:0.6rem;
+    font-size:3rem;
 }
 
 .button-shop {
     display: block;
-    width:320px;
+    width:25rem;
     height: 50px;
-    background: #bd7100;
+    background: var(--color-button);
     color: #fff;
-    font-size: 20px;
+    font-size: 1.6rem;
     margin: 0 auto;
-    line-height: 50px;
+    line-height: 5rem;
     text-align: center;
     border-radius: 3px;
     text-decoration:none;
@@ -210,19 +248,21 @@ button.error404{
 .get-dressed {
     font-family: "Times New Roman";
     font-style: italic;
-
 }
 
 
 #sort-items {
-    margin-bottom:200px;
+    margin-bottom:20px;
 }
 
 .images {
-  display: inline-block;
+    display: block;
+    width: 100%;
+
   max-width: 20%;
   margin: 0 2.5%;
 }
+
 
 /* ADMIN */
 
@@ -296,11 +336,11 @@ button.error404{
 }
 #form-sign h3{
     text-transform:uppercase;
-    font-style:italic;
+    color:var(--color-button);
     font-size:25px;
     font-weight:200;
     letter-spacing:8px;
-    font-family:"Times New Roman";
+
     margin-top:100px;
     margin-bottom:55px;
 }
@@ -325,7 +365,8 @@ button.error404{
 .form-sign-up input[type=submit] {
     width: 100px;
     height: 25px;
-    background-color: #000000;
+    background-color:var(--color-button);
+    border: 1px var(--color-button) solid; 
     border: none;
     color: #ffffff;
     letter-spacing: 2px;
@@ -333,7 +374,9 @@ button.error404{
 }
 
 .form-sign-up input[type=submit]:hover {
-    background-color:#bd7100;
+    background-color:var(--color-page);
+    color:var(--color-default);
+    border: 1px var(--color-button) solid;
 }
 
 
@@ -358,23 +401,24 @@ button.error404{
 .newsletter {
     text-align:center;
     letter-spacing:2px;
-    font-size:15px;
+    font-size:1.6rem;
 
 }
 .form-newsletter input[type=text] {
-    width: 300px;
-    height: 25px;
+    width: 25rem;
+    height: 3rem;
     background-color: #e4e4e4;
     border: none;;
     color: #555050;
     letter-spacing: 2px;
     text-transform: lowercase;
     outline:none;
+    margin:1rem;
 }
 .form-newsletter input[type=submit] {
     width: 100px;
     height: 25px;
-    background-color: #000000;
+    background-color: var(--color-button);
     border: none;
     color: #ffffff;
     letter-spacing: 2px;
@@ -382,7 +426,9 @@ button.error404{
 }
 
 .form-newsletter input[type=submit]:hover {
-    background-color:#bd7100;
+    background-color:var(--color-page);
+    border: 1px var(--color-button) solid;
+    color:var(--color-default)
 }
 
 .subscribe-newsletter {
@@ -391,14 +437,15 @@ button.error404{
 }
 
 #messageNewsletter {
-    font-family: "Times New Roman";
-    font-style:italic;
-    color:#bd7100;
+    font-size:1.2rem;
+    padding:1rem;
+    color:var(--color-error);
+    font-weight:400;
 }
 
 .social-media {
     margin-top:100px;
-    background-color:#000;
+    background-color:var(--color-link);
     color:#fff;
     font-size:12px;
 }
@@ -415,14 +462,16 @@ button.error404{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 1.3rem;
     text-transform: lowercase;
     align-items: center;
 }
 
 .footer h2{
     letter-spacing:2px;
-    font-size:20px;
+    font-size:2.6rem;
+    color:var(--color-button);
+    padding:2rem;
 }
 
 .footer-infos a {
@@ -433,17 +482,20 @@ button.error404{
 
 .footer-infos a:hover {
     text-decoration:underline;
+    color:var(--color-link);
+    transition: 0.3s linear;
 }
 
 .copyright {
-    margin-top:120px;
+    margin-top:10rem;
     text-align:center;
-    font-size:13px;
+    font-size:1.4rem;
     letter-spacing:2px;
     font-weight:500;
-    font-style:italic;
-    font-family:"Times New Roman"
+
+
 }
+
 
 
 

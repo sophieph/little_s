@@ -11,8 +11,11 @@
         <meta name="viewport" content="width=device-width, initial scale=1.0">
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/normalize.css">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
     </head>
 
     <body>
@@ -28,32 +31,30 @@
             <?php } ?>
 
             <div class="header">
+                <!-- search form -->
+                <div class="header-research">
+                    <form class="research-items" action="#" method="get">
+                        <input type="text" name="searchItems" placeholder="Rechercher" />
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
 
                 <!-- sign in/up -->
                 <div class="header-sign">
-                    <a href="?action=signin">Sign in</a> 
-                    <span class="two-dots">::</span> 
-                    <a href="?action=signup">Sign up</a>
-                </div>
-                <!-- basket -->
-                <div class="header-basket">
-                    <a href=""><img src="public/images/btn-basket.png"></a>
+                    <a href="?action=signin" class="signing-signin">Sign in</a> 
+                    <!-- <span class="two-dots">::</span>  -->
+                    <a href="?action=signup" class="signing-signup">Sign up</a>
+                    <a href=""><i class="fa fa-shopping-cart"></i>(0)</a>
+    
+      
+
                 </div>
             </div>
 
             <h1><a href="/little">little.s</a></h1>
 
 
-            <!-- search form -->
-            <div class="header-research">
-                <form class="research-items" action="#" method="get">
-                    <input type="text" name="searchItems" placeholder="Rechercher" />
-                    <input type="submit" 
-                    style="background:url('assets/images/btn-search.png') 
-                            no-repeat; width:25px; height:25px; font-size:0px;" 
-                    name="submit">
-                </form>
-            </div>
 
         </header>
 

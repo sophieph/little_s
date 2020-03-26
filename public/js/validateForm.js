@@ -115,7 +115,7 @@ function validateSignUp() {
             document.getElementById("text-sign-up").innerHTML = this.responseText;
 		}
 	};
-    xhr.open("GET", "sign-up.php?name=" + name + "&email=" + mail + "&pass1=" + password1 + "&category=" + category, true);
+    xhr.open("GET", "index.php?action=signupC&name=" + name + "&email=" + mail + "&pass1=" + password1 + "&category=" + category, true);
     xhr.send(null);
 
     return false;
