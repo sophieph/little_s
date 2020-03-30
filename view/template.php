@@ -21,11 +21,7 @@
     <body>
 
         <?php include_once 'include/header.php'; ?>
-        <?php 
-        echo $_SESSION['email'];
-        echo $_SESSION['name'];
 
-        ?> 
         <main id="content">
             <?= $content ?>
         </main>

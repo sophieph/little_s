@@ -36,7 +36,7 @@
                 </div>
     
                 <div class="copyright">
-                    <a href="form-admin.php">connexion admin</a>
+                    <a href="?action=admin">connexion admin</a>
                     <p>little.s &copy; 2020</p>
                 </div>
     

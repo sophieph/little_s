@@ -18,8 +18,9 @@
                     </form>
                 </div>
 
-                <!-- sign in/up -->
+                <!-- account -->
                 <div class="header-account">
+                Hello <?php echo $_SESSION['name'] ?> 
                  <a href="?action="> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
