@@ -15,13 +15,6 @@ function admin()
 }
 
 
-/**
- * adminController
- *
- * @return void
- * 
- * Connexion admin
- */
 function adminController()
 {
 
@@ -66,17 +59,4 @@ function adminController()
 
     echo $response;
 
-}
-
-/**
- * Board
- *
- * @return void
- * 
- * Tableau de bord cote admin
- * 
- */
-function board()
-{
-    include_once 'view/adminBoard.php';
 }

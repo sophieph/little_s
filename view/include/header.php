@@ -3,7 +3,7 @@
             
             if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') { ?>
             <div class="mode-admin"> 
-                <p> <?php echo $_SESSION['user'] . " : " . $_SESSION['name'] . " | <a href='admin-board.php'>Tableau de bord</a> " . " | ". "<a href='logoff.php'>Log off</a>"; ?> </p>
+                <p> <?php echo $_SESSION['user'] . " : " . $_SESSION['name'] . " | <a href='?action=board'>Tableau de bord</a> " . " | ". "<a href='?action=logoff'>Log off</a>"; ?> </p>
             </div>
 
             <?php } else if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') { 

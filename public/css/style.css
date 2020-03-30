@@ -195,13 +195,12 @@ button.error404{
     display: block;
     width:320px;
     height: 50px;
-    background: #bd7100;
+    background: var(--color-button);
     color: #fff;
     font-size: 20px;
     margin: 0 auto;
     line-height: 5px;
     text-align: center;
-    border-radius: 3px;
     text-decoration:none;
 }
 
@@ -245,7 +244,6 @@ button.error404{
     margin: 0 auto;
     line-height: 5rem;
     text-align: center;
-    border-radius: 3px;
     text-decoration:none;
 }
 
@@ -278,7 +276,7 @@ button.error404{
     display: inline-block;
     padding: 20px;
     margin:10px;
-    background-color:#000;
+    background-color:var(--color-default);
     letter-spacing:2px;
     
 }
@@ -289,7 +287,7 @@ button.error404{
 }
 
 .admin ul li:hover {
-    background-color:#bd7100;
+    background-color:var(--color-button);
     text-decoration:underline;
     
 }
@@ -303,14 +301,14 @@ button.error404{
     font-size:30px;
     font-weight:100;
     letter-spacing:2px;
-    color:#bd7100;
+    color:var(--color-button);
     
 }
 
 .admin-list th {
     letter-spacing:2px;
     text-transform:uppercase;
-    color:#bd7100;
+    color:var(--color-button);
     font-size:17px;
     padding:10px;
 }
