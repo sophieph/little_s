@@ -4,7 +4,7 @@ require 'controller/controller.php';
 require 'controller/newsletterController.php';
 require 'controller/signController.php';
 require 'controller/adminController.php';
-
+require 'controller/produitController.php';
 
 
 try {
@@ -29,8 +29,8 @@ try {
             adminController();
         } else if ($_GET['action'] == 'board') { // tableau de bord cote admin
             board();
-        } else if ($_GET['action'] == 'unepiece') {
-
+        } else if ($_GET['action'] == 'onepiece') { // une piece
+            onepiece();
         }
     } else {
         homePage();

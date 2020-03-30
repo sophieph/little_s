@@ -69,7 +69,7 @@
 
             <ul>
                 <li><a href="">Nouveautés</a></li>
-                <li><a href="one-piece.php">Une piece</a></li>
+                <li><a href="?action=onepiece">Une piece</a></li>
                 <li><a href="">Bikini</a></li>
                 <li><a href="">Accessoires</a></li>
             </ul>

@@ -12,6 +12,13 @@ function homepage()
     include 'view/mainPageView.php';
 }
 
+/**
+ * Logoff
+ *
+ * @return void
+ * 
+ * Supprime session
+ */
 function logoff()
 {
         include 'view/logoff.php';
