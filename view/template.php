@@ -45,7 +45,7 @@
                     <a href="?action=signin" class="signing-signin">Sign in</a> 
                     <!-- <span class="two-dots">::</span>  -->
                     <a href="?action=signup" class="signing-signup">Sign up</a>
-                    <a href=""><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
     
       
 
@@ -80,11 +80,11 @@
         ?>
 
             <div class="social-media">
-                <a href="http://www.twitter.com">Twitter</a>
-                <span class="two-dots">::</span>
-                <a href="http://www.facebook.com">Facebook</a> 
-                <span class="two-dots">::</span>
-                <a href="http://www.instagram.com">Instagram</a>
+                <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a>
+                <span class="two-dots">&nbsp&nbsp&nbsp</span>
+                <a href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a> 
+                <span class="two-dots">&nbsp&nbsp&nbsp</span>
+                <a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a>
             </div>
 
             <div class="footer">

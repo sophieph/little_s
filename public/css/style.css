@@ -1,48 +1,13 @@
-/* reset */ 
-/* 16 * 62.5 = 1.000 */
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font: 1.6rem sans-serif;
-    margin: 0;
-
-}
-
-h1,h2,h3,h4,figure,p,ul,ol {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-weight: 100;
-}
-
-details,summary, a, input {
-    outline:none;
-    text-decoration: none;
-    color: #222;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-:root{
-    /* mes variables css*/
-    --color-default:#222;
-    --color-list: #ccc;
-    --color-page:#fff;
-    --color-button:#FF964D;
-    --color-placeholder:#9f9f9f;
-    --color-link:#FFA884;
-    --color-error:#DB8900;
-}
 
 /* theme */
 body {
     text-align:center;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     
+}
+
+.two-dots {
+    margin:10px;
 }
 
 /* HEADER */
@@ -66,30 +31,39 @@ header {
  
 }
 
-header h1 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
 
 header h1 a {
     font-family: "Times New Roman";
     font-size: 10rem;
-    font-style: italic;
     color: var(--color-default);
     letter-spacing: 1rem;
     text-decoration: none;
+    font-style:inherit;
+    font-weight:100;
 }
 
 
+.header {
+    display: flex;
+    justify-content:flex-end;
+    font-size: 1.1rem;
+    text-transform: lowercase;
+    margin-top: 1rem;
+    letter-spacing: 0.1rem;
+    align-items:end;
+
+}
+
+.header-research{
+
+}
+
 .research-items {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right:3rem;
+
 }
 
 .research-items input[type=text] {
     width: 25rem;
-    height: 2rem;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -97,6 +71,8 @@ header h1 a {
     transition: 0.6s linear;
     letter-spacing: 2px;
     text-transform: lowercase;
+    text-align:left;
+    padding-top:15px;
 }
 
 
@@ -113,37 +89,38 @@ header h1 a {
 ::placeholder {
     letter-spacing: 2px;
     text-transform: lowercase;
-    text-align: center;
+    text-align: left;
     color: #9f9f9f;
     opacity: 1;
+
     /* Firefox */
 }
 
-.header {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 1.1rem;
-    text-transform: lowercase;
-    align-items: center;
-}
 
-.header a {
-    text-decoration: none;
-    letter-spacing: 0.1rem;
-    padding: 1rem;
-    color: var(--color-default);
-}
-
-.header a:hover {
-    text-decoration: underline;
+.header-sign {
+    color:#fff;
 }
 
 .signing-signin {
     background-color:var(--color-button);
-    border: 1px var(--color-button) solid; 
+    border: 1px var(--color-button) solid;
+    margin-right:1.4rem;
+    color:var(--color-page);
+    padding:10px;
 }
+
 .signing-signup {
+    color:var(--color-default);
     border: 1px var(--color-button) solid; 
+    padding:10px;
+}
+
+.fa-shopping-cart {
+    padding-left:10px;
+    font-size:2rem;
+}
+.panier {
+        padding-right:10px;
 }
 
 nav {
@@ -211,13 +188,13 @@ button.error404{
 
 /* main-image */
 .wrapper {
-    background-color: aqua;
+
     height: 589px;
-    background-image: url('/public/images/main-img.png') center;
+    background-image: url('/public/images/main-img.jpeg') center;
 }
 #main-image {
     height: 589px;
-    background-image: url('/public/images/main-img.png') center;
+    background-image: url('/public/images/main-img.jpeg') center;
     background-size: cover;
 }
 
@@ -247,16 +224,16 @@ button.error404{
 
 .get-dressed {
     font-family: "Times New Roman";
-    font-style: italic;
 }
 
 
 #sort-items {
     margin-bottom:20px;
+
 }
 
 .images {
-    display: block;
+    display: inline;
     width: 100%;
 
   max-width: 20%;
@@ -413,11 +390,12 @@ button.error404{
     letter-spacing: 2px;
     text-transform: lowercase;
     outline:none;
-    margin:1rem;
+    margin-top: 1rem;
+
 }
 .form-newsletter input[type=submit] {
     width: 100px;
-    height: 25px;
+    height: 3rem;
     background-color: var(--color-button);
     border: none;
     color: #ffffff;
@@ -433,7 +411,7 @@ button.error404{
 
 .subscribe-newsletter {
     font-family: "Times New Roman";
-    font-style: italic;
+    font-weight:100;
 }
 
 #messageNewsletter {
@@ -445,9 +423,10 @@ button.error404{
 
 .social-media {
     margin-top:100px;
+    padding:15px;
     background-color:var(--color-link);
     color:#fff;
-    font-size:12px;
+    font-size:1.4rem;
 }
 
 .social-media a{
@@ -472,6 +451,7 @@ button.error404{
     font-size:2.6rem;
     color:var(--color-button);
     padding:2rem;
+    font-weight:100;
 }
 
 .footer-infos a {
@@ -491,7 +471,7 @@ button.error404{
     text-align:center;
     font-size:1.4rem;
     letter-spacing:2px;
-    font-weight:500;
+    font-weight:100;
 
 
 }
