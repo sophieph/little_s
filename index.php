@@ -8,6 +8,8 @@ try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'homepage') {
             homepage();
+        } else if ($_GET['action'] == 'logoff') {
+            logoff();
         } else if ($_GET['action'] == 'subscribe') { // inscription a la newsletter
             subscribe();
         } else if ($_GET['action'] == 'signin') { // connexion

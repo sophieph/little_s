@@ -115,9 +115,35 @@ header h1 a {
     padding:10px;
 }
 
+
+.header-account {
+    margin-top:10px;
+    padding-right:20px;
+    padding-left:20px;
+    font-size:1.3rem;
+}
+.header-account a {
+    color:var(--color-link);
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.header-account a:hover {
+    text-decoration:underline;
+}
+
+.header-account a:nth-child(2) {
+    color:var(--color-default);
+}
+
+.header-account a:last-child {
+    color:var(--color-default);
+}
+
 .fa-shopping-cart {
     padding-left:10px;
     font-size:2rem;
+    color:var(--color-default);
 }
 .panier {
         padding-right:10px;

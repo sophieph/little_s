@@ -46,6 +46,7 @@ function signinController()
                 $membreConnecte = $membreManager->get($email);
 
                 session_start();
+                $_SESSION['user'] = 'membre';
                 $_SESSION['email'] = $membreConnecte->email();
                 $_SESSION['name'] = $membreConnecte->name();
             } else { 

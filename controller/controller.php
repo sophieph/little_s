@@ -12,3 +12,8 @@ function homepage()
     include 'view/mainPageView.php';
 }
 
+function logoff()
+{
+        include 'view/logoff.php';
+}
+
