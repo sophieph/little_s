@@ -40,8 +40,14 @@ function signinController()
 
         if ($membreManager->exists($email)) {
             if ($membreManager->signIn($email, $pass)) {
-                $membreConnecte = $membreManager->get($email);
+
                 $response = true;
+
+                $membreConnecte = $membreManager->get($email);
+
+                session_start();
+                $_SESSION['email'] = $membreConnecte->email();
+                $_SESSION['name'] = $membreConnecte->name();
             } else { 
                 $response = "Mot de passe incorrect";
             }

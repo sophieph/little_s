@@ -33,7 +33,7 @@ header {
 
 
 header h1 a {
-    font-family: "Times New Roman";
+    font-family: "Baskerville";
     font-size: 10rem;
     color: var(--color-default);
     letter-spacing: 1rem;
@@ -133,7 +133,7 @@ nav ul li {
 }
 
 nav ul a {
-    font-family: "Times New Roman";
+    font-family: "Baskerville";
     text-transform: lowercase;
     letter-spacing: 0.2rem;
     font-weight: bold;
@@ -141,6 +141,7 @@ nav ul a {
     font-size: 2.3rem;
     text-decoration: none;
     transition: 0.3s linear;
+    font-weight:100;
 }
 
 nav ul a:hover {
@@ -223,7 +224,7 @@ button.error404{
 }
 
 .get-dressed {
-    font-family: "Times New Roman";
+    font-family: "Baskerville";
 }
 
 
@@ -326,7 +327,7 @@ button.error404{
     text-transform:lowercase;
     letter-spacing:2px;
     font-size:16px;
-    font-family:"Times New Roman";
+    font-family:"Baskerville";
 
 }
 
@@ -356,6 +357,15 @@ button.error404{
     border: 1px var(--color-button) solid;
 }
 
+#text-sign-up {
+    color: var(--color-error);
+    padding-top:1rem;
+}
+
+#text-sign-in {
+    color: var(--color-error);
+    padding-top:1rem;
+}
 
 
 
@@ -410,7 +420,7 @@ button.error404{
 }
 
 .subscribe-newsletter {
-    font-family: "Times New Roman";
+    font-family: "Baskerville";
     font-weight:100;
 }
 
@@ -443,7 +453,7 @@ button.error404{
     padding-top: 20px;
     font-size: 1.3rem;
     text-transform: lowercase;
-    align-items: center;
+
 }
 
 .footer h2{
