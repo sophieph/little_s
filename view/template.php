@@ -31,7 +31,23 @@
         <!-- script js -->
         <script src="public/js/validateForm.js"></script>
         <script src="public/js/admin.js"></script>
-        <script src="public/js/jquery-3.4.1.min.js"></script>
+        <script src="public/js/css.js"></script>
+        <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+        
+        <script type="text/javascript">
+        // A $( document ).ready() block. for menu
+        $( document ).ready(function() {
+            $(".hamburger").click(function(){
+                $("nav").slideToggle();
+                console.log('ok');
+            });
+        });
+    </script>
     </body>
 
 </html>

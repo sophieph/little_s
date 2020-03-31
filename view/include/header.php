@@ -25,6 +25,7 @@
 
                     <a href="?action=logoff">Déconnexion</a>
                     <a href="" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                   
                 </div>
             </div>
 
@@ -58,8 +59,9 @@
             ?>
 
 
-
+            <a href="#" class="hamburger"> <ion-icon name="menu-outline"></ion-icon></a>
             <h1><a href="/little">little.s</a></h1>
+            <a href="#" class="panier-mobile"><i class="fa fa-shopping-cart"></i></a>
 
 
 
@@ -72,6 +74,7 @@
                 <li><a href="?action=onepiece">Une piece</a></li>
                 <li><a href="">Bikini</a></li>
                 <li><a href="">Accessoires</a></li>
+                <li><a href="" class="account">Mon compte</a></li>
             </ul>
 
         </nav>
