@@ -1,6 +1,7 @@
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: var(--color-default);
+
 }
 
 img {
@@ -113,6 +114,90 @@ nav ul li a {
 #sort-items {
     margin-bottom: 10rem;
 }
+
+#wrapper {
+    text-align: center;
+    margin: 3rem 0rem;
+}
+
+/*form sign */
+
+#form-sign {
+    margin-bottom: 2rem;
+
+}
+
+#form-sign h3 {
+    text-transform: uppercase;
+    color: var(--color-button);
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 8px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.form-sign-up label {
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    font-family: "Baskerville";
+}
+
+.form-sign-up input[type=text],
+input[type=password] {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    margin-bottom: 50px;
+    width: 30rem;
+    border-bottom: 1px solid #a7a7a7;
+    font-size: 1.2rem;
+}
+
+.form-sign-up input[type=submit] {
+    width: 100px;
+    height: 3rem;
+    background-color: var(--color-button);
+    border: 1px var(--color-button) solid;
+    border: none;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+
+
+#text-sign-in,
+#text-sign-up {
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: var(--color-error);
+    font-weight: 400;
+}
+
+/* form-filter */
+#filter {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+select {
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+
+}
+
+
+
+
+
 
 /*newsletter */
 .newsletter {
@@ -539,45 +624,10 @@ nav ul li a {
     }
 
     #form-sign h3 {
-        text-transform: uppercase;
-        color: var(--color-button);
-        font-size: 25px;
-        font-weight: 200;
-        letter-spacing: 8px;
-
-        margin-top: 100px;
-        margin-bottom: 55px;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
     }
 
-    .form-sign-up label {
-        text-transform: lowercase;
-        letter-spacing: 2px;
-        font-size: 16px;
-        font-family: "Baskerville";
-
-    }
-
-    .form-sign-up input[type=text],
-    input[type=password] {
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        outline: none;
-        margin-bottom: 50px;
-        width: 300px;
-        border-bottom: 1px solid #a7a7a7;
-    }
-
-    .form-sign-up input[type=submit] {
-        width: 100px;
-        height: 25px;
-        background-color: var(--color-button);
-        border: 1px var(--color-button) solid;
-        border: none;
-        color: #ffffff;
-        letter-spacing: 2px;
-        text-transform: lowercase;
-    }
 
     .form-sign-up input[type=submit]:hover {
         background-color: var(--color-page);
@@ -585,38 +635,16 @@ nav ul li a {
         border: 1px var(--color-button) solid;
     }
 
-    #text-sign-up {
-        color: var(--color-error);
-        padding-top: 1rem;
-    }
-
-    #text-sign-in {
-        color: var(--color-error);
-        padding-top: 1rem;
-    }
-
-
 
     /* FORM FILTER */
-
-    .form-filter {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-transform: lowercase;
-        letter-spacing: 1px;
-        color: #5a5a5a;
-    }
 
     /* Filter */
 
     #filter {
-        max-width: 90%;
-        margin: 0 auto;
+
+
         margin-top: 3rem;
         text-align: left;
-        display: flex;
-        justify-content: space-between;
 
     }
 
@@ -639,9 +667,8 @@ nav ul li a {
 
     /* Custom Select */
     select {
-        position: relative;
-        line-height: 1.5;
-        color: var(--color-list);
+
+
         letter-spacing: 1px;
         background-color: var(--color-page);
 
@@ -699,6 +726,7 @@ nav ul li a {
         padding: 2rem;
     }
 
+    
 
     .footer-infos a:hover {
         text-decoration: underline;
