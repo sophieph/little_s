@@ -5,11 +5,16 @@
             ?>
     
                 <div class="social-media">
-                    <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a>
+                    <ul>
+                        <li> <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a> </li>
+                        <li><a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                    <!-- <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a>
                     <span class="two-dots">&nbsp&nbsp&nbsp</span>
                     <a href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a> 
                     <span class="two-dots">&nbsp&nbsp&nbsp</span>
-                    <a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a>
+                    <a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a> -->
                 </div>
     
                 <div class="footer">
