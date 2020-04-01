@@ -42,7 +42,16 @@
                 </div>
     
                 <div class="copyright">
+                    <?php 
+                                        
+                    if ($_SESSION['user'] != 'membre') {
+                                        
+                        ?>
                     <a href="?action=admin">connexion admin</a>
+
+                        <?php 
+                    }
+                    ?>
                     <p>little.s &copy; 2020</p>
                 </div>
     

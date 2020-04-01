@@ -150,7 +150,8 @@ function deleteNewsletter()
  * 
  * list of all members
  */
-function manageMember() {
+function manageMember() 
+{
 
     try {
         $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -161,4 +162,16 @@ function manageMember() {
         die('Erreur : ' . $e->getMessage());
     }
     require_once 'view/adminMember.php';
+}
+
+/**
+ * ManageProduct
+ *
+ * @return void
+ * 
+ * list of all product available
+ */
+function manageProduct()
+{
+    require_once 'view/adminProduct.php';
 }

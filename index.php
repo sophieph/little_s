@@ -11,31 +11,33 @@ try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'homepage') {
             homepage();
-        } else if ($_GET['action'] == 'logoff') { // deconnexion
+        } else if ($_GET['action'] == 'logoff') { // log off
             logoff();
-        } else if ($_GET['action'] == 'subscribe') { // inscription a la newsletter
+        } else if ($_GET['action'] == 'subscribe') { // subscribe to a newsletter
             subscribe();
-        } else if ($_GET['action'] == 'signin') { // connexion membre
+        } else if ($_GET['action'] == 'signin') { // log in as a member
             signin();
         } else if ($_GET['action'] == 'signinC') {
             signinController();
-        } else if ($_GET['action'] == 'signup') { // inscription en tant que membre
+        } else if ($_GET['action'] == 'signup') { // subscribe as a member
             signup();
         } else if ($_GET['action'] == 'signupC') { 
             signupController();
-        } else if ($_GET['action'] == 'admin') { // connexion en tant qu'admin
+        } else if ($_GET['action'] == 'admin') { // log in as an admin
             admin();
         } else if ($_GET['action'] == 'adminC') { 
             adminController();
-        } else if ($_GET['action'] == 'board') { // tableau de bord cote admin
+        } else if ($_GET['action'] == 'board') { // dashboard for admin
             board();
-        } else if ($_GET['action'] == 'admin-newsletter') { // tableau de bord cote admin
+        } else if ($_GET['action'] == 'admin-newsletter') { // manage newsletter
             manageNewsletter();
-        } else if ($_GET['action'] == 'delete-newsletter') { // tableau de bord cote admin
+        } else if ($_GET['action'] == 'delete-newsletter') { // delete newsleter
             deleteNewsletter();
-        } else if ($_GET['action'] == 'admin-member') { // gere la newsletter
+        } else if ($_GET['action'] == 'admin-member') { // manage member
             manageMember();
-        } else if ($_GET['action'] == 'onepiece') { // une piece
+        } else if ($_GET['action'] == 'admin-product') { // manage product
+            manageProduct();
+        } else if ($_GET['action'] == 'onepiece') { // one piece page
             onepiece();
         }
     } else {

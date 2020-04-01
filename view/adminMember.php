@@ -6,8 +6,8 @@ ob_start();
 <section id="wrapper">
 
 <?php 
-    if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') { 
-?>
+if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') { 
+    ?>
 
     <div class="admin-list">
 
@@ -21,7 +21,7 @@ ob_start();
                 <th></th>
             </tr> 
             <?php
-                foreach($liste as $member) {
+            foreach($liste as $member) {
                 ?>
 
                 <tr>
@@ -31,8 +31,8 @@ ob_start();
                 <td class="admin-hover"> <a href="?action=delete-member&id=<?php echo $member['id']; ?>">delete </a></td>
                 </tr>
 
-            <?php 
-                }
+                <?php 
+            }
             ?>
             
         </table>
@@ -41,14 +41,13 @@ ob_start();
     </div>
 
     <?php 
-        } else {
-            http_response_code(404);
-            include 'include/error404.php';
-        }
-    ?>
+} else {
+    http_response_code(404);
+    include 'include/error404.php';
+}
+?>
 
 </section>
-
 
 
 <?php $content = ob_get_clean(); ?>
