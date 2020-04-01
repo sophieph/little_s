@@ -55,6 +55,23 @@ class MembreManager {
         return new Membre($membre);
     }
 
+    
+    /**
+     * GetList
+     *
+     * @return void
+     * 
+     * list of all members
+     */
+    public function getList() 
+    {
+        $q = $this->_db->prepare('SELECT * FROM Membre WHERE category = "membre"');
+        $q->execute();
+
+        return $q->fetchAll();
+    }
+
+
     // si l'user est un admin
 
     public function admin($email) {

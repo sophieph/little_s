@@ -15,7 +15,7 @@ ob_start(); ?>
         <ul>
             <li> <a href="?action=admin-newsletter">Gérer la newsletter</a></li>
             <li> <a href="">Gérer les produits</a></li>
-            <li> <a href="">Gérer les membres</a></li>
+            <li> <a href="?action=admin-member">Gérer les membres</a></li>
         </ul>
     </div>
 

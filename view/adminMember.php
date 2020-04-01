@@ -11,21 +11,24 @@ ob_start();
 
     <div class="admin-list">
 
-        <h3> Liste : <b>Newsletter</b> </h3>
+        <h3> Liste : <b>Membres</b> </h3>
+
         <table class="admin-list-table">
             <tr>
                 <th>Id</th>
+                <th>Nom</th>
                 <th>Email</th>
                 <th></th>
             </tr> 
             <?php
-                foreach($liste as $mail) {
+                foreach($liste as $member) {
                 ?>
 
                 <tr>
-                <td><?php echo $mail['id'];?></td>
-                <td><?php echo $mail['email'];?></td> 
-                <td class="admin-hover"> <a href="?action=delete-newsletter&id=<?php echo $mail['id']; ?>">delete </a></td>
+                <td><?php echo $member['id'];?></td>
+                <td><?php echo $member['name'];?></td>
+                <td><?php echo $member['email'];?></td> 
+                <td class="admin-hover"> <a href="?action=delete-member&id=<?php echo $member['id']; ?>">delete </a></td>
                 </tr>
 
             <?php 

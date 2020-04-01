@@ -142,3 +142,23 @@ function deleteNewsletter()
 
     require_once 'view/adminNewsletter.php';
 }
+
+/**
+ * ManageMember
+ *
+ * @return void
+ * 
+ * list of all members
+ */
+function manageMember() {
+
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $membreManager = new MembreManager($db);
+
+        $liste = $membreManager->getList();
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    require_once 'view/adminMember.php';
+}

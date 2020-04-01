@@ -33,6 +33,8 @@ try {
             manageNewsletter();
         } else if ($_GET['action'] == 'delete-newsletter') { // tableau de bord cote admin
             deleteNewsletter();
+        } else if ($_GET['action'] == 'admin-member') { // gere la newsletter
+            manageMember();
         } else if ($_GET['action'] == 'onepiece') { // une piece
             onepiece();
         }
