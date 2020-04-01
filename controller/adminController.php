@@ -88,9 +88,8 @@ function board()
  * 
  * Gère les emails inscrites à la newsletter cote admin
  */
-function manageNewsletter() {
-
-
+function manageNewsletter() 
+{
 
     try {
         $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -103,4 +102,43 @@ function manageNewsletter() {
 
     require_once 'view/adminNewsletter.php';
     
+}
+
+/**
+ * DeleteNewsletter
+ *
+ * @return void
+ * 
+ * Supprime les gens de la liste de newsletter
+ */
+function deleteNewsletter() 
+{
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $newsletterManager = new NewsletterManager($db);
+        
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $response = 'delete';
+        try {
+            $newsletterManager->deleteEmail($_GET['id']);
+            
+        } catch(Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        manageNewsletter();
+        /* revoir la redirection */
+        try {
+            header('Location : /little/?action=admin-newsletter');
+        }catch(Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+    }
+
+    require_once 'view/adminNewsletter.php';
 }

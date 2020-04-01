@@ -620,6 +620,7 @@ select {
 
     .admin-list a {
         text-decoration: none;
+        color:var(--color-link);
     }
 
     .admin-list a:hover {

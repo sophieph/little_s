@@ -63,7 +63,7 @@ class NewsletterManager
      */
     public function getList() 
     {
-        $q = $this->_db->prepare('SELECT email FROM Newsletter');
+        $q = $this->_db->prepare('SELECT * FROM Newsletter');
         $q->execute();
 
         return $q->fetchAll();
@@ -77,10 +77,10 @@ class NewsletterManager
      * 
      * Delete an email in Newsletter table
      */
-    public function deleteEmail(Newsletter $email) 
+    public function deleteEmail($id) 
     {
-        $q = $this->_db->prepare('DELETE FROM Newsletter WHERE email = :email');
-        $q->bindValue(':email', $email->email());
+        $q = $this->_db->prepare('DELETE FROM Newsletter WHERE id = :id');
+        $q->bindValue(':id', $id);
         $q->execute();
     }
 }

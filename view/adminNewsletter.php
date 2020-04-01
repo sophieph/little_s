@@ -12,6 +12,7 @@ ob_start();
     <div class="admin-list">
 
         <h3> Liste : <b>Newsletter</b> </h3>
+        <p><?php echo $response; ?></p>
         <table class="admin-list-table">
             <tr>
                 <th>Email</th>
@@ -22,8 +23,9 @@ ob_start();
                 ?>
 
                 <tr>
+                <td><?php echo $mail['id'];?></td>
                 <td><?php echo $mail['email'];?></td> 
-                <td class="admin-hover"> delete </td>
+                <td class="admin-hover"> <a href="?action=delete-newsletter&id=<?php echo $mail['id']; ?>">delete </a></td>
                 </tr>
 
             <?php 
@@ -38,7 +40,7 @@ ob_start();
     <?php 
         } else {
             http_response_code(404);
-            include("404.php");
+            include 'include/error404.php';
         }
     ?>
 

@@ -31,6 +31,8 @@ try {
             board();
         } else if ($_GET['action'] == 'admin-newsletter') { // tableau de bord cote admin
             manageNewsletter();
+        } else if ($_GET['action'] == 'delete-newsletter') { // tableau de bord cote admin
+            deleteNewsletter();
         } else if ($_GET['action'] == 'onepiece') { // une piece
             onepiece();
         }
