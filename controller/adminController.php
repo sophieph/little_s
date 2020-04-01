@@ -80,3 +80,27 @@ function board()
 {
     include_once 'view/adminBoard.php';
 }
+
+/**
+ * ManageNewsletter
+ *
+ * @return void
+ * 
+ * Gère les emails inscrites à la newsletter cote admin
+ */
+function manageNewsletter() {
+
+
+
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $newsletterManager = new NewsletterManager($db);
+        
+        $liste = $newsletterManager->getList();
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    require_once 'view/adminNewsletter.php';
+    
+}

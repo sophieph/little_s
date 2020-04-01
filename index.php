@@ -29,6 +29,8 @@ try {
             adminController();
         } else if ($_GET['action'] == 'board') { // tableau de bord cote admin
             board();
+        } else if ($_GET['action'] == 'admin-newsletter') { // tableau de bord cote admin
+            manageNewsletter();
         } else if ($_GET['action'] == 'onepiece') { // une piece
             onepiece();
         }

@@ -194,9 +194,38 @@ select {
 
 }
 
+/*admin-list*/
+.admin-list {
+    text-align: left;
+    margin: 10rem 0;
+}
 
+.admin-list h3 {
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: var(--color-button);
 
+}
 
+.admin-list th {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-link);
+    font-size: 1.7rem;
+    padding: 1rem;
+}
+
+.admin-list tr {
+    padding: 1rem;
+    letter-spacing: 1px;
+    font-size: 1.4rem
+}
+
+.admin-list tr:nth-child(2n+1) {
+    color: #656565;
+    background-color: #fcfcfc;
+}
 
 
 /*newsletter */
@@ -579,33 +608,14 @@ select {
     }
 
     .admin-list {
-        text-align: left;
-        margin: 100px;
+        text-align: center;
+        margin: 10rem;
     }
 
-    .admin-list h3 {
-        font-size: 30px;
-        font-weight: 100;
-        letter-spacing: 2px;
-        color: var(--color-button);
-
-    }
-
-    .admin-list th {
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--color-button);
-        font-size: 17px;
-        padding: 10px;
-    }
 
     .admin-list td {
-        padding: 10px;
-        font-style: italic;
-        letter-spacing: 1px;
-        font-size: 13px;
-        color: #656565;
-        border: 1px solid #000;
+        padding: 1rem;
+
     }
 
     .admin-list a {
@@ -726,7 +736,7 @@ select {
         padding: 2rem;
     }
 
-    
+
 
     .footer-infos a:hover {
         text-decoration: underline;

@@ -33,6 +33,7 @@
                         <a href="">Plan du site</a><br>
                     </div>
     
+
                     <div class="footer-infos">
                         <h2>Mon compte</h2>
                         <a href="">Historique</a><br>

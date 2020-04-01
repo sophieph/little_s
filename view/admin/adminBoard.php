@@ -13,7 +13,7 @@ ob_start(); ?>
 
     <div class="admin">
         <ul>
-            <li> <a href="?action=admin-newsletter">Gérer la newsletter</a></li>
+            <li> <a href="list-newsletter.php">Gérer la newsletter</a></li>
             <li> <a href="">Gérer les produits</a></li>
             <li> <a href="">Gérer les membres</a></li>
         </ul>
