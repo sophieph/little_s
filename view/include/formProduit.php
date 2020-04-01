@@ -1,8 +1,8 @@
-<form action="" class="form-product">
+<form action="?action=admin-product" class="form-product">
     <table>
         <tr>
             <td><label for="name">Nom du produit</label></td>
-            <td><input type="text" name="name" id="name"> </td>
+            <td><input type="text" name="name" id="name" onKeyPress="nameProduct()" onKeyUp="nameProduct()"> </td>
         </tr>
 
         <tr>
@@ -12,14 +12,14 @@
 
         <tr>
             <td><label for="stock">Nombre de stock</label></td>
-            <td><input type="text" name="stock" id="stock"></td>
+            <td><input type="text" name="stock" id="stock" onKeyPress="stockProduct()" onKeyUp="stockProduct()"></td>
         </tr>
 
         <tr>
             <td><label for="category">Catégorie</label></td>
             <td>
             <select name="category" id="category">
-            <option value="onepiece">Une pièce</option>
+            <option value="onePiece">Une pièce</option>
             <option value="bikini">Bikini</option>
             <option value="accessoire">Accessoire</option>
             </select>
@@ -28,7 +28,9 @@
 
     </table>
 
-    <input type="submit" value="Ajouter">
+    <input type="submit" value="Ajouter" class="button" id="button">
+
+    <p id="text-product"></p>
 
 
 </form>

@@ -25,7 +25,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
             
         </table>
 
-        <p id="demo"> </p>
     </div>
 
     <?php 

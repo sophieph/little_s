@@ -8,8 +8,35 @@ img {
     height: auto;
 }
 
+input {
+    font-size: 1.2rem;
+}
 
+/* error */
 
+.error {
+    margin: 10rem 0rem;
+}
+
+.error p {
+    font-size: 2rem;
+}
+
+button.error404 {
+    display: block;
+    width: 32rem;
+    height: 5rem;
+    background: var(--color-button);
+    font-size: 2rem;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.error404 a {
+    color: var(--color-page);
+    text-transform: lowercase;
+    letter-spacing: 0.2rem;
+}
 
 /* header */
 .header {
@@ -29,7 +56,6 @@ header h1 a {
     font-style: inherit;
     font-weight: 100;
 }
-
 
 .hamburger {
     font-size: 3rem;
@@ -104,10 +130,9 @@ nav ul li a {
     text-decoration: none;
 }
 
-
 .images {
     display: inline;
-    width: 100%;
+    max-width: 100%;
 
 }
 
@@ -124,7 +149,6 @@ nav ul li a {
 
 #form-sign {
     margin-bottom: 2rem;
-
 }
 
 #form-sign h3 {
@@ -167,10 +191,8 @@ input[type=password] {
     text-transform: lowercase;
 }
 
-
-
 #text-sign-in,
-#text-sign-up {
+#text-sign-up, #text-product {
     font-size: 1.2rem;
     padding: 1rem;
     color: var(--color-error);
@@ -233,8 +255,11 @@ select {
     margin: 3rem 0;
 }
 
-.form-product label {
+.form-product table {
+    margin: 0 auto;
+}
 
+.form-product label {
     color: var(--color-list);
 }
 
@@ -243,11 +268,9 @@ select {
     border: none;
     width: 30rem;
     border-bottom: 1px solid var(--color-list);
-
 }
 
 .form-product input[type=submit] {
-
     width: 10rem;
     height: 3rem;
     background-color: var(--color-button);
@@ -300,8 +323,6 @@ select {
     font-weight: 400;
 }
 
-
-
 /* social media */
 .social-media {
     margin-top: 100px;
@@ -333,7 +354,6 @@ select {
     letter-spacing: 2px;
     font-size: 2.6rem;
     color: var(--color-button);
-
     font-weight: 100;
 }
 
@@ -349,8 +369,6 @@ select {
     font-size: 1.4rem;
     letter-spacing: 2px;
     font-weight: 100;
-
-
 }
 
 @media screen and (min-width:768px) {
@@ -384,7 +402,6 @@ select {
         text-transform: lowercase;
     }
 
-
     .hamburger,
     .panier-mobile {
         display: none;
@@ -395,7 +412,6 @@ select {
         letter-spacing: 1rem;
     }
 
-
     .header {
         display: flex;
         justify-content: flex-end;
@@ -404,12 +420,7 @@ select {
         margin-top: 1rem;
         letter-spacing: 0.1rem;
         align-items: end;
-
     }
-
-    .header-research {}
-
-    .research-items {}
 
     .research-items input[type=text] {
         width: 25rem;
@@ -445,7 +456,6 @@ select {
         /* Firefox */
     }
 
-
     .header-sign {
         color: #fff;
     }
@@ -463,7 +473,6 @@ select {
         border: 1px var(--color-button) solid;
         padding: 10px;
     }
-
 
     .header-account {
         margin-top: 10px;
@@ -537,37 +546,6 @@ select {
         margin: 0 auto;
     }
 
-    /* error */
-
-    .error {
-        margin: 200px;
-    }
-
-    .error p {
-        font-size: 30px;
-    }
-
-    button.error404 {
-        display: block;
-        width: 320px;
-        height: 50px;
-        background: var(--color-button);
-        color: #fff;
-        font-size: 20px;
-        margin: 0 auto;
-        line-height: 5px;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .error404 a {
-        color: #fff;
-        text-decoration: none;
-        text-transform: lowercase;
-        letter-spacing: 2px;
-    }
-
-
     /* main-image */
     .wrapper {
 
@@ -582,20 +560,13 @@ select {
     }
 
     #main-image h2 {
-
-
         padding: 150px 0 40px 0;
         margin-bottom: 20px;
         font-size: 3rem;
     }
 
-    .button-shop {}
-
-
-
     #sort-items {
         margin-bottom: 20px;
-
     }
 
     .images {
@@ -604,11 +575,6 @@ select {
         max-width: 20%;
         margin: 0 2.5%;
     }
-
-
-
-
-
 
     /* ADMIN */
 
@@ -622,7 +588,6 @@ select {
         margin: 10px;
         background-color: var(--color-default);
         letter-spacing: 2px;
-
     }
 
     .admin a {
@@ -633,7 +598,6 @@ select {
     .admin ul li:hover {
         background-color: var(--color-button);
         text-decoration: underline;
-
     }
 
     .admin-list {
@@ -644,7 +608,6 @@ select {
 
     .admin-list td {
         padding: 1rem;
-
     }
 
     .admin-list a {
@@ -655,7 +618,6 @@ select {
     .admin-list a:hover {
         text-decoration: underline;
     }
-
 
     /* SIGN FORM */
 
@@ -668,7 +630,6 @@ select {
         margin-bottom: 6rem;
     }
 
-
     .form-sign-up input[type=submit]:hover {
         background-color: var(--color-page);
         color: var(--color-default);
@@ -676,29 +637,20 @@ select {
     }
 
 
-    /* FORM FILTER */
-
     /* Filter */
 
     #filter {
-
-
         margin-top: 3rem;
         text-align: left;
-
     }
 
     label {
         font-size: 1.3rem;
         font-weight: 500;
-
     }
-
-
 
     /* Reset Select */
     select {
-
         box-shadow: none;
         border: 0;
         border-radius: 0;
@@ -707,22 +659,14 @@ select {
 
     /* Custom Select */
     select {
-
-
         letter-spacing: 1px;
         background-color: var(--color-page);
-
     }
 
     select {
         padding: 0;
         color: #000;
-
     }
-
-
-
-
 
     /* FOOTER */
 
@@ -730,18 +674,11 @@ select {
         margin-top: 20rem;
     }
 
-
-
-
     .form-newsletter input[type=submit]:hover {
         background-color: var(--color-page);
         border: 1px var(--color-button) solid;
         color: var(--color-default)
     }
-
-
-
-
 
     .social-media li {
         display: inline-block;
@@ -755,7 +692,6 @@ select {
         text-transform: lowercase;
     }
 
-
     .footer {
         display: flex;
         justify-content: space-around;
@@ -765,8 +701,6 @@ select {
     .footer h2 {
         padding: 2rem;
     }
-
-
 
     .footer-infos a:hover {
         text-decoration: underline;

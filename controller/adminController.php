@@ -173,5 +173,17 @@ function manageMember()
  */
 function manageProduct()
 {
+
+    if (isset($_GET['name']) && !empty($_GET['name'])
+        && isset($_GET['date']) && !empty($_GET['date'])
+        && isset($_GET['stock']) && !empty($_GET['stock'])
+        && isset($_GET['category']) && !empty($_GET['category'])
+    ) {
+        echo $_GET['name'];
+        echo $_GET['date'];
+        echo $_GET['stock'];
+        echo $_GET['category'];
+    }
+
     require_once 'view/adminProduct.php';
 }

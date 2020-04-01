@@ -47,3 +47,41 @@ function adminC() {
     return false;  
 }
 
+
+function string(word) {
+    var re = /^[A-Za-z ]+$/;
+    var val = re.test(word);
+
+    return val;
+}
+
+function nameProduct() {
+    var name =  document.getElementById("name").value;
+    
+    if (string(name)) {
+        document.getElementById("text-product").innerHTML = "";
+        document.getElementById("button").disabled = false;
+    }
+    else {
+        document.getElementById("text-product").innerHTML = "Ne mettez que des lettres alphabétiques.";
+        document.getElementById("button").disabled = true;
+    }
+}
+
+function isInt(value) {
+    var re = /^[1-9]+$/;
+    var val = re.test(value);
+
+    return val;
+  }
+
+function stockProduct() {
+    var stock = document.getElementById("stock").value;
+    if (isInt(stock)){
+        document.getElementById("text-product").innerHTML = "";
+        document.getElementById("button").disabled = false;
+    } else {
+        document.getElementById("text-product").innerHTML = "Ne mettez que des chiffres au dessus de 0";
+        document.getElementById("button").disabled = true;
+    }
+}
