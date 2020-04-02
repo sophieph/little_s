@@ -12,7 +12,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
     <div class="admin-list">
 
         <h3>Ajouter un produit</h3>
-    
         <?php
         include_once 'view/include/formProduit.php';
         ?>

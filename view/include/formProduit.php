@@ -1,4 +1,4 @@
-<form action="?action=admin-product" class="form-product">
+<form action="" method="POST" class="form-product">
     <table>
         <tr>
             <td><label for="name">Nom du produit</label></td>
@@ -28,7 +28,7 @@
 
     </table>
 
-    <input type="submit" value="Ajouter" class="button" id="button">
+    <input type="submit" value="Ajouter" class="button" id="button" onclick="return(addP())">
 
     <p id="text-product"></p>
 

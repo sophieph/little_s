@@ -37,6 +37,8 @@ try {
             manageMember();
         } else if ($_GET['action'] == 'admin-product') { // manage product
             manageProduct();
+        } else if ($_GET['action'] == 'add-product') { // add a product
+            addProduct();
         } else if ($_GET['action'] == 'onepiece') { // one piece page
             onepiece();
         }

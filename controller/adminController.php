@@ -174,16 +174,42 @@ function manageMember()
 function manageProduct()
 {
 
+    require_once 'view/adminProduct.php';
+}
+
+/**
+ * AddProduct
+ *
+ * @return void
+ * 
+ * Add a product in the db
+ */
+function addProduct()
+{
     if (isset($_GET['name']) && !empty($_GET['name'])
         && isset($_GET['date']) && !empty($_GET['date'])
         && isset($_GET['stock']) && !empty($_GET['stock'])
         && isset($_GET['category']) && !empty($_GET['category'])
     ) {
-        echo $_GET['name'];
-        echo $_GET['date'];
-        echo $_GET['stock'];
-        echo $_GET['category'];
+
+        $nameProduct = $_GET['name'];
+        $dateProduct = $_GET['date'];
+        $stock = $_GET['stock'];
+        $category = $_GET['category'];
+        $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category;
+
+        /* Connexion à la bdd pour inscrire l'email dans la newsletter */
+        try {
+            $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $produitManager = new ProduitManager($db);
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
+
+    } else {
+        $response = 'nonn';
     }
 
-    require_once 'view/adminProduct.php';
+
+    echo $response;
 }

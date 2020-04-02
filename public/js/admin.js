@@ -1,30 +1,3 @@
-function admin() {
-    var mail = document.getElementById("email").value;
-    var password = document.getElementById("pass").value;
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            if (this.responseText) {
-                document.getElementById("text").innerHTML = 'ok';
-                // window.location = 'admin-board.php';
-            } else {
-                document.getElementById("text").innerHTML = this.responseText;
-            }
-        }
-	};
-    xhr.open("GET", "index.php?action=adminC&email=" + mail + "&pass=" + password , true);
-    xhr.send(null);
-
-    return false;
-}
-
-function deleteNewsletter($email){
-
-   document.getElementById("demo").innerHTML = $email;
-
-}
 function adminC() {
     var mail = document.getElementById("email").value;
     var password = document.getElementById("pass").value;
@@ -35,7 +8,7 @@ function adminC() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             if (this.responseText) {
                 document.getElementById("text").innerHTML = this.responseText;
-                 window.location = '/little';
+                 window.location = '/little/?action=board';
             } else {
                 document.getElementById("text").innerHTML = this.responseText;
             }
@@ -46,7 +19,6 @@ function adminC() {
 
     return false;  
 }
-
 
 function string(word) {
     var re = /^[A-Za-z ]+$/;
@@ -84,4 +56,57 @@ function stockProduct() {
         document.getElementById("text-product").innerHTML = "Ne mettez que des chiffres au dessus de 0";
         document.getElementById("button").disabled = true;
     }
+}
+
+// add a product ajax
+function addProduct() {
+    var name = document.getElementById("name").value;
+    var date = document.getElementById("date").value;
+    var stock = document.getElementById("stock").value;
+    var category = document.getElementById("category").value;
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+
+            document.getElementById("text-product").innerHTML = 'ok';
+            
+        } else {
+            document.getElementById("text-product").innerHTML = 'nonono';
+
+        }
+    };
+    // xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category, true);
+
+    xhr.open("GET", "index.php?action=add-product&name=" + name , true);
+    xhr.send(null);
+
+    return false;
+}
+
+function addP() {
+    
+    var name = document.getElementById("name").value;
+    var date = document.getElementById("date").value;
+    var stock = document.getElementById("stock").value;
+    var category = document.getElementById("category").value;
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            document.getElementById("text-product").innerHTML = this.responseText;
+		} else {
+            document.getElementById("text-product").innerHTML = 'lol';
+
+        }
+	};
+    xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category  , true);
+    xhr.send(null);
+
+
+
+
+    return false;
 }

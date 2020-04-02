@@ -18,7 +18,7 @@ class ProduitManager
 
     public function add(Produit $produit)
     {
-        $q = $this->_db->prepare('INSERT INTO produit(name, date,stock, category) VALUES(:name, :date, :stock, :category)');
+        $q = $this->_db->prepare('INSERT INTO Produit(name, date,stock, category) VALUES(:name, :date, :stock, :category)');
         $q->bindValue(':name', $produit->name());
         $q->bindValue(':date', $produit->date());
         $q->bindValue(':stock', $produit->stock());

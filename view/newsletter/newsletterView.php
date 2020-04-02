@@ -8,5 +8,5 @@
         <p id="messageNewsletter" class="form-newsletter"> </p>
         <input type="submit" value="S'inscrire" class="form-newsletter" onclick="return(validateNewsletter());">
     </form> 
-    <!--  -->
+    
 </div>
