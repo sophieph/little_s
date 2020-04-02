@@ -59,9 +59,8 @@ function stockProduct() {
 }
 
 
-
+/* add a product to database with ajax */
 function addP() {
-    
     var name = document.getElementById("name").value;
     var date = document.getElementById("date").value;
     var stock = document.getElementById("stock").value;
@@ -81,7 +80,15 @@ function addP() {
     xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category  , true);
     xhr.send(null);
 
-
-
     return false;
+}
+
+/* add a path */
+function addPath() {
+    var path = document.getElementById("image").value;
+    document.getElementById("image").value = 'public/images/produit/' + path;
+}
+
+function addImage() {
+    
 }

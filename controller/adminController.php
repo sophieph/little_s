@@ -3,6 +3,7 @@
 require 'model/ProduitManager.php';
 require 'model/Produit.php';
 
+
 /**
  * Signin
  *
@@ -197,8 +198,8 @@ function addProduct()
     try {
         $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $produitManager = new ProduitManager($db);
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
     }
     
     if (isset($_GET['name']) && !empty($_GET['name'])
@@ -231,4 +232,26 @@ function addProduct()
 
     echo $response;
 
+}
+
+/**
+ * AddImageProduct
+ *
+ * @return void
+ * 
+ * display the form to add image to a product
+ */
+function addImageProduct()
+{
+
+    $db = db();
+    $produitManager = new ProduitManager($db); 
+
+    if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
+        $codeProduit = $_GET['codeProduit'];
+        $product = $produitManager->get($codeProduit);
+
+    }
+
+    require_once 'view/adminImage.php';
 }

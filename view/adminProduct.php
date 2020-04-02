@@ -37,10 +37,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
                 <td><?php echo $produit['date'];?></td>
                 <td><?php echo $produit['stock'];?></td>
                 <td><?php echo $produit['category'];?></td>
-                <td>Ajouter des images</td>
+                <td><a href="?action=image-product&codeProduit=<?php echo $produit['codeProduit']; ?>">Ajouter des images<a/></td>
                 <td>Modifier</td>
 
-                <td class="admin-hover"> <a href="?action=delete-produit&id=<?php echo $produit['id']; ?>">delete </a></td>
+                <td class="admin-hover"> <a href="?action=delete-product&id=<?php echo $produit['id']; ?>">delete </a></td>
                 </tr>
 
                 <?php 

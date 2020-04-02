@@ -1,6 +1,6 @@
 <?php 
  
-class ProduitManager
+class ImageProduitManager
 {
     
     private $_db;
@@ -22,15 +22,13 @@ class ProduitManager
      * @param  mixed $produit
      * @return void
      * 
-     * add a product in database
+     * add an image to a product 
      */
-    public function add(Produit $produit)
+    public function add(ImageProduit $produit)
     {
-        $q = $this->_db->prepare('INSERT INTO Produit(name, date,stock, category) VALUES(:name, :date, :stock, :category)');
-        $q->bindValue(':name', $produit->name());
-        $q->bindValue(':date', $produit->date());
-        $q->bindValue(':stock', $produit->stock());
-        $q->bindValue(':category', $produit->category());
+        $q = $this->_db->prepare('INSERT INTO ImageProduit(codeProduit, link) VALUES(:codeProduit, :link)');
+        $q->bindValue(':codeProduit', $produit->codeProduit());
+        $q->bindValue(':link', $produit->link());
         $q->execute();
         
         $produit->hydrate(
@@ -47,7 +45,7 @@ class ProduitManager
      * 
      * list of all members
      */
-    public function getList() 
+    public function getListImage() 
     {
         $q = $this->_db->prepare('SELECT * FROM Produit');
         $q->execute();
