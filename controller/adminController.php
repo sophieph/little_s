@@ -153,7 +153,6 @@ function deleteNewsletter()
  */
 function manageMember() 
 {
-
     try {
         $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $membreManager = new MembreManager($db);
@@ -174,7 +173,13 @@ function manageMember()
  */
 function manageProduct()
 {
-
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $produitManager = new ProduitManager($db);
+        $liste = $produitManager->getList();
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
     require_once 'view/adminProduct.php';
 }
 
@@ -225,4 +230,5 @@ function addProduct()
     }
 
     echo $response;
+
 }

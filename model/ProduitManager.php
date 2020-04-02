@@ -15,7 +15,15 @@ class ProduitManager
         $this->_db = $db;
     }
     
-
+    
+    /**
+     * Add
+     *
+     * @param  mixed $produit
+     * @return void
+     * 
+     * add a product in database
+     */
     public function add(Produit $produit)
     {
         $q = $this->_db->prepare('INSERT INTO Produit(name, date,stock, category) VALUES(:name, :date, :stock, :category)');
@@ -32,6 +40,20 @@ class ProduitManager
         );
     }
 
+        /**
+     * GetList
+     *
+     * @return void
+     * 
+     * list of all members
+     */
+    public function getList() 
+    {
+        $q = $this->_db->prepare('SELECT * FROM Produit');
+        $q->execute();
+
+        return $q->fetchAll();
+    }
 }
 
 

@@ -1,7 +1,6 @@
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: var(--color-default);
-
 }
 
 img {
@@ -36,6 +35,11 @@ button.error404 {
     color: var(--color-page);
     text-transform: lowercase;
     letter-spacing: 0.2rem;
+}
+
+h3 {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
 }
 
 /* header */
@@ -192,7 +196,8 @@ input[type=password] {
 }
 
 #text-sign-in,
-#text-sign-up, #text-product {
+#text-sign-up,
+#text-product {
     font-size: 1.2rem;
     padding: 1rem;
     color: var(--color-error);
