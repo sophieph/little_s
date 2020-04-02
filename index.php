@@ -40,6 +40,8 @@ try {
         } else if ($_GET['action'] == 'add-product') { // add a product
             addProduct();
         } else if ($_GET['action'] == 'image-product') { // add an image to a product
+            imageProduct();
+        } else if ($_GET['action'] == 'add-image') { // add an image to a product
             addImageProduct();
         } else if ($_GET['action'] == 'onepiece') { // one piece page
             onepiece();

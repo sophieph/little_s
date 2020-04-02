@@ -16,14 +16,28 @@ ob_start();
         <p><b>Nom du produit </b> : <?php echo $product['name']; ?></p>
         <p><b>Stock </b> : <?php echo $product['stock']; ?></p>
         <p><b>Catégorie du produit </b> : <?php echo $product['category']; ?></p>
-        <p><b>Images</b> : </p><br><br>
+        <p><b>Images</b> : 
+        
+        <?php
+            foreach( $images as $image) {
+
+                ?>
+<img src="<?php echo $image['link'];?>">
+                <?php 
+
+        
+            }
+        ?>
+        </p><br><br>
 
         <form action="">
             <label for="images">Ajouter une image</label>
             <input type="text" name="image" id="image" onfocusout="addPath()" >
-            <input type="hidden" name="codeProduit" value="<?php echo $product['codeProduit']; ?>">
-            <input type="submit" value="Ajouter l'image" onclick="addImage()">
+            <input type="hidden" name="codeProduit" id="codeProduit" value="<?php echo $product['codeProduit']; ?>">
+            <input type="submit" value="Ajouter l'image" onclick="return(addImage());">
         </form>
+
+        <p id="image-text"></p>
     </div>
 
     <?php 

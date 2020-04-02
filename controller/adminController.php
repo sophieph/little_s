@@ -2,7 +2,8 @@
 
 require 'model/ProduitManager.php';
 require 'model/Produit.php';
-
+require 'model/ImageProduitManager.php';
+require 'model/ImageProduit.php';
 
 /**
  * Signin
@@ -18,7 +19,7 @@ function admin()
 
 
 /**
- * adminController
+ * AdminController
  *
  * @return void
  * 
@@ -235,23 +236,61 @@ function addProduct()
 }
 
 /**
- * AddImageProduct
+ * imageProduct
  *
  * @return void
  * 
  * display the form to add image to a product
  */
-function addImageProduct()
+function imageProduct()
 {
-
     $db = db();
     $produitManager = new ProduitManager($db); 
+    $imageProduitManager = new ImageProduitManager($db);
 
     if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
         $codeProduit = $_GET['codeProduit'];
         $product = $produitManager->get($codeProduit);
-
+        $images = $imageProduitManager->getListImage($codeProduit);
     }
 
     require_once 'view/adminImage.php';
+}
+
+/**
+ * AddImageProduct
+ *
+ * @return void
+ * 
+ * add an image to a product
+ */
+function addImageProduct()
+{
+    $db = db();
+    $imageProduitManager = new ImageProduitManager($db);
+
+    if (isset($_GET['image']) && !empty($_GET['image'])  
+        && isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])
+    ) {
+        $codeProduit = $_GET['codeProduit'];
+        $image = $_GET['image'];
+
+        $produit = new ImageProduit(
+            [
+                'codeProduit' => $codeProduit,
+                'link' => $image
+            ]
+        );
+        $response = $image . " " . $codeProduit;
+    } else {
+        $response = "non";
+    }
+
+    if (isset($produit)) {
+        $imageProduitManager->add($produit);
+        $response = "L'image a été ajoutée.";
+
+    }
+    echo $response;
+    
 }

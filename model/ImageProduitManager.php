@@ -45,10 +45,10 @@ class ImageProduitManager
      * 
      * list of all members
      */
-    public function getListImage() 
+    public function getListImage($codeProduit) 
     {
-        $q = $this->_db->prepare('SELECT * FROM Produit');
-        $q->execute();
+        $q = $this->_db->prepare('SELECT * FROM ImageProduit WHERE codeProduit = :codeProduit');
+        $q->execute([':codeProduit' => $codeProduit]);
 
         return $q->fetchAll();
     }

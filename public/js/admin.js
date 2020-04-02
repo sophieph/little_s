@@ -90,5 +90,22 @@ function addPath() {
 }
 
 function addImage() {
-    
+    var path = document.getElementById("image").value;
+    var code = document.getElementById("codeProduit").value
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            document.getElementById("image-text").innerHTML = this.responseText;
+            window.location = "/little/?action=image-product&codeProduit=" + code;
+		} else {
+            document.getElementById("image-text").innerHTML = 'Could not make it.';
+
+        }
+	};
+    xhr.open("GET", "index.php?action=add-image&image=" + path + "&codeProduit=" + code   , true);
+    xhr.send(null);
+    document.getElementById("image-text").innerHTML = path;
+    return false;
 }
