@@ -11,7 +11,7 @@ ob_start();
 
     <div class="admin-list">
 
-        <h3> Liste : <b>Newsletter!</b> </h3>
+        <h3> Liste : <b>Newsletter</b> </h3>
         <table class="admin-list-table">
             <tr>
                 <th>Id</th>
