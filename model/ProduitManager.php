@@ -27,7 +27,7 @@ class ProduitManager
         
         $produit->hydrate(
             [
-            'id' => $this->_db->lastInsertId()
+            'code' => $this->_db->lastInsertId()
             ]
         );
     }

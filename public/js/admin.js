@@ -41,7 +41,7 @@ function nameProduct() {
 }
 
 function isInt(value) {
-    var re = /^[1-9]+$/;
+    var re = /^[0-9]+$/;
     var val = re.test(value);
 
     return val;
@@ -49,7 +49,7 @@ function isInt(value) {
 
 function stockProduct() {
     var stock = document.getElementById("stock").value;
-    if (isInt(stock)){
+    if (isInt(stock) && stock > 0){
         document.getElementById("text-product").innerHTML = "";
         document.getElementById("button").disabled = false;
     } else {
@@ -58,32 +58,7 @@ function stockProduct() {
     }
 }
 
-// add a product ajax
-function addProduct() {
-    var name = document.getElementById("name").value;
-    var date = document.getElementById("date").value;
-    var stock = document.getElementById("stock").value;
-    var category = document.getElementById("category").value;
 
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-
-            document.getElementById("text-product").innerHTML = 'ok';
-            
-        } else {
-            document.getElementById("text-product").innerHTML = 'nonono';
-
-        }
-    };
-    // xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category, true);
-
-    xhr.open("GET", "index.php?action=add-product&name=" + name , true);
-    xhr.send(null);
-
-    return false;
-}
 
 function addP() {
     
@@ -104,8 +79,6 @@ function addP() {
 	};
     xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category  , true);
     xhr.send(null);
-
-
 
 
     return false;

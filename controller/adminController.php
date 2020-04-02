@@ -1,6 +1,7 @@
 <?php 
 
-
+require 'model/ProduitManager.php';
+require 'model/Produit.php';
 
 /**
  * Signin
@@ -186,30 +187,42 @@ function manageProduct()
  */
 function addProduct()
 {
+
+    /* Connexion à la bdd pour inscrire l'email dans la newsletter */
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $produitManager = new ProduitManager($db);
+    } catch (PDOException $e) {
+        echo 'Erreur : ' . $e->getMessage();
+    }
+    
     if (isset($_GET['name']) && !empty($_GET['name'])
         && isset($_GET['date']) && !empty($_GET['date'])
         && isset($_GET['stock']) && !empty($_GET['stock'])
         && isset($_GET['category']) && !empty($_GET['category'])
     ) {
-
         $nameProduct = $_GET['name'];
         $dateProduct = $_GET['date'];
         $stock = $_GET['stock'];
         $category = $_GET['category'];
         $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category;
 
-        /* Connexion à la bdd pour inscrire l'email dans la newsletter */
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $produitManager = new ProduitManager($db);
-        } catch (PDOException $e) {
-            echo 'Erreur : ' . $e->getMessage();
-        }
-
+        $produit = new Produit(
+            [
+            'name' => $nameProduct,
+            'date' => $dateProduct,
+            'stock' => $stock,
+            'category' => $category
+            ]
+        );
     } else {
-        $response = 'nonn';
+        return false;
     }
 
+    if (isset($produit)) {
+        $produitManager->add($produit);
+        $response = "Le produit a été ajouté à l'inventaire.";
+    }
 
     echo $response;
 }
