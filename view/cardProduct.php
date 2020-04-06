@@ -5,7 +5,7 @@
     <div class="card">
 
 
-        <div class="admin-list">
+        <div class="card-list">
             <div class="slideshow-container">
                 <ul >
                 <?php
@@ -21,6 +21,7 @@
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
             </div>
         </div>
 

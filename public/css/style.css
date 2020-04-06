@@ -221,6 +221,7 @@ select {
 
 }
 
+/* .catalogue */
 .catalogue ul {
     max-width: 150rem;
     margin: 6.0rem auto;
@@ -255,7 +256,17 @@ select {
     margin-bottom: 20px;
 }
 
+/* .card */
 
+.card-list {
+    text-align: left;
+    margin: 0;
+    background-color:aliceblue;
+}
+
+.card-list > .slideshow-container {
+    margin: 0 auto;
+}
 /*admin-list*/
 .admin-list {
     text-align: left;
@@ -748,10 +759,18 @@ select {
         background-color: var(--color-page);
     }
 
+    /* .catalogue */
     .catalogue ul li:nth-child(5n+5) {
         width: calc(100% / 2);
         float: left;
         padding: 2rem;
+    }
+
+    /* card */
+
+    .card-list > .slideshow-container {
+        max-width:50%;
+        margin:0;
     }
 
     /* FOOTER */
