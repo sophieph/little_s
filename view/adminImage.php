@@ -45,6 +45,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
             <label for="images">Ajouter une image</label>
             <input type="text" name="image" id="image" onfocusout="addPath()" >
             <input type="hidden" name="codeProduit" id="codeProduit" value="<?php echo $product['codeProduit']; ?>">
+            <input type="hidden" name="category" id="category" value="<?php echo $product['category']; ?>">
+
             <input type="submit" value="Ajouter l'image" onclick="return(addImage());">
         </form>
 

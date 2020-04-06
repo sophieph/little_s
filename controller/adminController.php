@@ -182,7 +182,7 @@ function manageProduct()
     } catch(Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    require_once 'view/adminProduct.php';
+    require_once 'view/adminListProduct.php';
 }
 
 /**
@@ -293,4 +293,88 @@ function addImageProduct()
     }
     echo $response;
     
+}
+
+/**
+ * EditProduct
+ *
+ * @return void
+ * 
+ * Edit a product
+ */
+function editProduct()
+{
+
+    $db = db();
+    $produitManager = new ProduitManager($db); 
+    // $imageProduitManager = new ImageProduitManager($db);
+
+
+    if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit']) && isset($_GET['name']) && !empty($_GET['name']) && isset($_GET['stock']) && !empty($_GET['stock']) && isset($_GET['category']) && !empty($_GET['category'])   ) {
+            $codeProduit = $_GET['codeProduit'];
+            $name = $_GET['name'];
+            $stock = $_GET['stock'];
+            $category = $_GET['category'];
+
+            $produit = new Produit(
+                [
+                'code' => $codeProduit,
+                'name' => $name,
+                'stock' => $stock,
+                'category' => $category
+                ]
+            );
+
+            $produitManager->edit($produit);
+            $response = "done";
+
+    } else if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
+            $codeProduit = $_GET['codeProduit'];
+            $product = $produitManager->get($codeProduit);
+            // $images = $imageProduitManager->getListImage($codeProduit);
+            require_once 'view/adminProduct.php';
+    } 
+        
+    // }
+
+    echo $response;
+
+}
+
+
+/**
+ * DeleteProduct
+ *
+ * @return void
+ * 
+ * delete a product
+ */
+function deleteProduct() 
+{
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $produitManager = new ProduitManager($db);
+        
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
+        try {
+            $produitManager->deleteProduct($_GET['codeProduit']);
+            
+        } catch(Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    manageProduct();
+    /* revoir la redirection */
+    try {
+        header('Location : /little/?action=admin-product');
+    }catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }    
+
+    require_once 'view/adminListProduct.php';
 }

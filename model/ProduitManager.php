@@ -41,6 +41,21 @@ class ProduitManager
     }
 
     /**
+     * DeleteProduct
+     *
+     * @param  mixed $product
+     * @return void
+     * 
+     * Delete a Product in Produit table
+     */
+    public function deleteProduct($codeProduit) 
+    {
+        $q = $this->_db->prepare('DELETE FROM Produit WHERE codeProduit = :codeProduit');
+        $q->bindValue(':codeProduit', $codeProduit);
+        $q->execute();
+    }
+
+    /**
      * GetList
      *
      * @return void
@@ -72,7 +87,26 @@ class ProduitManager
 
         return $produit;
     }
-
+    
+    /**
+     * Edit
+     *
+     * @param  mixed $codeProduit
+     * @return void
+     * 
+     * edit a product
+     */
+    public function edit(Produit $produit)
+    {
+        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');
+        // $q = $this->_db->prepare('UPDATE Produit SET name = :name, stock = :stock WHERE codeProduit = :codeProduit');
+        
+        $q->bindValue(':codeProduit', $produit->code());
+        $q->bindValue(':name', $produit->name());
+        $q->bindValue(':stock', $produit->stock());
+        $q->bindValue(':category', $produit->category());
+        $q->execute();
+    }
 }
 
 

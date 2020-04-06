@@ -86,7 +86,8 @@ function addP() {
 /* add a path */
 function addPath() {
     var path = document.getElementById("image").value;
-    document.getElementById("image").value = 'public/images/produit/' + path;
+    var category = document.getElementById("category").value;
+    document.getElementById("image").value = 'public/images/produit/' + category + '/' +path;
 }
 
 function addImage() {
@@ -107,5 +108,28 @@ function addImage() {
     xhr.open("GET", "index.php?action=add-image&image=" + path + "&codeProduit=" + code   , true);
     xhr.send(null);
     document.getElementById("image-text").innerHTML = path;
+    return false;
+}
+
+function edit() {
+    var codeProduit = document.getElementById("codeProduit").value;
+    var name = document.getElementById("name").value;
+    var stock = document.getElementById("stock").value;
+    var category = document.getElementById("category").value;
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            document.getElementById("text-product").innerHTML = this.responseText;
+            window.location = "/little/?action=edit-product&codeProduit=" + codeProduit;
+		} else {
+            document.getElementById("text-product").innerHTML = 'Could not make it.';
+
+        }
+	};
+    xhr.open("GET", "index.php?action=edit-product&codeProduit=" + codeProduit + "&name=" + name + "&stock=" + stock + "&category=" + category  , true);
+    xhr.send(null);
+
     return false;
 }
