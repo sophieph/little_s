@@ -88,17 +88,17 @@ class ProduitManager
     }
 
     /**
-     * GetListCategory
+     * GetListByNews
      *
      * @param  mixed $category
      * @return void
      * 
-     * list product by category
+     * list product by news
      */
-    public function getListCategory($category) 
+    public function getListByNews() 
     {
-        $q = $this->_db->prepare('SELECT p.name, i.link FROM Produit p, ImageProduit i WHERE category = :category AND p.codeProduit = i.codeProduit');
-        $q->bindValue(':category', $category);
+        $q = $this->_db->prepare('SELECT * FROM Produit ORDER BY  date DESC');
+
         $q->execute();
 
         return $q->fetchAll();

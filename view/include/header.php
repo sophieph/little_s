@@ -70,7 +70,7 @@
         <nav>
 
             <ul>
-                <li><a href="">Nouveautés</a></li>
+                <li><a href="?action=product">Nouveautés</a></li>
                 <li><a href="?action=product&category=onePiece">Une piece</a></li>
                 <li><a href="?action=product&category=bikini">Bikini</a></li>
                 <li><a href="?action=product&category=accessoire">Accessoires</a></li>

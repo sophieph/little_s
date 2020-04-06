@@ -50,6 +50,11 @@ try {
         } else if ($_GET['action'] == 'product' && ($_GET['category'] == 'onePiece' || $_GET['category'] == 'bikini' || $_GET['category'] == 'accessoire' )) { // one piece page
             $category = $_GET['category'];
             product($category);
+        } else if ($_GET['action'] == 'product') { // one piece page
+            news();
+        } else if ($_GET['action'] == 'card' && $_GET['id']) { // one piece page
+            $id = $_GET['id'];
+            productCard($id);
         } 
     } else {
         homePage();
