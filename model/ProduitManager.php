@@ -60,14 +60,47 @@ class ProduitManager
      *
      * @return void
      * 
-     * list of all members
+     * list of all product
      */
-    public function getList() 
+    public function getList($category) 
     {
-        $q = $this->_db->prepare('SELECT * FROM Produit');
+        $q = $this->_db->prepare('SELECT name, codeProduit FROM Produit WHERE category = :category');
+        $q->bindValue(':category', $category);
+        $q->execute();
+        return $q->fetchAll();
+    }
+
+    /**
+     * GetListCategory
+     *
+     * @return void
+     * 
+     * list product by category
+     */
+    public function getListCategory($category) 
+    {
+        $q = $this->_db->prepare('SELECT p.name, i.link FROM Produit p, ImageProduit i WHERE category = :category AND p.codeProduit = i.codeProduit');
+        $q->bindValue(':category', $category);
         $q->execute();
 
         return $q->fetchAll();
+    }
+    
+    /**
+     * GetFirstImage
+     *
+     * @param  mixed $name
+     * @return void
+     * 
+     * get the first image of a product
+     */
+    public function getFirstImage($codeProduit)
+    {
+        $q = $this->_db->prepare('SELECT p.name, i.link FROM Produit p, ImageProduit i WHERE  p.codeProduit = :codeProduit AND  p.codeProduit = i.codeProduit limit 1');
+        $q->bindValue(':codeProduit', $codeProduit);
+        $q->execute();
+
+        return $q->fetch();
     }
 
     
@@ -98,9 +131,7 @@ class ProduitManager
      */
     public function edit(Produit $produit)
     {
-        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');
-        // $q = $this->_db->prepare('UPDATE Produit SET name = :name, stock = :stock WHERE codeProduit = :codeProduit');
-        
+        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');        
         $q->bindValue(':codeProduit', $produit->code());
         $q->bindValue(':name', $produit->name());
         $q->bindValue(':stock', $produit->stock());

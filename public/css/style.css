@@ -221,6 +221,40 @@ select {
 
 }
 
+.catalogue ul {
+/*     max-width: 150rem; */
+    margin: 6.0rem auto;
+    /* overflow: hidden; */
+    padding: 1.0rem 0 0 1.0rem;
+    display: table;
+}
+
+.catalogue ul li {
+    width: calc(100% / 2);
+    float: left;
+    padding:2rem;
+}
+
+.catalogue ul li img {
+    display: block;
+    width: 100%;
+}
+
+.catalogue ul li:nth-child(5n+5) {
+    width: calc(100% /1);
+}
+
+.title-product {
+    color:var(--color-default);
+    text-transform:uppercase;
+    letter-spacing:0.5rem;
+    font-size:2.5rem;
+    font-weight:100;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
 /*admin-list*/
 .admin-list {
     text-align: left;
@@ -258,18 +292,19 @@ select {
 .slideshow-container {
     max-width: 60rem;
     position: relative;
-  
-  }
+
+}
 
 .slideshow-container img {
-    max-width:100%;
+    max-width: 100%;
 }
 
 .slide-image {
-    display:none;
+    display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -282,19 +317,20 @@ select {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    font-weight:100;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
+    font-weight: 100;
+}
+
+/* Position the "next button" to the right */
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 
 /* form-product */
@@ -312,7 +348,7 @@ select {
 }
 
 .form-product input[type=text],
-select {
+.form-product select {
     border: none;
     width: 30rem;
     border-bottom: 1px solid var(--color-list);
@@ -711,9 +747,10 @@ select {
         background-color: var(--color-page);
     }
 
-    select {
-        padding: 0;
-        color: #000;
+    .catalogue ul li:nth-child(5n+5) {
+        width: calc(100% / 2);
+        float: left;
+        padding:2rem;
     }
 
     /* FOOTER */
