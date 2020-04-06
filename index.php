@@ -47,9 +47,10 @@ try {
             imageProduct();
         } else if ($_GET['action'] == 'add-image') { // add an image to a product
             addImageProduct();
-        } else if ($_GET['action'] == 'onepiece') { // one piece page
-            onepiece();
-        }
+        } else if ($_GET['action'] == 'product' && ($_GET['category'] == 'onePiece' || $_GET['category'] == 'bikini' || $_GET['category'] == 'accessoire' )) { // one piece page
+            $category = $_GET['category'];
+            product($category);
+        } 
     } else {
         homePage();
     }

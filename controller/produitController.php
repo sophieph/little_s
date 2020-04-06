@@ -8,12 +8,12 @@
  * 
  * liste les une pièce
  */
-function onepiece()
+function product($category)
 {
     $db = db();
     $produitManager = new ProduitManager($db); 
 
-    $produits = $produitManager->getListByCategory('onePiece');
+    $produits = $produitManager->getListByCategory($category);
 
     include_once 'view/onepiece.php';
 }

@@ -71,9 +71,9 @@
 
             <ul>
                 <li><a href="">Nouveautés</a></li>
-                <li><a href="?action=onepiece">Une piece</a></li>
-                <li><a href="">Bikini</a></li>
-                <li><a href="">Accessoires</a></li>
+                <li><a href="?action=product&category=onePiece">Une piece</a></li>
+                <li><a href="?action=product&category=bikini">Bikini</a></li>
+                <li><a href="?action=product&category=accessoire">Accessoires</a></li>
                 <li><a href="?action=signin" class="account">Mon compte</a></li>
                 <?php 
                 if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') {
