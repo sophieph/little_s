@@ -182,6 +182,10 @@ function manageProduct()
     } catch(Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
+
+    // $db = db();
+    // $produitManager = new ProduitManager($db);
+    // $liste = $produitManager->getList();
     require_once 'view/adminListProduct.php';
 }
 

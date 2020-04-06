@@ -40,10 +40,11 @@ class ProduitManager
         );
     }
 
+    
     /**
      * DeleteProduct
      *
-     * @param  mixed $product
+     * @param  mixed $codeProduit
      * @return void
      * 
      * Delete a Product in Produit table
@@ -54,15 +55,31 @@ class ProduitManager
         $q->bindValue(':codeProduit', $codeProduit);
         $q->execute();
     }
-
+    
     /**
      * GetList
      *
      * @return void
      * 
-     * list of all product
+     * list of all product in admin
      */
-    public function getList($category) 
+    public function getList() 
+    {
+        $q = $this->_db->prepare('SELECT * FROM Produit');
+        $q->execute();
+        return $q->fetchAll();
+    }
+
+    
+    /**
+     * GetListByCategory
+     *
+     * @param  mixed $category
+     * @return void
+     * 
+     * list of all product by category
+     */
+    public function getListByCategory($category) 
     {
         $q = $this->_db->prepare('SELECT name, codeProduit FROM Produit WHERE category = :category');
         $q->bindValue(':category', $category);
@@ -73,6 +90,7 @@ class ProduitManager
     /**
      * GetListCategory
      *
+     * @param  mixed $category
      * @return void
      * 
      * list product by category
@@ -89,7 +107,7 @@ class ProduitManager
     /**
      * GetFirstImage
      *
-     * @param  mixed $name
+     * @param  mixed $codeProduit
      * @return void
      * 
      * get the first image of a product
@@ -124,7 +142,7 @@ class ProduitManager
     /**
      * Edit
      *
-     * @param  mixed $codeProduit
+     * @param  mixed $produit
      * @return void
      * 
      * edit a product

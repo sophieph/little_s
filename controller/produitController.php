@@ -12,11 +12,8 @@ function onepiece()
 {
     $db = db();
     $produitManager = new ProduitManager($db); 
-    
 
-    // $produits = $produitManager->getListCategory('onepiece');
-    $produits = $produitManager->getList('onePiece');
-    // $image = $produitManager->getFirstImage();
+    $produits = $produitManager->getListByCategory('onePiece');
 
     include_once 'view/onepiece.php';
 }
