@@ -16,6 +16,11 @@
         </tr>
 
         <tr>
+            <td><label for="prix">Prix du produit</label></td>
+            <td><input type="text" name="prix" id="prix" onKeyPress="stockProduct()" onKeyUp="stockProduct()"></td>
+        </tr>
+
+        <tr>
             <td><label for="category">Catégorie</label></td>
             <td>
             <select name="category" id="category">

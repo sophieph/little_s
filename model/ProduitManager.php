@@ -1,5 +1,8 @@
 <?php 
  
+/**
+ * ProduitManager
+ */
 class ProduitManager
 {
     
@@ -26,11 +29,12 @@ class ProduitManager
      */
     public function add(Produit $produit)
     {
-        $q = $this->_db->prepare('INSERT INTO Produit(name, date,stock, category) VALUES(:name, :date, :stock, :category)');
+        $q = $this->_db->prepare('INSERT INTO Produit(name, date,stock, category, price) VALUES(:name, :date, :stock, :category, :price)');
         $q->bindValue(':name', $produit->name());
         $q->bindValue(':date', $produit->date());
         $q->bindValue(':stock', $produit->stock());
         $q->bindValue(':category', $produit->category());
+        $q->bindValue(':price', $produit->price());
         $q->execute();
         
         $produit->hydrate(
@@ -81,7 +85,7 @@ class ProduitManager
      */
     public function getListByCategory($category) 
     {
-        $q = $this->_db->prepare('SELECT name, codeProduit FROM Produit WHERE category = :category');
+        $q = $this->_db->prepare('SELECT name, codeProduit, price FROM Produit WHERE category = :category');
         $q->bindValue(':category', $category);
         $q->execute();
         return $q->fetchAll();
@@ -97,7 +101,7 @@ class ProduitManager
      */
     public function getListByNews() 
     {
-        $q = $this->_db->prepare('SELECT * FROM Produit ORDER BY  date DESC');
+        $q = $this->_db->prepare('SELECT * FROM Produit ORDER BY date DESC');
 
         $q->execute();
 
@@ -114,7 +118,7 @@ class ProduitManager
      */
     public function getFirstImage($codeProduit)
     {
-        $q = $this->_db->prepare('SELECT p.name, i.link FROM Produit p, ImageProduit i WHERE  p.codeProduit = :codeProduit AND  p.codeProduit = i.codeProduit limit 1');
+        $q = $this->_db->prepare('SELECT p.name, p.price, i.link FROM Produit p, ImageProduit i WHERE  p.codeProduit = :codeProduit AND  p.codeProduit = i.codeProduit LIMIT 1');
         $q->bindValue(':codeProduit', $codeProduit);
         $q->execute();
 
@@ -149,11 +153,12 @@ class ProduitManager
      */
     public function edit(Produit $produit)
     {
-        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');        
+        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');
         $q->bindValue(':codeProduit', $produit->code());
         $q->bindValue(':name', $produit->name());
         $q->bindValue(':stock', $produit->stock());
         $q->bindValue(':category', $produit->category());
+        $q->bindValue(':price', $produit->price());
         $q->execute();
     }
 }

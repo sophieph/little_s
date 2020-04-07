@@ -1,14 +1,21 @@
 <?php 
-class Newsletter {
+
+/**
+ * Newsletter
+ */
+class Newsletter
+{
     protected $id;
     protected $email;
 
-    public function __construct(array $donnees) {
+    public function __construct(array $donnees)
+    {
         $this->hydrate($donnees);
         $this->type = strtolower(static::class);
     }
     
-    public function hydrate(array $donnees) {
+    public function hydrate(array $donnees)
+    {
         foreach ($donnees as $key => $value) {
             $method = 'set'.ucfirst($key);
             
@@ -19,16 +26,19 @@ class Newsletter {
     }
 
     // getters
-    public function id() {
+    public function id() 
+    {
         return $this->id;
     }
 
-    public function email() {
+    public function email() 
+    {
         return $this->email;
     }
 
     // setters
-    public function setId($id) {
+    public function setId($id) 
+    {
         $id = (int) $id;
             
         if ($id > 0) {
@@ -36,21 +46,13 @@ class Newsletter {
         }
     }
 
-    public function setEmail($email) {
+    public function setEmail($email) 
+    {
         if (is_string($email)) {
             $this->email = $email;
         }
     }
 
-    public function deleteEmail($id) {
-
-    }
-
-    public function test() {
-        // var_dump(get_object_vars($this));
-        var_dump($this->count());
-    }
 
 }
 
-?>

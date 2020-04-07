@@ -15,7 +15,12 @@
                 <a href="?action=card&id=<?php echo $produit['codeProduit']; ?>">
                 <?php $image = $produitManager->getFirstImage($produit['codeProduit']); ?>
                 <img src="<?php echo $image['link'];?>">    
-                <p class="title-product"><?php echo $produit['name']; ?>  </p>
+                <p class="title-product">
+                    <?php echo $produit['name']; ?>  
+                    <br>
+                    <b><?php echo $produit['price']; ?>&euro;</b>
+                    <br>
+                </p>
                 </a>                   
             </li>
             <?php

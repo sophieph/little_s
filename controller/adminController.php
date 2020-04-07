@@ -10,7 +10,7 @@ require 'model/ImageProduit.php';
  *
  * @return void
  * 
- * Formulaire de connexion admin
+ * admin connection form
  */
 function admin() 
 {
@@ -23,12 +23,10 @@ function admin()
  *
  * @return void
  * 
- * Connexion admin
+ * admin connection
  */
 function adminController()
 {
-
-    // session_start();
     /* Connexion à la bdd pour inscrire un nouveau membre dans bdd */
     try {
         $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -44,7 +42,7 @@ function adminController()
 
         if ($membreManager->exists($email)) {
             if ($membreManager->signIn($email, $pass)) {
-                /* verifie si le user est un admin */
+                /* verify if it is an admin */
                 if ($membreManager->admin($email)) { 
                     $membre = $membreManager->get($email);
                     session_start();
@@ -76,7 +74,7 @@ function adminController()
  *
  * @return void
  * 
- * Tableau de bord cote admin
+ * dashboard for admin
  * 
  */
 function board()
@@ -89,7 +87,7 @@ function board()
  *
  * @return void
  * 
- * Gère les emails inscrites à la newsletter cote admin
+ * manage all subscribers of the newsletter
  */
 function manageNewsletter() 
 {
@@ -112,7 +110,7 @@ function manageNewsletter()
  *
  * @return void
  * 
- * Supprime les gens de la liste de newsletter
+ * delete subscribers of the newsletter
  */
 function deleteNewsletter() 
 {
@@ -211,11 +209,13 @@ function addProduct()
         && isset($_GET['date']) && !empty($_GET['date'])
         && isset($_GET['stock']) && !empty($_GET['stock'])
         && isset($_GET['category']) && !empty($_GET['category'])
+        && isset($_GET['price']) && !empty($_GET['price'])
     ) {
         $nameProduct = $_GET['name'];
         $dateProduct = $_GET['date'];
         $stock = $_GET['stock'];
         $category = $_GET['category'];
+        $price = $_GET['price'];
         $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category;
 
         $produit = new Produit(
@@ -223,7 +223,8 @@ function addProduct()
             'name' => $nameProduct,
             'date' => $dateProduct,
             'stock' => $stock,
-            'category' => $category
+            'category' => $category,
+            'price' => $price
             ]
         );
     } else {
@@ -314,18 +315,25 @@ function editProduct()
     // $imageProduitManager = new ImageProduitManager($db);
 
 
-    if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit']) && isset($_GET['name']) && !empty($_GET['name']) && isset($_GET['stock']) && !empty($_GET['stock']) && isset($_GET['category']) && !empty($_GET['category'])   ) {
+    if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit']) 
+        && isset($_GET['name']) && !empty($_GET['name']) 
+        && isset($_GET['stock']) && !empty($_GET['stock']) 
+        && isset($_GET['category']) && !empty($_GET['category'])   
+        && isset($_GET['price']) && !empty($_GET['price'])
+    ) {
             $codeProduit = $_GET['codeProduit'];
             $name = $_GET['name'];
             $stock = $_GET['stock'];
             $category = $_GET['category'];
+            $price = $_GET['price'];
 
             $produit = new Produit(
                 [
                 'code' => $codeProduit,
                 'name' => $name,
                 'stock' => $stock,
-                'category' => $category
+                'category' => $category,
+                'price' => $price
                 ]
             );
 

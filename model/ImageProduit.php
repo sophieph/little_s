@@ -50,7 +50,7 @@ class ImageProduit
         }
     }
 
-    public function setlink($link) {
+    public function setLink($link) {
         if (is_string($link)) {
             $this->link = $link;
         }

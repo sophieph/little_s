@@ -16,9 +16,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
         
         <p><b>Nom du produit </b> : <?php echo $product['name']; ?></p>
         <p><b>Stock </b> : <?php echo $product['stock']; ?></p>
+        <p><b>Prix </b> : <?php echo $product['prix']; ?></p>
         <p><b>Catégorie du produit </b> : <?php echo $product['category']; ?></p>
 
-        <h3>Modifier produit</h3>
+        <h3>Modifier le produit</h3>
 
         <?php
         include_once 'view/include/formEditProduct.php';

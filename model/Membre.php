@@ -24,23 +24,28 @@ class Membre {
     }
 
     // getters
-    public function id() {
+    public function id() 
+    {
         return $this->id;
     }
 
-    public function name() {
+    public function name() 
+    {
         return $this->name;
     }
 
-    public function email() {
+    public function email() 
+    {
         return $this->email;
     }
 
-    public function password() {
+    public function password() 
+    {
         return $this->password;
     }
 
-    public function category() {
+    public function category() 
+    {
         return $this->category;
     }
 

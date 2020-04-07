@@ -6,7 +6,7 @@
  *
  * @return void
  * 
- * liste les produits par categorie
+ * list products by category
  */
 function product($category)
 {
@@ -23,7 +23,7 @@ function product($category)
  *
  * @return void
  * 
- * liste les produits par nouveautés
+ * list products by news
  */
 function news()
 {
@@ -35,6 +35,14 @@ function news()
     include_once 'view/catalogueProduct.php';
 }
 
+/**
+ * productCard
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * show a product card
+ */
 function productCard($id) {
 
     $db = db();

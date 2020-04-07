@@ -21,6 +21,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
                 <th>Nom</th>
                 <th>Date</th>
                 <th>Stock</th>
+                <th>Prix</th>
                 <th>Category</th>
                 <th>Images</th>
                 <th>Modifier</th>
@@ -36,6 +37,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
                 <td><?php echo $produit['name'];?></td>
                 <td><?php echo $produit['date'];?></td>
                 <td><?php echo $produit['stock'];?></td>
+                <td><?php echo $produit['prix'];?></td>
                 <td><?php echo $produit['category'];?></td>
                 <td><a href="?action=image-product&codeProduit=<?php echo $produit['codeProduit']; ?>">Ajouter des images<a/></td>
                 <td><a href="?action=edit-product&codeProduit=<?php echo $produit['codeProduit']; ?>">Modifier</a></td>

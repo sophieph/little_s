@@ -14,6 +14,11 @@
         </tr>
 
         <tr>
+            <td><label for="prix">Prix</label></td>
+            <td><input type="text" name="prix" id="prix" value="<?php echo $product['prix']; ?>" onKeyPress="stockProduct()" onKeyUp="stockProduct()"></td>
+        </tr>
+
+        <tr>
             <td><label for="category">Catégorie</label></td>
             <td>
             <select name="category" id="category" >

@@ -46,7 +46,6 @@ class NewsletterManager
      */
     public function exists($email) 
     {
-        
         $q = $this->_db->prepare('SELECT email FROM Newsletter WHERE email = :email');
         $q->execute([':email' => $email]);
         $result = (bool) $q->fetchColumn();
@@ -72,7 +71,7 @@ class NewsletterManager
     /**
      * DeleteEmail
      *
-     * @param  mixed $email
+     * @param  mixed $id
      * @return void
      * 
      * Delete an email in Newsletter table

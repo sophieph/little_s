@@ -1,19 +1,34 @@
 <?php 
  
-class MembreManager {
+/**
+ * MembreManager
+ */
+class MembreManager
+{
     
     private $_db;
     
-    public function __construct($db) {
+    public function __construct($db) 
+    {
         $this->setDb($db);
     }
     
-    public function setDb(PDO $db) {
+    public function setDb(PDO $db) 
+    {
         $this->_db = $db;
     }
     
-    // Ajouter un nouveau membre dans bdd
-    public function add(Membre $membre) {
+    
+    /**
+     * Add
+     *
+     * @param  mixed $membre
+     * @return void
+     * 
+     * Add a member
+     */
+    public function add(Membre $membre) 
+    {
         $q = $this->_db->prepare('INSERT INTO Membre(name, email, pass, category) VALUES(:name, :email, :pass, :category)');
         $q->bindValue(':name', $membre->name());
         $q->bindValue(':email', $membre->email());
@@ -21,33 +36,73 @@ class MembreManager {
         $q->bindValue(':category', $membre->category());
         $q->execute();
         
-        $membre->hydrate([
+        $membre->hydrate(
+            [
             'id' => $this->_db->lastInsertId()
-        ]);
+            ]
+        );
     }
-
-     // verifier si l'email existe deja dans la bdd
-     public function exists($email) {
-        
+     
+     /**
+      * Exists
+      *
+      * @param  mixed $email
+      * @return void
+      * See if an email exists
+      */
+    public function exists($email)
+    {
         $q = $this->_db->prepare('SELECT email FROM Membre WHERE email = :email');
         $q->execute([':email' => $email]);
         
         return (bool) $q->fetchColumn();
     }
-
-    // connexion 
-    public function signIn($email, $pass) {
-        
+    
+    /**
+     * SignIn
+     *
+     * @param  mixed $email
+     * @param  mixed $pass
+     * @return void
+     * 
+     * Signing in
+     */
+    public function signIn($email, $pass)
+    {   
         $q = $this->_db->prepare('SELECT email, pass FROM Membre WHERE email = ? AND pass = ?');
         $q->execute(array($email, $pass));
         
         return (bool) $q->fetchColumn();
     }
+    
+    /**
+     * Admin
+     *
+     * @param  mixed $email
+     * @return void
+     * 
+     * Verify if its an admin
+     */
+    public function admin($email) 
+    {
 
-    // obtenir toutes les infos d'un membre 
+        $q = $this->_db->prepare('SELECT category FROM Membre WHERE email = ? AND category = ?');
+        $q->execute(array($email, 'administrateur'));
 
-    public function get($email) {
+        return (bool) $q->fetchColumn();
+    }
 
+    
+    /**
+     * Get
+     *
+     * @param  mixed $email
+     * @return void
+     * 
+     * get info of a member
+     */
+    public function get($email) 
+    {
             $q = $this->_db->prepare('SELECT id, name, email FROM Membre WHERE email = :email');
             $q->execute([':email' => $email]);
             $membre = $q->fetch(PDO::FETCH_ASSOC); 
@@ -72,18 +127,6 @@ class MembreManager {
     }
 
 
-    // si l'user est un admin
-
-    public function admin($email) {
-
-        $q = $this->_db->prepare('SELECT category FROM Membre WHERE email = ? AND category = ?');
-        $q->execute(array($email, 'administrateur'));
-
-        return (bool) $q->fetchColumn();
-    }
 }
 
 
-
-
-?>

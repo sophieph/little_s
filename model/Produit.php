@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Produit
+ */
 class Produit
 {
     
@@ -8,6 +11,7 @@ class Produit
     protected $date;
     protected $stock;
     protected $category;
+    protected $price;
 
     public function __construct(array $donnees)
     {
@@ -52,8 +56,13 @@ class Produit
         return $this->category;
     }
 
+    public function price()
+    {
+        return $this->price;
+    }
+
     // setters
-    public function setcode($code) 
+    public function setCode($code) 
     {
         $code = (int) $code;
             
@@ -69,14 +78,14 @@ class Produit
         }
     }    
 
-    public function setdate($date) 
+    public function setDate($date) 
     {
         if (is_string($date)) {
             $this->date = $date;
         }
     } 
 
-    public function setstock($stock) 
+    public function setStock($stock) 
     {
         $stock = (int) $stock;
         if ($stock > 0) {
@@ -84,12 +93,20 @@ class Produit
         }
     }
 
-    public function setCategory($category) {
+    public function setCategory($category) 
+    {
         if (is_string($category)) {
             $this->category = $category;
         }
     } 
 
+    public function setPrice($price) 
+    {
+        $price = (int) $price;
+        if ($price > 0) {
+            $this->price = $price;
+        }
+    }
 }
 
 ?>
