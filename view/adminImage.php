@@ -16,7 +16,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
         <p><b>Nom du produit </b> : <?php echo $product['name']; ?></p>
         <p><b>Stock </b> : <?php echo $product['stock']; ?></p>
         <p><b>Catégorie du produit </b> : <?php echo $product['category']; ?></p>
-        <p><b>Prix </b> : <?php echo $product['price']; ?> </p>
+        <p><b>Prix </b> : <?php echo $product['price']; ?>&euro; </p>
         <p>
             <b>Images</b> : 
         </p>

@@ -153,7 +153,7 @@ class ProduitManager
      */
     public function edit(Produit $produit)
     {
-        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock WHERE codeProduit = :codeProduit');
+        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock, price = :price WHERE codeProduit = :codeProduit');
         $q->bindValue(':codeProduit', $produit->code());
         $q->bindValue(':name', $produit->name());
         $q->bindValue(':stock', $produit->stock());

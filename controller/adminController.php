@@ -312,7 +312,7 @@ function editProduct()
 
     $db = db();
     $produitManager = new ProduitManager($db); 
-    // $imageProduitManager = new ImageProduitManager($db);
+    $imageProduitManager = new ImageProduitManager($db);
 
 
     if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit']) 
@@ -343,7 +343,7 @@ function editProduct()
     } else if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
             $codeProduit = $_GET['codeProduit'];
             $product = $produitManager->get($codeProduit);
-            // $images = $imageProduitManager->getListImage($codeProduit);
+            $images = $imageProduitManager->getListImage($codeProduit);
             require_once 'view/adminProduct.php';
     } 
         
