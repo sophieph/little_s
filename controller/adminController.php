@@ -216,7 +216,7 @@ function addProduct()
         $stock = $_GET['stock'];
         $category = $_GET['category'];
         $price = $_GET['price'];
-        $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category;
+        $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category . " "  . $price;
 
         $produit = new Produit(
             [

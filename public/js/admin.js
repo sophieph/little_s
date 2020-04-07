@@ -20,6 +20,7 @@ function adminC() {
     return false;  
 }
 
+/* if word is a word */
 function string(word) {
     var re = /^[A-Za-z ]+$/;
     var val = re.test(word);
@@ -27,6 +28,7 @@ function string(word) {
     return val;
 }
 
+/* check if name is a word */
 function nameProduct() {
     var name =  document.getElementById("name").value;
     
@@ -40,6 +42,7 @@ function nameProduct() {
     }
 }
 
+/* if value is Integer */
 function isInt(value) {
     var re = /^[0-9]+$/;
     var val = re.test(value);
@@ -47,9 +50,23 @@ function isInt(value) {
     return val;
   }
 
+/* check if stock value is int */
 function stockProduct() {
     var stock = document.getElementById("stock").value;
+
     if (isInt(stock) && stock > 0){
+        document.getElementById("text-product").innerHTML = "";
+        document.getElementById("button").disabled = false;
+    } else {
+        document.getElementById("text-product").innerHTML = "Ne mettez que des chiffres au dessus de 0";
+        document.getElementById("button").disabled = true;
+    }
+}
+
+/* check if price value is int */
+function priceProduct() {
+    var price = document.getElementById("price").value;
+    if (isInt(price) && price > 0){
         document.getElementById("text-product").innerHTML = "";
         document.getElementById("button").disabled = false;
     } else {
@@ -65,6 +82,7 @@ function addP() {
     var date = document.getElementById("date").value;
     var stock = document.getElementById("stock").value;
     var category = document.getElementById("category").value;
+    var price = document.getElementById("price").value;
 
     var xhr = new XMLHttpRequest();
 
@@ -77,7 +95,7 @@ function addP() {
 
         }
 	};
-    xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&category=" + category  , true);
+    xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&price=" + price + "&category=" + category  , true);
     xhr.send(null);
 
     return false;
@@ -116,6 +134,7 @@ function edit() {
     var name = document.getElementById("name").value;
     var stock = document.getElementById("stock").value;
     var category = document.getElementById("category").value;
+    var price = document.getElementById("price").value;
 
     var xhr = new XMLHttpRequest();
 
@@ -128,7 +147,7 @@ function edit() {
 
         }
 	};
-    xhr.open("GET", "index.php?action=edit-product&codeProduit=" + codeProduit + "&name=" + name + "&stock=" + stock + "&category=" + category  , true);
+    xhr.open("GET", "index.php?action=edit-product&codeProduit=" + codeProduit + "&name=" + name + "&stock=" + stock + "&price=" + price + "&category=" + category  , true);
     xhr.send(null);
 
     return false;

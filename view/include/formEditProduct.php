@@ -2,6 +2,7 @@
     <table>
         <tr>
             <td><input type="hidden" name="codeProduit" id="codeProduit" value="<?php echo $product['codeProduit']; ?>"></td>
+            <td></td>
         </tr>
         <tr>
             <td><label for="name">Nom du produit</label></td>
@@ -14,8 +15,8 @@
         </tr>
 
         <tr>
-            <td><label for="prix">Prix</label></td>
-            <td><input type="text" name="prix" id="prix" value="<?php echo $product['prix']; ?>" onKeyPress="stockProduct()" onKeyUp="stockProduct()"></td>
+            <td><label for="price">Prix</label></td>
+            <td><input type="text" name="price" id="price" value="<?php echo $product['price']; ?>" onKeyPress="priceProduct()" onKeyUp="priceProduct()"></td>
         </tr>
 
         <tr>

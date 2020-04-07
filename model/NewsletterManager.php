@@ -1,5 +1,8 @@
 <?php 
  
+/**
+ * NewsletterManager
+ */
 class NewsletterManager
 {
     private $_db;
