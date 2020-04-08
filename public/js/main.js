@@ -8,17 +8,19 @@ function initEvents() {
         $("nav").slideToggle();
     });
 
-    // $("#form-sort #sort").change(function() {
-    //     var sort = $("#sort").val();
-    //     var category = $("#category").val();
+    /*
+    $("#form-sort #sort").change(function() {
+        var sort = $("#sort").val();
+        var category = $("#category").val();
 
-    //     console.log("lol" + category);
-    //     //sortProduct(this.value);
-    // }
-
-    );
+        console.log("lol" + category);
+        //sortProduct(this.value);
+    }
+    );*/
+    
 }
 
+/*
 function sortProduct(sort, category) {
     
     $.ajax({
@@ -42,3 +44,4 @@ function sortProduct(sort, category) {
  
      });
 }
+*/

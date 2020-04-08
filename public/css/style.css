@@ -120,6 +120,8 @@ nav ul li a {
     color: var(--color-page);
     letter-spacing: 0.6rem;
     text-shadow: 1px 2px 10px var(--color-default);
+    padding-right:1rem;
+    padding-left:1rem;
 }
 
 .get-dressed {
@@ -797,12 +799,6 @@ select {
         margin: 2rem;
     }
 
-    .social-media a {
-        color: #fff;
-        text-decoration: none;
-        letter-spacing: 2px;
-        text-transform: lowercase;
-    }
 
     .footer {
         display: flex;

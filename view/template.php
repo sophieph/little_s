@@ -48,10 +48,9 @@
 
         
         <script type="text/javascript">
-        // A $( document ).ready() block. for menu
+        
         $( document ).ready(function() {
             init();
-            
         });
     </script>
 
