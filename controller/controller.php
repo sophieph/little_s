@@ -26,7 +26,7 @@ function db()
  */
 function homepage() 
 {
-    include 'view/mainPageView.php';
+    include_once ROOT_PATH . 'view/mainPageView.php';
 }
 
 /**
@@ -38,6 +38,6 @@ function homepage()
  */
 function logoff()
 {
-        include 'view/logoff.php';
+    include_once ROOT_PATH . 'view/logoff.php';
 }
 

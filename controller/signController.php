@@ -1,5 +1,6 @@
 <?php 
 
+require 'config.php';
 require 'model/MembreManager.php';
 require 'model/Membre.php';
 
@@ -13,7 +14,7 @@ require 'model/Membre.php';
  */
 function signin() 
 {
-    include_once 'view/signinView.php';
+    include_once ROOT_PATH . 'view/signing/signinView.php';
 }
 
 /**
@@ -70,7 +71,7 @@ function signinController()
  */
 function signup() 
 {
-    include 'view/signupView.php';
+    include_once ROOT_PATH . 'view/signing/signupView.php';
 }
 
 /**

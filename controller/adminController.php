@@ -80,7 +80,7 @@ function adminController()
  */
 function board()
 {
-    include_once 'view/adminBoard.php';
+    include_once ROOT_PATH . 'view/admin/adminBoard.php';
 }
 
 /**
@@ -102,7 +102,7 @@ function manageNewsletter()
         die('Erreur : ' . $e->getMessage());
     }
 
-    require_once 'view/adminNewsletter.php';
+    include_once ROOT_PATH . 'view/admin/adminNewsletter.php';
     
 }
 
@@ -142,7 +142,7 @@ function deleteNewsletter()
 
     }
 
-    require_once 'view/adminNewsletter.php';
+    include_once ROOT_PATH . 'view/admin/adminNewsletter.php';
 }
 
 /**
@@ -162,7 +162,7 @@ function manageMember()
     } catch(Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    require_once 'view/adminMember.php';
+    include_once ROOT_PATH . 'view/admin/adminMember.php';
 }
 
 /**
@@ -185,7 +185,7 @@ function manageProduct()
     // $db = db();
     // $produitManager = new ProduitManager($db);
     // $liste = $produitManager->getList();
-    require_once 'view/adminListProduct.php';
+    include_once ROOT_PATH . 'view/admin/adminListProduct.php';
 }
 
 /**
@@ -242,7 +242,7 @@ function addProduct()
 }
 
 /**
- * imageProduct
+ * ImageProduct
  *
  * @return void
  * 
@@ -260,7 +260,7 @@ function imageProduct()
         $images = $imageProduitManager->getListImage($codeProduit);
     }
 
-    require_once 'view/adminImage.php';
+    include_once ROOT_PATH . 'view/admin/adminImage.php';
 }
 
 /**
@@ -345,7 +345,7 @@ function editProduct()
             $codeProduit = $_GET['codeProduit'];
             $product = $produitManager->get($codeProduit);
             $images = $imageProduitManager->getListImage($codeProduit);
-            require_once 'view/adminProduct.php';
+            include_once ROOT_PATH . 'view/admin/adminProduct.php';
     } 
         
     // }
@@ -389,5 +389,5 @@ function deleteProduct()
         die('Erreur : ' . $e->getMessage());
     }    
 
-    require_once 'view/adminListProduct.php';
+    include_once ROOT_PATH . 'view/admin/adminListProduct.php';
 }

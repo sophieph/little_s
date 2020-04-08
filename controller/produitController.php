@@ -1,6 +1,5 @@
 <?php 
 
-require 'config.php';
 
 
 /**
@@ -17,7 +16,7 @@ function product($category)
 
     $produits = $produitManager->getListByCategory($category);
 
-    include_once 'view/catalogueProduct.php';
+    include_once ROOT_PATH . 'view/product/catalogueProduct.php';
 }
 
 /**
@@ -34,7 +33,7 @@ function news()
 
     $produits = $produitManager->getListByNews();
 
-    include_once 'view/catalogueProduct.php';
+    include_once ROOT_PATH . 'view/product/catalogueProduct.php';
 }
 
 /**
@@ -55,7 +54,7 @@ function productCard($id)
         $product = $produitManager->get($id);
         $images = $imageProduitManager->getListImage($id);
     
-    include_once 'view/cardProduct.php';
+        include_once ROOT_PATH . 'view/product/cardProduct.php';
 }
 
 function orderProduct()
