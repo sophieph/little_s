@@ -22,11 +22,6 @@
 
         <?php require_once 'include/header.php'; ?>
 
-        <?php 
-        //require_once(ROOT_PATH.'/include/header.php'); 
-        
-        ?>
-
         <main id="content">
             <?= $content ?>
         </main>

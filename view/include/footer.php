@@ -1,7 +1,6 @@
             <footer>
-            
             <?php 
-                require 'view/newsletter/newsletterView.php';
+                require_once ROOT_PATH . 'view/newsletter/newsletterView.php';
             ?>
     
                 <div class="social-media">
@@ -10,11 +9,7 @@
                         <li><a href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a> </li>
                         <li><a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a></li>
                     </ul>
-                    <!-- <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a>
-                    <span class="two-dots">&nbsp&nbsp&nbsp</span>
-                    <a href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a> 
-                    <span class="two-dots">&nbsp&nbsp&nbsp</span>
-                    <a href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a> -->
+
                 </div>
     
                 <div class="footer">

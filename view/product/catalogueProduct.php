@@ -2,7 +2,7 @@
 
 <section id="wrapper">
     <?php 
-        include_once 'include/filter.php';
+        include_once ROOT_PATH . 'view/include/filter.php';
     ?>
 
     <div class="catalogue">
