@@ -1,18 +1,20 @@
-function orderProduct() {
-    var order = document.getElementById("sort").value;
+function orderProduct(value) {
+    var order = value;
+    var category = document.getElementById("category").value;
 
-
+    
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            document.getElementById("text-product").innerHTML = this.responseText;
+            document.getElementById("catalogue").innerHTML = this.responseText;
+
 		} else {
-            document.getElementById("text-product").innerHTML = 'Could not make it.';
+            document.getElementById("catalogue").innerHTML = 'Could not make it.';
 
         }
 	};
-    xhr.open("GET", "index.php?action=edit-product&codeProduit=" + codeProduit , true);
+    xhr.open("GET", "index.php?action=sort&order=" + order + "&category=" + category, true);
     xhr.send(null);
 
     return false;

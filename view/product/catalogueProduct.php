@@ -5,7 +5,8 @@
         include_once ROOT_PATH . 'view/include/filter.php';
     ?>
 
-    <div class="catalogue">
+    <p id="msg"> looool</p>
+    <div id="catalogue">
 
         <ul>    
         <?php 
