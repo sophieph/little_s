@@ -1,5 +1,5 @@
 <?php 
-
+require 'config.php';
 require 'model/ProduitManager.php';
 require 'model/Produit.php';
 require 'model/ImageProduitManager.php';
@@ -14,7 +14,8 @@ require 'model/ImageProduit.php';
  */
 function admin() 
 {
-    include_once 'view/adminSignIn.php';
+    // include_once 'view/admin/adminSignIn.php';
+    include_once ROOT_PATH . 'view/admin/adminSignIn.php';
 }
 
 

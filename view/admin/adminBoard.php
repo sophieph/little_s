@@ -13,9 +13,9 @@ ob_start(); ?>
 
     <div class="admin">
         <ul>
-            <li> <a href="list-newsletter.php">Gérer la newsletter</a></li>
-            <li> <a href="">Gérer les produits</a></li>
-            <li> <a href="">Gérer les membres</a></li>
+            <li> <a href="?action=admin-newsletter">Gérer la newsletter</a></li>
+            <li> <a href="?action=admin-product">Gérer les produits</a></li>
+            <li> <a href="?action=admin-member">Gérer les membres</a></li>
         </ul>
     </div>
 
@@ -35,4 +35,4 @@ ob_start(); ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require 'template.php'; ?>
+<?php require ROOT_PATH . 'view/template.php'; ?>

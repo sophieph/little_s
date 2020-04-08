@@ -106,6 +106,9 @@ nav ul li a {
 #main-image {
     margin-top: 10rem;
     margin-bottom: 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 #main-image h2 {
@@ -650,12 +653,11 @@ select {
     /* main-image */
     .home {
         height: 589px;
-        background-image: url('/public/images/main-img.jpeg') center;
+        background-size: cover;
     }
 
     #main-image {
         height: 589px;
-        background-image: url('/public/images/main-img.jpeg') center;
         background-size: cover;
     }
 
