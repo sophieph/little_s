@@ -1,9 +1,9 @@
 <?php 
 require 'config.php';
-require 'model/ProduitManager.php';
-require 'model/Produit.php';
-require 'model/ImageProduitManager.php';
-require 'model/ImageProduit.php';
+require ROOT_PATH . 'model/produit/ProduitManager.php';
+require ROOT_PATH . 'model/produit/Produit.php';
+require ROOT_PATH . 'model/produit/ImageProduitManager.php';
+require ROOT_PATH . 'model/produit/ImageProduit.php';
 
 /**
  * Signin

@@ -13,8 +13,9 @@
 
         <!-- <div class="form-sort"> -->
             <form action="" method="" id="form-sort">
+                <input type="hidden" value="<?php echo $_GET['category']; ?>" id="category" name="category" >
                 <label for="sort">Sort by</label>
-                <select name="sort" id="sort" >
+                <select name="sort" id="sort" onChange="sortProduct(this.value)">
 
                     <option value="recommanded">Recommandé</option>
                     <option value="asc">Prix croissant</option>

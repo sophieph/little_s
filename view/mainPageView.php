@@ -15,11 +15,6 @@
         <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
         <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
         <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
-
-        <br>
-        <?php echo ROOT_PATH  ;?>
-        <br>
-
     </div>
 
 </section>

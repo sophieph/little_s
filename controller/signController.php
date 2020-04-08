@@ -1,8 +1,8 @@
 <?php 
 
 require 'config.php';
-require 'model/MembreManager.php';
-require 'model/Membre.php';
+require ROOT_PATH . 'model/membre/MembreManager.php';
+require ROOT_PATH . 'model/membre/Membre.php';
 
 
 /**

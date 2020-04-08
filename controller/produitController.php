@@ -37,7 +37,7 @@ function news()
 }
 
 /**
- * productCard
+ * ProductCard
  *
  * @param  mixed $id
  * @return void
@@ -57,17 +57,17 @@ function productCard($id)
     include_once ROOT_PATH . 'view/product/cardProduct.php';
 }
 
-function orderProduct()
+function sortProduct()
 {
 
     $db = db();
     $produitManager = new ProduitManager($db); 
 
-    if (isset($_GET['order']) && !empty($_GET['order']) && isset($_GET['category']) ) {
-        $order = $_GET['order'];
+    if (isset($_GET['sort']) && !empty($_GET['sort']) && isset($_GET['category']) ) {
+        $sort = $_GET['sort'];
         $category = $_GET['category'];
-        $produitManager->getListByPrice($order, $category);
-        $produits =  $produitManager->getListByPrice($order, $category);
+        $produitManager->getListByPrice($sort, $category);
+        $produits =  $produitManager->getListByPrice($sort, $category);
         
     } else {
         $response = 'nope';

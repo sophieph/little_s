@@ -1,7 +1,7 @@
 <?php 
 
-require 'model/NewsletterManager.php';
-require 'model/Newsletter.php';
+require ROOT_PATH . 'model/newsletter/NewsletterManager.php';
+require ROOT_PATH . 'model/newsletter/Newsletter.php';
 
 /**
  * Subscribe

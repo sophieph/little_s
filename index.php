@@ -57,7 +57,7 @@ try {
             $id = $_GET['id'];
             productCard($id);
         } else if ($_GET['action'] == 'sort') { // filter
-            orderProduct();
+            sortProduct();
         } 
     } else {
         homePage();

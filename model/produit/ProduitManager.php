@@ -134,17 +134,17 @@ class ProduitManager
      * 
      * list product by news
      */
-    public function getListByPrice($order, $category = null) 
+    public function getListByPrice($sort, $category = null) 
     {
         if ($category == null) {
-            $query = 'SELECT * FROM Produit ORDER BY price ' . $order;
+            $query = 'SELECT * FROM Produit ORDER BY price ' . $sort;
             $q = $this->_db->prepare($query);
             $q->execute();
 
             return $q->fetchAll();
         }
 
-        $query = "SELECT * FROM Produit WHERE category = '" . $category  . "' ORDER BY price " . $order ;
+        $query = "SELECT * FROM Produit WHERE category = '" . $category  . "' ORDER BY price " . $sort ;
         $q = $this->_db->prepare($query);
         $q->execute();
 
