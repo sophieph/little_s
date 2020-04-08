@@ -23,6 +23,14 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
             </div>
+
+            <div class="description">
+
+                <h4><?php echo $product['name']; ?></h4>
+                <?php echo $product['price']; ?>
+
+
+            </div>
         </div>
 
     </div>

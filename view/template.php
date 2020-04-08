@@ -1,4 +1,5 @@
 <?php 
+    if (!isset($_GET['ajax'])) :  
     session_start();
 ?>
 
@@ -22,21 +23,26 @@
 
         <?php require_once 'include/header.php'; ?>
 
+    <?php endif; ?>
+
         <main id="content">
             <?= $content ?>
         </main>
 
+    <?php if (!isset($_GET['ajax'])) : ?>
+
         <?php include_once 'include/footer.php'; ?>
 
         <!-- script js -->
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
         <script src="<?php echo BASE_URL; ?>public/js/validateForm.js"></script>
         <script src="<?php echo BASE_URL; ?>public/js/admin.js"></script>
         <script src="<?php echo BASE_URL; ?>public/js/animation.js"></script>
         <script src="<?php echo BASE_URL; ?>public/js/product.js"></script>
-        <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+        <script src="<?php echo BASE_URL; ?>public/js/main.js"></script>
 
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
@@ -44,13 +50,12 @@
         <script type="text/javascript">
         // A $( document ).ready() block. for menu
         $( document ).ready(function() {
-            $(".hamburger").click(function(){
-                $("nav").slideToggle();
-                console.log('ok');
-            });
+            init();
+            
         });
     </script>
 
     </body>
 
 </html>
+    <?php endif; ?>

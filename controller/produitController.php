@@ -63,12 +63,11 @@ function orderProduct()
     $db = db();
     $produitManager = new ProduitManager($db); 
 
-    if (isset($_GET['order']) && !empty($_GET['order']) && isset($_GET['category'])) {
+    if (isset($_GET['order']) && !empty($_GET['order']) && isset($_GET['category']) ) {
         $order = $_GET['order'];
         $category = $_GET['category'];
         $produitManager->getListByPrice($order, $category);
         $produits =  $produitManager->getListByPrice($order, $category);
-        $response = 'youhou';
         
     } else {
         $response = 'nope';

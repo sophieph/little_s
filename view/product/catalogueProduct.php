@@ -5,7 +5,6 @@
         include_once ROOT_PATH . 'view/include/filter.php';
     ?>
 
-    <p id="msg"> looool</p>
     <div id="catalogue">
 
         <ul>    
@@ -36,5 +35,6 @@
 </section>
 
 <?php $content = ob_get_clean(); ?>
+
 
 <?php require ROOT_PATH . 'view/template.php'; ?>

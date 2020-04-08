@@ -14,7 +14,7 @@
         <!-- <div class="form-sort"> -->
             <form action="" method="" id="form-sort">
                 <label for="sort">Sort by</label>
-                <select name="sort" id="sort" onChange="orderProduct(this.value);">
+                <select name="sort" id="sort" >
 
                     <option value="recommanded">Recommandé</option>
                     <option value="asc">Prix croissant</option>
