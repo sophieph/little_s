@@ -44,6 +44,24 @@ class ProduitManager
         );
     }
 
+    /**
+     * Edit
+     *
+     * @param  mixed $produit
+     * @return void
+     * 
+     * edit a product
+     */
+    public function edit(Produit $produit)
+    {
+        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock, price = :price WHERE codeProduit = :codeProduit');
+        $q->bindValue(':codeProduit', $produit->code());
+        $q->bindValue(':name', $produit->name());
+        $q->bindValue(':stock', $produit->stock());
+        $q->bindValue(':category', $produit->category());
+        $q->bindValue(':price', $produit->price());
+        $q->execute();
+    }
     
     /**
      * DeleteProduct
@@ -107,6 +125,23 @@ class ProduitManager
 
         return $q->fetchAll();
     }
+
+    /**
+     * GetListByNews
+     *
+     * @param  mixed $category
+     * @return void
+     * 
+     * list product by news
+     */
+    public function getListByPrice($order) 
+    {
+        $q = $this->_db->prepare('SELECT * FROM Produit ORDER BY price :order');
+        $q->bindValue(':order', $order);
+        $q->execute();
+
+        return $q->fetchAll();
+    }
     
     /**
      * GetFirstImage
@@ -143,24 +178,7 @@ class ProduitManager
         return $produit;
     }
     
-    /**
-     * Edit
-     *
-     * @param  mixed $produit
-     * @return void
-     * 
-     * edit a product
-     */
-    public function edit(Produit $produit)
-    {
-        $q = $this->_db->prepare('UPDATE Produit SET name = :name, category = :category,  stock = :stock, price = :price WHERE codeProduit = :codeProduit');
-        $q->bindValue(':codeProduit', $produit->code());
-        $q->bindValue(':name', $produit->name());
-        $q->bindValue(':stock', $produit->stock());
-        $q->bindValue(':category', $produit->category());
-        $q->bindValue(':price', $produit->price());
-        $q->execute();
-    }
+
 }
 
 

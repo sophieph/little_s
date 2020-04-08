@@ -16,8 +16,8 @@
                 <select name="sort" id="sort">
 
                     <option value="recommanded">Recommandé</option>
-                    <option value="lowToHigh">Prix croissant</option>
-                    <option value="highToLow">Prix décroissant</option>
+                    <option value="asc">Prix croissant</option>
+                    <option value="desc">Prix décroissant</option>
                 </select>
             </form>
         <!-- </div> -->

@@ -43,7 +43,8 @@ function news()
  * 
  * show a product card
  */
-function productCard($id) {
+function productCard($id)
+{
 
     $db = db();
     $produitManager = new ProduitManager($db); 
@@ -53,4 +54,9 @@ function productCard($id) {
         $images = $imageProduitManager->getListImage($id);
     
     include_once 'view/cardProduct.php';
+}
+
+function orderProduct()
+{
+
 }

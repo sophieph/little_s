@@ -5,6 +5,7 @@ require 'controller/newsletterController.php';
 require 'controller/signController.php';
 require 'controller/adminController.php';
 require 'controller/produitController.php';
+require 'config.php';
 
 
 try {
