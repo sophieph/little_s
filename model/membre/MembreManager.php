@@ -42,6 +42,26 @@ class MembreManager
             ]
         );
     }
+    
+    /**
+     * Edit
+     *
+     * @param  mixed $membre
+     * @return void
+     * 
+     * edit information about a member
+     */
+    public function edit(Membre $membre)
+    {
+        $q = $this->_db->prepare('UPDATE membre SET name = :name, home = :home WHERE id = :id');
+        $q->bindValue(':id', $membre->id());
+        $q->bindValue(':name', $membre->name());
+        $q->bindValue(':home', $membre->home());
+        
+        $q->execute();
+    }
+
+
      
      /**
       * Exists
@@ -103,7 +123,7 @@ class MembreManager
      */
     public function get($email) 
     {
-            $q = $this->_db->prepare('SELECT id, name, email FROM Membre WHERE email = :email');
+            $q = $this->_db->prepare('SELECT * FROM Membre WHERE email = :email');
             $q->execute([':email' => $email]);
             $membre = $q->fetch(PDO::FETCH_ASSOC); 
 

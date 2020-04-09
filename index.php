@@ -3,6 +3,7 @@ require 'config.php';
 require  ROOT_PATH . 'controller/controller.php';
 require  ROOT_PATH . 'controller/newsletter/newsletterController.php';
 require  ROOT_PATH . 'controller/membre/signController.php';
+require  ROOT_PATH . 'controller/membre/membreController.php';
 require  ROOT_PATH . 'controller/admin/adminController.php';
 require  ROOT_PATH . 'controller/produit/produitController.php';
 
@@ -58,6 +59,8 @@ try {
             productCard($id);
         } else if ($_GET['action'] == 'sort') { // filter
             sortProduct();
+        } else if ($_GET['action'] == 'account') { // account page for members
+            account();
         } 
     } else {
         homePage();

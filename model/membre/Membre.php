@@ -7,6 +7,7 @@ class Membre {
     protected $email;
     protected $password;
     protected $category;
+    protected $home;
 
     public function __construct(array $donnees) {
         $this->hydrate($donnees);
@@ -49,6 +50,11 @@ class Membre {
         return $this->category;
     }
 
+    public function home()
+    {
+        return $this->home;
+    }
+
     // setters
     public function setId($id) {
         $id = (int) $id;
@@ -79,6 +85,11 @@ class Membre {
     public function setCategory($category) {
         if (is_string($category)) {
             $this->category = $category;
+        }
+    } 
+    public function setHome($home) {
+        if (is_string($home)) {
+            $this->home = $home;
         }
     } 
 

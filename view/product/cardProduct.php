@@ -30,7 +30,7 @@
                 <p><?php echo $product['price']; ?>&euro;</p>
                 <button class="size"> Unique size</button> 
                 <br>
-                <button class="add-to-bag">Add to bag</button> 
+                <button class="add-to-bag" >Add to bag</button> 
                 <br>
 
                 <div class="delivery">
