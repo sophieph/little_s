@@ -20,8 +20,8 @@
 
                 <!-- account -->
                 <div class="header-account">
-                Hello <?php echo $_SESSION['name']; ?> 
-                 <a href="?action=account&user=<?php echo $_SESSION['email']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
+                
+                 <a href="?action=account&email=<?php echo $_SESSION['email']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
                     <a href="" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
@@ -74,7 +74,7 @@
                 <li><a href="?action=product&category=onePiece">Une piece</a></li>
                 <li><a href="?action=product&category=bikini">Bikini</a></li>
                 <li><a href="?action=product&category=accessoire">Accessoires</a></li>
-                <li><a href="?action=account&user=<?php echo $_SESSION['email']; ?>" class="account">Mon compte</a></li>
+                <li><a href="?action=account&email=<?php echo $_SESSION['email']; ?>" class="account">Mon compte</a></li>
                 <?php 
                 if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') {
                 ?>

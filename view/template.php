@@ -43,6 +43,7 @@
         <script src="<?php echo BASE_URL; ?>public/js/animation.js"></script>
         <script src="<?php echo BASE_URL; ?>public/js/product.js"></script>
         <script src="<?php echo BASE_URL; ?>public/js/main.js"></script>
+        <script src="<?php echo BASE_URL; ?>public/js/member.js"></script>
 
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 

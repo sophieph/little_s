@@ -8,40 +8,42 @@ function initEvents() {
         $("nav").slideToggle();
     });
 
-    /*
-    $("#form-sort #sort").change(function() {
-        var sort = $("#sort").val();
-        var category = $("#category").val();
-
-        console.log("lol" + category);
-        //sortProduct(this.value);
-    }
-    );*/
+    
+    // $("#modify").click(function() {
+    //     // alert('wooor');
+    //     // editMember();
+    // }
+    // );
     
 }
 
-/*
-function sortProduct(sort, category) {
+// function editMember() {
+//     name = $("#name").val();
+//     home = $("#home").val();
+//     email = $("#email").val();
+
+//     alert(home+name+email);
     
-    $.ajax({
-        url : "/little/",
-        type : 'GET',
-        data : "action=sort&ajax=true&category=" + category + "&order=" + sort, 
-        dataType : 'html',
-        success : function(code_html, statut){
-            console.log('success');
-        },
+//     return true;
+//     $.ajax({
+//         url : "/little/",
+//         type : 'GET',
+//         data : "action=edit-member&ajax=true&email=" + email + "&name=" + name + "&home=" + home, 
+//         dataType : 'html',
+//         success : function(code_html, statut){
+//             console.log('success');
+//         },
  
-        error : function(resultat, statut, erreur){
-            console.log(erreur);
-        },
+//         error : function(resultat, statut, erreur){
+//             console.log(erreur);
+//         },
  
-        complete : function(resultat, statut){
-            console.log(resultat);
-            $('main').html(resultat.responseText);
-            init();
-        }
+//         complete : function(resultat, statut){
+//             console.log(resultat);
+//             $('.info').html(resultat.responseText);
+//             init();
+//         }
  
-     });
-}
-*/
+//      });
+
+// }

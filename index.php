@@ -61,6 +61,8 @@ try {
             sortProduct();
         } else if ($_GET['action'] == 'account') { // account page for members
             account();
+        } else if ($_GET['action'] == 'edit-member') { // modify info of members
+            editMember();
         } 
     } else {
         homePage();

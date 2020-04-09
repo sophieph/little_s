@@ -4,7 +4,7 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
-    console.log('lol')
+    console.log('lol');
 }
 
 function showSlides(n) {
@@ -12,11 +12,11 @@ function showSlides(n) {
     var slides = document.getElementsByClassName("slide-image");
     
     if(n > slides.length) {
-        slideIndex = 1
+        slideIndex = 1;
     }
 
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
 
     for (i = 0; i < slides.length; i++) {
