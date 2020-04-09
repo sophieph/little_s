@@ -29,7 +29,7 @@ class PanierManager
      */
     public function add(Panier $panier)
     {
-        $q = $this->_db->prepare('INSERT INTO panier(idMembre, codeProduit, quantity) VALUES(:idMembre, :codeProduit, :quantity)');
+        $q = $this->_db->prepare('INSERT INTO Panier(idMembre, codeProduit, quantity) VALUES(:idMembre, :codeProduit, :quantity)');
         $q->bindValue(':idMembre', $panier->idMembre());
         $q->bindValue(':codeProduit', $panier->codeProduit());
         $q->bindValue(':quantity', $panier->quantity());
@@ -39,9 +39,29 @@ class PanierManager
         
         $panier->hydrate(
             [
-            'code' => $this->_db->lastInsertId()
+            'id' => $this->_db->lastInsertId()
             ]
         );
+    }
+    
+    /**
+     * GetPanier
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * get basket
+     */
+    public function getBasket($id)
+    {
+
+        $query = 'SELECT * FROM Produit pr, Panier pa WHERE pa.idMembre =' . $id . ' AND pr.codeProduit = pa.codeProduit';
+        $q = $this->_db->prepare($query);
+        $q->execute();
+        $panier = $q->fetchAll(); 
+
+        return $panier;
+  
     }
 
 }

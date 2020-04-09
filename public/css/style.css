@@ -376,9 +376,20 @@ select {
 }
 
 /* basket */
+
+.img-basket {
+    height:100px;
+    width:20rem;
+}
+
+.img-basket img {
+    max-width:100%;
+}
 .list-basket {
     width:90%;
 }
+
+
 .list-basket>table {
     margin:auto;
     width: 60%;
@@ -388,7 +399,7 @@ select {
 .list-basket td {
     border-bottom: 1px solid var(--color-list);
     border-top: 1px solid var(--color-list);
-    padding: 2rem 0.5rem;
+    padding: 2rem 3rem;
 
 }
 

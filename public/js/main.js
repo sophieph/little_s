@@ -10,40 +10,40 @@ function initEvents() {
 
     
     $("#add-to-bag").click(function() {
-        alert('wooor');
-        // editMember();
+
+        addBag();
+        
     }
     );
     
 }
 
-// function editMember() {
-//     name = $("#name").val();
-//     home = $("#home").val();
-//     email = $("#email").val();
+function addBag() {
+        id = id_member;
+        codeProduit = $('#add-to-bag').val();
 
-//     alert(home+name+email);
-    
-//     return true;
-//     $.ajax({
-//         url : "/little/",
-//         type : 'GET',
-//         data : "action=edit-member&ajax=true&email=" + email + "&name=" + name + "&home=" + home, 
-//         dataType : 'html',
-//         success : function(code_html, statut){
-//             console.log('success');
-//         },
- 
-//         error : function(resultat, statut, erreur){
-//             console.log(erreur);
-//         },
- 
-//         complete : function(resultat, statut){
-//             console.log(resultat);
-//             $('.info').html(resultat.responseText);
-//             init();
-//         }
- 
-//      });
+    $.ajax({
+        url : "/little/",
+        type : 'GET',
+        data : "action=add-to-basket&id=" + id + "&codeProduit=" + codeProduit, 
+        dataType : 'html',
+        success : function(code_html, statut){
+            console.log('success');
+            // $(document).html(resultat.responseText);
 
-// }
+        },
+ 
+        error : function(resultat, statut, erreur){
+            console.log(erreur);
+        },
+ 
+        complete : function(resultat, statut){
+            console.log( resultat);
+            window.location.replace('/little/?action=basket');
+
+            // $(document).html(resultat.responseText);
+            // init();
+        }
+     });
+
+}

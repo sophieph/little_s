@@ -24,7 +24,7 @@
                  <a href="?action=account&email=<?php echo $_SESSION['email']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
-                    <a href="?action=basket" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket&id=<?php echo $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                    
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <a href="?action=signin" class="signing-signin">Sign in</a> 
 
                     <a href="?action=signup" class="signing-signup">Sign up</a>
-                    <a href="?action=basket" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket&id=<?php echo $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                 </div>
             </div>
     
@@ -61,7 +61,7 @@
 
             <a href="#" class="hamburger"> <ion-icon name="menu-outline"></ion-icon></a>
             <h1><a href="/little">little.s</a></h1>
-            <a href="#" class="panier-mobile"><i class="fa fa-shopping-cart"></i></a>
+            <a href="?action=basket&id=<?php echo $_SESSION['id']; ?>" class="panier-mobile"><i class="fa fa-shopping-cart"></i></a>
 
 
 
@@ -73,7 +73,7 @@
                 <li><a href="?action=product">Nouveautés</a></li>
                 <li><a href="?action=product&category=onePiece">Une piece</a></li>
                 <li><a href="?action=product&category=bikini">Bikini</a></li>
-                <li><a href="?action=product&category=accessoire">Accessoires</a></li>
+                <li><a href="?action=product&category=accessoire">Accessoires</a></li><br>
                 <li><a href="?action=account&email=<?php echo $_SESSION['email']; ?>" class="account">Mon compte</a></li>
                 <?php 
                 if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') {

@@ -33,7 +33,7 @@ class ImageProduitManager
         
         $produit->hydrate(
             [
-            'code' => $this->_db->lastInsertId()
+            'id' => $this->_db->lastInsertId()
             ]
         );
     }

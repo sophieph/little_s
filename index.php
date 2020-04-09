@@ -63,8 +63,11 @@ try {
             account();
         } else if ($_GET['action'] == 'edit-member') { // modify info of members
             editMember();
-        } else if ($_GET['action'] == 'basket') { // Basket
-            basket();
+        } else if ($_GET['action'] == 'basket' && $_GET['id']) { // Basket
+            $id = $_GET['id'];
+            basket($id);
+        } else if ($_GET['action'] == 'add-to-basket') { // add a product to Basket
+            addToBasket();
         } 
     } else {
         homePage();

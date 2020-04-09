@@ -1,6 +1,7 @@
 <?php 
     if (!isset($_GET['ajax'])) :  
     session_start();
+    $session_value = (isset($_SESSION['user'])) ? $_SESSION['id'] : ''; 
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +53,7 @@
         
         $( document ).ready(function() {
             init();
+            id_member = '<?php echo $session_value;?>';
         });
     </script>
 

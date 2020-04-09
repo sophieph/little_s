@@ -3,17 +3,34 @@
 <section id="wrapper">
 
     <div class="list-basket">
-        
+
         <table>
-            <tr>
-                <td>Image</td>
-                <td>
-                    <b>Nom :</b> <br>
-                    <b>Quantité :</b> <br>
-                    <b>Prix : </b><br>
+            
+            
+            <?php 
+            foreach($paniers as $panier) {
+                ?>
+            <tr> 
+                <td class="img-basket">
+                    <?php 
+                        $image = $produitManager->getFirstImage($panier['codeProduit']);
+                        ?>
+                    <img class="img-panier" src="<?php echo $image['link'];?>"> 
 
                 </td>
-            </tr>
+                <td>
+                    <b>Nom :</b> <?php echo $panier['name']; ?> <br>
+                    <b>Catégorie :</b> <?php echo $panier['category']; ?><br>
+                    <b>Quantité :</b> <?php echo $panier['quantity']; ?><br>
+                    <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
+
+                </td>
+                </tr>
+                <?php 
+            }
+            ?>
+            
+             
         </table>
 
         <div class="total">

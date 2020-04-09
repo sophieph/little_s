@@ -187,6 +187,7 @@ class ProduitManager
         return $produit;
     }
     
+    
 
 }
 
