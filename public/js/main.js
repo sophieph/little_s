@@ -9,11 +9,11 @@ function initEvents() {
     });
 
     
-    // $("#modify").click(function() {
-    //     // alert('wooor');
-    //     // editMember();
-    // }
-    // );
+    $("#add-to-bag").click(function() {
+        alert('wooor');
+        // editMember();
+    }
+    );
     
 }
 

@@ -6,7 +6,7 @@ require  ROOT_PATH . 'controller/membre/signController.php';
 require  ROOT_PATH . 'controller/membre/membreController.php';
 require  ROOT_PATH . 'controller/admin/adminController.php';
 require  ROOT_PATH . 'controller/produit/produitController.php';
-
+require  ROOT_PATH . 'controller/panier/panierController.php';
 
 
 try {
@@ -63,6 +63,8 @@ try {
             account();
         } else if ($_GET['action'] == 'edit-member') { // modify info of members
             editMember();
+        } else if ($_GET['action'] == 'basket') { // Basket
+            basket();
         } 
     } else {
         homePage();

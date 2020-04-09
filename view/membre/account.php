@@ -32,7 +32,9 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
         <ul>
             <li><b>Nom</b> : <?php echo $name; ?></li>
             <li><b>Email</b> : <?php echo $mail; ?></li>
-            <li><b>Adresse de domicile</b> : <?php echo $home; ?> </li>
+            <li><b>Adresse de domicile</b> : 
+            <br>
+            <?php echo $home; ?> </li>
         </ul>
         
         <h3>Modifier mes informations</h3>

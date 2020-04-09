@@ -24,7 +24,7 @@
                  <a href="?action=account&email=<?php echo $_SESSION['email']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
-                    <a href="" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                    
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <a href="?action=signin" class="signing-signin">Sign in</a> 
 
                     <a href="?action=signup" class="signing-signup">Sign up</a>
-                    <a href="" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                 </div>
             </div>
     
