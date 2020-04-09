@@ -1,10 +1,10 @@
 <?php 
 require 'config.php';
-require 'controller/controller.php';
-require 'controller/newsletterController.php';
-require 'controller/signController.php';
-require 'controller/adminController.php';
-require 'controller/produitController.php';
+require  ROOT_PATH . 'controller/controller.php';
+require  ROOT_PATH . 'controller/newsletter/newsletterController.php';
+require  ROOT_PATH . 'controller/membre/signController.php';
+require  ROOT_PATH . 'controller/admin/adminController.php';
+require  ROOT_PATH . 'controller/produit/produitController.php';
 
 
 

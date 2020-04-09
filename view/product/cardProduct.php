@@ -27,9 +27,17 @@
             <div class="description">
 
                 <h4><?php echo $product['name']; ?></h4>
-                <?php echo $product['price']; ?>
+                <p><?php echo $product['price']; ?>&euro;</p>
+                <button class="size"> Unique size</button> 
+                <br>
+                <button class="add-to-bag">Add to bag</button> 
+                <br>
 
+                <div class="delivery">
+                    <p>Delivery & returns - Free on all orders over 100 &euro;</p>
+                </div>
 
+                <a href="?action=product&category=<?php echo $product['category']; ?>"><button class="all-product">Voir tous les produits <?php echo $product['category']; ?> </button></a>
             </div>
         </div>
 
