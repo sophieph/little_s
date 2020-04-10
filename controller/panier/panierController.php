@@ -52,3 +52,28 @@ function addToBasket()
 
     include_once ROOT_PATH . 'view/panier/basket.php';
 }
+
+/**
+ * DeleteItem
+ *
+ * @param  mixed $idMember
+ * @param  mixed $codeProduit
+ * @return void
+ * 
+ * delete an item to Basket
+ */
+function deleteItem()
+{
+
+    $db = db();
+    $panierManager = new PanierManager($db);
+
+    if (isset($_GET['id']) && isset($_GET['code'])) {
+        $idMember = $_GET['id'];
+        $codeProduit = $_GET['code'];
+        $panierManager->deleteItem($idMember, $codeProduit);
+    }
+    
+    homepage();
+
+}

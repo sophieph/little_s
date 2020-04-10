@@ -2,10 +2,12 @@
 
 <section id="wrapper">
 
+    <h2>Mon panier</h2>
+    <hr>
     <div class="list-basket">
 
+        
         <table>
-            
             
             <?php 
             foreach($paniers as $panier) {
@@ -19,10 +21,15 @@
 
                 </td>
                 <td>
-                    <b>Nom :</b> <?php echo $panier['name']; ?> <br>
+                    <b>Nom :</b> <?php echo $panier['name']; ?>  | <?php echo $panier['codeProduit']; ?><br>
                     <b>Catégorie :</b> <?php echo $panier['category']; ?><br>
-                    <b>Quantité :</b> <?php echo $panier['quantity']; ?><br>
+                    <b>Quantité :</b>
+                    <i class="fa fa-minus" ></i>
+                    <?php echo $panier['quantity']; ?>
+                    <i class="fa fa-plus"></i><br>
                     <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
+                    
+                    <a href="?action=delete-basket&id=<?php echo $panier['idMembre']; ?>&code=<?php echo $panier['codeProduit']; ?>">Supprimer</a>
 
                 </td>
                 </tr>
@@ -36,7 +43,7 @@
         <div class="total">
             <p>Prix total :</p>
 
-            <button id="add-to-bag">Check out</button>
+            <button id="checkout">Check out</button>
         </div>
     </div>
 

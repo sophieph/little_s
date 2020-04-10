@@ -68,7 +68,11 @@ try {
             basket($id);
         } else if ($_GET['action'] == 'add-to-basket') { // add a product to Basket
             addToBasket();
-        } 
+        } else if ($_GET['action'] == 'delete-basket') { // delete a product to Basket
+            $idMember = $_GET['id'];
+            $codeProduit = $_GET['code'];
+            deleteItem();
+        }
     } else {
         homePage();
     }

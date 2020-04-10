@@ -64,4 +64,26 @@ class PanierManager
   
     }
 
+    public function countItem($id)
+    {
+
+    }
+        
+    /**
+     * DeleteItem
+     *
+     * @param  mixed $idMembre
+     * @param  mixed $codeProduit
+     * @return void
+     * 
+     * Delete an item from Basket
+     */
+    public function deleteItem($idMembre, $codeProduit)
+    {
+        $q = $this->_db->prepare('DELETE FROM Panier WHERE codeProduit = :codeProduit AND idMembre = :idMembre');
+        $q->bindValue(':codeProduit', $codeProduit);
+        $q->bindValue(':idMembre', $idMembre);
+        $q->execute();
+    }
+
 }
