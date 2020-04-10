@@ -130,4 +130,22 @@ class PanierManager
         
         $q->execute();
     } 
+    
+    /**
+     * TotalPrice
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * get Total Price
+     */
+    public function totalPrice($id)
+    {
+        $query = "SELECT SUM(pr.price * pa.quantity) FROM Panier pa, Produit pr WHERE idMembre = " . $id . " AND pa.codeProduit = pr.codeProduit";
+        $q = $this->_db->prepare($query);
+        $q->execute();
+        $price = $q->fetchColumn(); 
+
+        return $price;
+    }
 }

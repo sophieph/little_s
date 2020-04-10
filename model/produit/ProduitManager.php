@@ -186,7 +186,23 @@ class ProduitManager
 
         return $produit;
     }
-    
+        
+    /**
+     * getStok
+     *
+     * @param  mixed $codeProduit
+     * @return void
+     * 
+     * get Stock of Product
+     */
+    public function getStock($codeProduit) 
+    {
+        $q = $this->_db->prepare('SELECT stock FROM Produit WHERE codeProduit = :codeProduit');
+        $q->execute([':codeProduit' => $codeProduit]);
+        $stock = $q->fetch(PDO::FETCH_ASSOC); 
+
+        return $stock;
+    }
     
 
 }

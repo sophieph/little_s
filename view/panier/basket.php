@@ -2,10 +2,10 @@
 
 <section id="wrapper">
 
-    <h2>Mon panier</h2>
+    
     <hr>
     <div class="list-basket">
-
+    <h2>Mon panier</h2>
         
         <table>
             
@@ -43,7 +43,7 @@
         </table>
 
         <div class="total">
-            <p>Prix total :</p>
+            <p>Prix total : <?php echo $price; ?>&euro;</p>
 
             <button id="checkout">Check out</button>
         </div>

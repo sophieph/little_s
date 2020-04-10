@@ -18,7 +18,7 @@ function basket($id)
 
     $paniers = $panierManager->getBasket($id);
     
-
+    $price = $panierManager->totalPrice($id);
 
     include_once ROOT_PATH . 'view/panier/basket.php';
 }
@@ -34,6 +34,7 @@ function addToBasket()
 {
     $db = db();
     $panierManager = new PanierManager($db);
+    $produitManager = new ProduitManager($db);
 
     if (isset($_GET['id']) && isset($_GET['codeProduit']) ) {
         $idMember = $_GET['id'];
@@ -47,7 +48,14 @@ function addToBasket()
             ]
         );
 
-        $panierManager->add($produit);
+        $quantity = $panierManager->getQuantity($idMember, $codeProduit);
+
+        if ($quantity >= 1) {
+            $panierManager->changeQuantity($idMember, $codeProduit, '+1');
+        } else {
+            $panierManager->add($produit);
+        }
+        
     }
 
     include_once ROOT_PATH . 'view/panier/basket.php';
@@ -97,13 +105,6 @@ function changeQuantity()
         
         $quantity = $panierManager->getQuantity($idMember, $codeProduit);
 
-        
-        // if ($change == '+') {
-        //     // $panierManager->changeQuantity($idMember, $codeProduit, '+1');
-        //     $response = $change;
-        // } else {
-        //     $response = 'no';
-        // }
         if ($quantity == 1 && $change == '-') {
             $panierManager->deleteItem($idMember, $codeProduit);
             $response = "delete";
