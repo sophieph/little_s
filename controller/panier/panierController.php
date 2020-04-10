@@ -77,3 +77,46 @@ function deleteItem()
     homepage();
 
 }
+
+/**
+ * ChangeQuantity
+ *
+ * @return void
+ * 
+ * change quantity in basket
+ */
+function changeQuantity() 
+{
+    $db = db();
+    $panierManager = new PanierManager($db);
+
+    if (isset($_GET['id']) && isset($_GET['code']) && isset($_GET['change'])) {
+        $idMember = $_GET['id'];
+        $codeProduit = $_GET['code'];
+        $change = $_GET['change'];
+        
+        $quantity = $panierManager->getQuantity($idMember, $codeProduit);
+
+        
+        // if ($change == '+') {
+        //     // $panierManager->changeQuantity($idMember, $codeProduit, '+1');
+        //     $response = $change;
+        // } else {
+        //     $response = 'no';
+        // }
+        if ($quantity == 1 && $change == '-') {
+            $panierManager->deleteItem($idMember, $codeProduit);
+            $response = "delete";
+        } else if ($quantity > 1 && $change == '-') {
+            $panierManager->changeQuantity($idMember, $codeProduit, '-1');
+            $response = "-1";
+        } else {
+            $panierManager->changeQuantity($idMember, $codeProduit, '+1');
+            $response = "nooon";
+        }
+        
+    }
+
+ 
+    echo $response;
+}

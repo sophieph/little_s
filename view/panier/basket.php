@@ -24,9 +24,11 @@
                     <b>Nom :</b> <?php echo $panier['name']; ?>  | <?php echo $panier['codeProduit']; ?><br>
                     <b>Catégorie :</b> <?php echo $panier['category']; ?><br>
                     <b>Quantité :</b>
-                    <i class="fa fa-minus" ></i>
-                    <?php echo $panier['quantity']; ?>
-                    <i class="fa fa-plus"></i><br>
+                    <p id="t"></p>
+                    <i class="fa fa-minus" onClick="changeQty(<?php echo $panier['codeProduit']; ?>, '-')" ></i>
+                    
+                    <span class="qty"><?php echo $panier['quantity']; ?></span>
+                    <i class="fa fa-plus" onClick="changeQty(<?php echo $panier['codeProduit']; ?>, '+')"></i><br>
                     <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
                     
                     <a href="?action=delete-basket&id=<?php echo $panier['idMembre']; ?>&code=<?php echo $panier['codeProduit']; ?>">Supprimer</a>

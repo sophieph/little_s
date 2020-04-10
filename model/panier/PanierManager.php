@@ -85,5 +85,49 @@ class PanierManager
         $q->bindValue(':idMembre', $idMembre);
         $q->execute();
     }
+    
+    /**
+     * GetQuantity
+     *
+     * @param  mixed $idMembre
+     * @param  mixed $codeProduit
+     * @return void
+     * 
+     * get quantity of a product from one member
+     */
+    public function getQuantity($idMembre, $codeProduit) 
+    {
+            $q = $this->_db->prepare('SELECT quantity FROM Panier WHERE codeProduit = :codeProduit AND idMembre = :idMembre');
+            $q->bindValue(':codeProduit', $codeProduit);
+            $q->bindValue(':idMembre', $idMembre);
+            $q->execute();
+            $quantity = $q->fetchColumn(); 
 
+        return $quantity;
+    }    
+    
+    /**
+     * ChangeQuantity
+     *
+     * @param  mixed $idMembre
+     * @param  mixed $codeProduit
+     * @param  mixed $sign
+     * @return void
+     * 
+     * change quantity of a product from ONE member
+     */
+    public function changeQuantity($idMembre, $codeProduit, $sign)
+    {
+
+        if ($sign == '-1') {
+            $query = "UPDATE Panier SET quantity = quantity " . $sign . " WHERE codeProduit = :codeProduit AND idMembre = :idMembre";
+        } else if ($sign == "+1") {
+            $query = "UPDATE Panier SET quantity = quantity " . $sign . " WHERE codeProduit = :codeProduit AND idMembre = :idMembre";
+        }
+        $q = $this->_db->prepare($query);
+        $q->bindValue(':codeProduit', $codeProduit);
+        $q->bindValue(':idMembre', $idMembre);
+        
+        $q->execute();
+    } 
 }

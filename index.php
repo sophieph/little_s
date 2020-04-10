@@ -72,6 +72,8 @@ try {
             $idMember = $_GET['id'];
             $codeProduit = $_GET['code'];
             deleteItem();
+        } else if ($_GET['action'] == 'change-quantity') { // delete a product to Basket
+            changeQuantity();
         }
     } else {
         homePage();
