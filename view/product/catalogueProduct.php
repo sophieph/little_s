@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php 
+session_start();
+ob_start(); ?>
 <?php if (!isset($_GET['ajax'])) :  ?>
 <section id="wrapper">
     <?php 

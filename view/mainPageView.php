@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php 
+session_start();
+ob_start(); ?>
 
 <!-- get latest items -->
 <section id="main-image" style="background-image: url('<?php echo BASE_URL; ?>public/images/main-img.jpeg');">

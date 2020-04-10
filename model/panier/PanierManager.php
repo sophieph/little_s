@@ -63,10 +63,23 @@ class PanierManager
         return $panier;
   
     }
-
+    
+    /**
+     * CountItem
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * count number of Item in basket
+     */
     public function countItem($id)
     {
+        $query = "SELECT SUM(quantity) FROM Panier  WHERE idMembre = " . $id;
+        $q = $this->_db->prepare($query);
+        $q->execute();
+        $item = $q->fetchColumn(); 
 
+        return $item;
     }
         
     /**
@@ -82,6 +95,21 @@ class PanierManager
     {
         $q = $this->_db->prepare('DELETE FROM Panier WHERE codeProduit = :codeProduit AND idMembre = :idMembre');
         $q->bindValue(':codeProduit', $codeProduit);
+        $q->bindValue(':idMembre', $idMembre);
+        $q->execute();
+    }
+    
+    /**
+     * DeleteBag
+     *
+     * @param  mixed $idMembre
+     * @return void
+     * 
+     * Delete all item of a member
+     */
+    public function deleteBag($idMembre)
+    {
+        $q = $this->_db->prepare('DELETE FROM Panier WHERE idMembre = :idMembre');
         $q->bindValue(':idMembre', $idMembre);
         $q->execute();
     }

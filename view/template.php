@@ -2,6 +2,7 @@
     if (!isset($_GET['ajax'])) :  
     session_start();
     $session_value = (isset($_SESSION['user'])) ? $_SESSION['id'] : ''; 
+    $session_expire = (isset($_SESSION['user'])) ? $_SESSION['expire'] : '';
 ?>
 
 <!DOCTYPE html>

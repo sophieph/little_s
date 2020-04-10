@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php 
+session_start();
+ob_start(); ?>
 
 <?php 
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {

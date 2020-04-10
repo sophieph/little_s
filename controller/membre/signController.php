@@ -51,6 +51,8 @@ function signinController()
                 $_SESSION['id'] = $membreConnecte->id();
                 $_SESSION['email'] = $membreConnecte->email();
                 $_SESSION['name'] = $membreConnecte->name();
+                $_SESSION['start'] = time();
+                $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
             } else { 
                 $response = "Mot de passe incorrect";
             }

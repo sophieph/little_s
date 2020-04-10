@@ -19,6 +19,7 @@ function basket($id)
     $paniers = $panierManager->getBasket($id);
     
     $price = $panierManager->totalPrice($id);
+    $item = $panierManager->countItem($id);
 
     include_once ROOT_PATH . 'view/panier/basket.php';
 }

@@ -1,22 +1,32 @@
-<?php ob_start(); ?>
+<?php 
+session_start();
+ob_start(); ?>
 
 <section id="wrapper">
 
-    
-    <hr>
+<?php 
+$now = time(); // Checking the time now when home page starts.
+
+if ($now > $_SESSION['expire']) {
+    $panierManager->deleteBag($_SESSION['id']);
+    $_SESSION['start'] = time();
+    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+} else {
+    ?>
     <div class="list-basket">
     <h2>Mon panier</h2>
-        
+    <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
+
         <table>
             
             <?php 
-            foreach($paniers as $panier) {
+            foreach ($paniers as $panier) {
                 ?>
             <tr> 
                 <td class="img-basket">
                     <?php 
                         $image = $produitManager->getFirstImage($panier['codeProduit']);
-                        ?>
+                    ?>
                     <img class="img-panier" src="<?php echo $image['link'];?>"> 
 
                 </td>
@@ -27,7 +37,7 @@
                     <p id="t"></p>
                     <i class="fa fa-minus" onClick="changeQty(<?php echo $panier['codeProduit']; ?>, '-')" ></i>
                     
-                    <span class="qty"><?php echo $panier['quantity']; ?></span>
+                    <?php echo $panier['quantity']; ?>
                     <i class="fa fa-plus" onClick="changeQty(<?php echo $panier['codeProduit']; ?>, '+')"></i><br>
                     <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
                     
@@ -49,6 +59,9 @@
         </div>
     </div>
 
+    <?php 
+}
+?>
 
 
 </section>

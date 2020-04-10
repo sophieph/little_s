@@ -38,7 +38,7 @@ function addBag() {
 
             complete: function (resultat, statut) {
                 console.log(resultat);
-                document.location.reload(true);
+                // document.location.reload(true);
                 // $(document).html(resultat.responseText);
                 // init();
             }
