@@ -61,4 +61,4 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
 
 
 <?php $content = ob_get_clean(); ?>
-<?php require ROOT_PATH . 'view/template.php'; ?>
+<?php require ROOT_PATH . 'view/templateAdmin.php'; ?>

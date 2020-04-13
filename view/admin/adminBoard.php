@@ -35,4 +35,4 @@ ob_start(); ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require ROOT_PATH . 'view/template.php'; ?>
+<?php require ROOT_PATH . 'view/templateAdmin.php'; ?>
