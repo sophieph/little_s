@@ -6,9 +6,9 @@
 class DetailCommande
 {
     
-    protected $numeroCommande;
+    protected $commande;
     protected $idMembre;
-    protected $codeProduit;
+    protected $codeProduit = 6;
 
 
     public function __construct(array $donnees)
@@ -29,9 +29,9 @@ class DetailCommande
     }
 
     // getters
-    public function numeroCommande() 
+    public function commande() 
     {
-        return $this->numeroCommande;
+        return $this->commande;
     }
 
     public function idMembre() 
@@ -39,19 +39,18 @@ class DetailCommande
         return $this->idMembre;
     }
 
-    public function codeProduit() 
+    public function codeProduit()
     {
         return $this->codeProduit;
     }
 
+
     // setters
-    public function setNumeroCommande($numeroCommande) 
+    public function setCommande($commande) 
     {
-        $numeroCommande = (int) $numeroCommande;
-            
-        if ($numeroCommande > 0) {
-            $this->numeroCommande = $numeroCommande;
-        }
+        
+        $this->commande = $commande;
+        
     }
 
     public function setIdMembre($idMembre) 
@@ -63,14 +62,11 @@ class DetailCommande
         }
     }    
 
-    public function setCodeProduit($codeProduit) 
+    public function setCodeProduit($codeProduit)
     {
-        $codeProduit = (int) $codeProduit;
-            
-        if ($codeProduit > 0) {
-            $this->$codeProduit = $codeProduit;
-        }
-    } 
+        $this->codeProduit = $codeProduit;
+    }
+
 
 }
 

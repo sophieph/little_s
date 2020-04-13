@@ -17,6 +17,7 @@ if ($id == 0) {
         <p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> <b>Commande<b></p>
        
         <?php echo $numeroCommande; ?> <br>
+        <?php echo '<pre>' , var_dump($detail) , '</pre>'; ?> <br>
        
         <h2>Récapitulatif</h2>
 

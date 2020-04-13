@@ -6,7 +6,7 @@
 class Commande
 {
     
-    protected $numeroCommande;
+    protected $commande;
     protected $idMembre;
     protected $date;
 
@@ -29,10 +29,7 @@ class Commande
     }
 
     // getters
-    public function numeroCommande() 
-    {
-        return $this->numeroCommande;
-    }
+
 
     public function idMembre() 
     {
@@ -44,15 +41,14 @@ class Commande
         return $this->date;
     }
 
-    // setters
-    public function setNumeroCommande($numeroCommande) 
+    public function commande() 
     {
-        $numeroCommande = (int) $numeroCommande;
-            
-        if ($numeroCommande > 0) {
-            $this->numeroCommande = $numeroCommande;
-        }
+        return $this->commande;
     }
+
+
+    // setters
+
 
     public function setIdMembre($idMembre) 
     {
@@ -67,6 +63,13 @@ class Commande
     {
         if (is_string($date)) {
             $this->date = $date;
+        }
+    } 
+
+    public function setCommande($commande) 
+    {
+        if (is_string($commande)) {
+            $this->commande = $commande;
         }
     } 
 

@@ -2,6 +2,10 @@
 
 require ROOT_PATH . 'model/panier/PanierManager.php';
 require ROOT_PATH . 'model/panier/Panier.php';
+require ROOT_PATH . 'model/commande/CommandeManager.php';
+require ROOT_PATH . 'model/commande/Commande.php';
+require ROOT_PATH . 'model/detailCommande/DetailCommandeManager.php';
+require ROOT_PATH . 'model/detailCommande/DetailCommande.php';
 
 /**
  * Basket
@@ -201,6 +205,8 @@ function recap($id)
         $db = db();
         $produitManager = new ProduitManager($db);
         $panierManager = new PanierManager($db);
+        $commandeManager = new CommandeManager($db);
+        $detailManager = new DetailCommandeManager($db);
 
         $paniers = $panierManager->getBasket($id);
         
@@ -208,7 +214,32 @@ function recap($id)
         $item = $panierManager->countItem($id);
 
         $numeroCommande = generateRandomString();
+        $date = date('Y-m-d');
 
+        $commande = new Commande(
+            [   
+                'idMembre' => $id,
+                'date' => $date,
+                'commande' => $numeroCommande
+            ]
+        );
+
+        $commandeManager->add($commande);
+
+
+
+        foreach($paniers as $panier) {
+            $detail = new DetailCommande(
+                [
+                    'idMembre' => $id,
+                    'commande' => $numeroCommande,
+                    'codeProduit' => $panier['codeProduit']
+                ]
+            );
+
+            $detailManager->add($detail);
+        }
+        
     
     }
 
@@ -216,11 +247,15 @@ function recap($id)
 
 }
 
-function generateRandomString($length = 6) {
-    $characters = '0123456789-ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+function generateRandomString($length = 6) 
+{
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
+        if ($i == 3) {
+            $randomString .= '-';
+        }
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
