@@ -10,8 +10,10 @@ require ROOT_PATH . 'model/panier/Panier.php';
  * 
  * display basket
  */
-function basket($id)
+function basket($id = null)
 {
+
+
     $db = db();
     $produitManager = new ProduitManager($db);
     $panierManager = new PanierManager($db);
@@ -21,7 +23,14 @@ function basket($id)
     $price = $panierManager->totalPrice($id);
     $item = $panierManager->countItem($id);
 
+    
     include_once ROOT_PATH . 'view/panier/basket.php';
+    
+}
+
+function bask()
+{
+    include_once ROOT_PATH . 'view/panier/bask.php';
 }
 
 /**

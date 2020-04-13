@@ -63,9 +63,14 @@ try {
             account();
         } else if ($_GET['action'] == 'edit-member') { // modify info of members
             editMember();
-        } else if ($_GET['action'] == 'basket' && $_GET['id']) { // Basket
+        } else if ($_GET['action'] == 'basket') { // Basket
             $id = $_GET['id'];
-            basket($id);
+            if (empty($id)) {
+                bask();
+            } else {
+                basket($id);
+            }
+            
         } else if ($_GET['action'] == 'add-to-basket') { // add a product to Basket
             addToBasket();
         } else if ($_GET['action'] == 'delete-basket') { // delete a product to Basket
