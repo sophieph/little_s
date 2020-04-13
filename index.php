@@ -92,6 +92,20 @@ try {
             } else {
                 delivery($id);
             }
+        } else if ($_GET['action'] == 'payment') { // payment
+            $id = $_GET['id'];
+            if (empty($id)) {
+                payment($id = 0);
+            } else {
+                payment($id);
+            }
+        } else if ($_GET['action'] == 'recap') { // payment
+            $id = $_GET['id'];
+            if (empty($id)) {
+                recap($id = 0);
+            } else {
+                recap($id);
+            }
         } 
     } else {
         homePage();

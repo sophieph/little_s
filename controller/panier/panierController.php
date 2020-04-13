@@ -169,3 +169,59 @@ function delivery($id)
     }
     include_once ROOT_PATH . 'view/panier/delivery.php';
 }
+
+function payment($id)
+{
+
+    if ($id == 0) {
+        $msg = 'lol';
+    } else {
+        $db = db();
+        $produitManager = new ProduitManager($db);
+        $panierManager = new PanierManager($db);
+
+        $paniers = $panierManager->getBasket($id);
+        
+        $price = $panierManager->totalPrice($id);
+        $item = $panierManager->countItem($id);
+
+    
+    }
+
+    include_once ROOT_PATH . 'view/panier/payment.php';
+
+}
+
+function recap($id) 
+{
+
+    if ($id == 0) {
+        $msg = 'lol';
+    } else {
+        $db = db();
+        $produitManager = new ProduitManager($db);
+        $panierManager = new PanierManager($db);
+
+        $paniers = $panierManager->getBasket($id);
+        
+        $price = $panierManager->totalPrice($id);
+        $item = $panierManager->countItem($id);
+
+        $numeroCommande = generateRandomString();
+
+    
+    }
+
+    include_once ROOT_PATH . 'view/panier/recap.php';
+
+}
+
+function generateRandomString($length = 6) {
+    $characters = '0123456789-ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}

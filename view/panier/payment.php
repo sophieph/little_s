@@ -15,13 +15,22 @@ if ($id == 0) {
 
     ?>
 
-<p>Check-out <i class="fa fa-angle-double-right"></i> <b>Livraison</b> <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> Commande</p>
+<p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> <b>Paiement</b> <i class="fa fa-angle-double-right"></i> Commande</p>
 
 
 <div>
-    <p>Livrer à cette adresse</p>
-    <?php echo $name; ?> <br>
-    <?php echo $home; ?>
+    <form action="">
+        <label for="number">Numéro de carte:</label>
+        <input type="text"> <br>
+        <label for="ccv">ccv:</label>
+        <input type="text"><br>
+        <label for="date">Date d'expiration:</label>
+        <input type="text"><br>
+        <label for="nom">Nom sur la carte</label>
+        <input type="text"><br>
+    </form>
+    <button id="checkout"><a href='?action=recap&id=<?php echo $id; ?>'>Commander</a> </button>
+
 </div>
     <div class="check-out">
 
@@ -60,7 +69,6 @@ if ($id == 0) {
             <p>Prix total : <?php echo $price; ?>&euro;</p>
         </div>
 
-        <button id="checkout"><a href='?action=payment&id=<?php echo $panier['idMembre']; ?>'>Paiement</a> </button>
 
 
     <?php 

@@ -2,9 +2,7 @@
 session_start();
 ob_start(); ?>
 
-<section id="cont">
-
-
+<section id="wrapper">
 <?php 
 if ($id == 0) {
     echo $msg;
@@ -14,17 +12,12 @@ if ($id == 0) {
 } else {
 
     ?>
+    <div class="checkout">
 
-<p>Check-out <i class="fa fa-angle-double-right"></i> <b>Livraison</b> <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> Commande</p>
-
-
-<div>
-    <p>Livrer à cette adresse</p>
-    <?php echo $name; ?> <br>
-    <?php echo $home; ?>
-</div>
-    <div class="check-out">
-
+        <p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> <b>Commande<b></p>
+       
+        <?php echo $numeroCommande; ?> <br>
+       
         <h2>Récapitulatif</h2>
 
         <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
@@ -60,7 +53,6 @@ if ($id == 0) {
             <p>Prix total : <?php echo $price; ?>&euro;</p>
         </div>
 
-        <button id="checkout"><a href='?action=payment&id=<?php echo $panier['idMembre']; ?>'>Paiement</a> </button>
 
 
     <?php 
