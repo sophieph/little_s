@@ -70,7 +70,6 @@ try {
             } else {
                 basket($id);
             }
-            
         } else if ($_GET['action'] == 'add-to-basket') { // add a product to Basket
             addToBasket();
         } else if ($_GET['action'] == 'delete-basket') { // delete a product to Basket
@@ -79,7 +78,21 @@ try {
             deleteItem();
         } else if ($_GET['action'] == 'change-quantity') { // change quantity of a product from Basket
             changeQuantity();
-        }
+        } else if ($_GET['action'] == 'check-out') { // checking-out
+            $id = $_GET['id'];
+            if (empty($id)) {
+                checkout($id = 0);
+            } else {
+                checkout($id);
+            }
+        } else if ($_GET['action'] == 'delivery') { // delivery
+            $id = $_GET['id'];
+            if (empty($id)) {
+                delivery($id = 0);
+            } else {
+                delivery($id);
+            }
+        } 
     } else {
         homePage();
     }

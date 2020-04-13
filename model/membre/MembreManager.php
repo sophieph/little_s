@@ -123,13 +123,34 @@ class MembreManager
      */
     public function get($email) 
     {
-            $q = $this->_db->prepare('SELECT * FROM Membre WHERE email = :email');
-            $q->execute([':email' => $email]);
-            $membre = $q->fetch(PDO::FETCH_ASSOC); 
 
+        $query = 'SELECT * FROM Membre WHERE email = :email';
+        $q = $this->_db->prepare($query);
+        $q->execute([':email' => $email]);
+        
+        $membre = $q->fetch(PDO::FETCH_ASSOC); 
         return new Membre($membre);
     }
 
+    /**
+     * GetId
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * get info of a member
+     */
+    public function getId($id) 
+    {
+
+        $query = 'SELECT * FROM Membre WHERE id = :id';
+        $q = $this->_db->prepare($query);
+        $q->execute([':id' => $id]);
+
+        $membre = $q->fetch(PDO::FETCH_ASSOC); 
+        return new Membre($membre);
+    }
+    
     
     /**
      * GetList
@@ -148,5 +169,3 @@ class MembreManager
 
 
 }
-
-

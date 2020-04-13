@@ -55,7 +55,7 @@ ob_start(); ?>
             <div class="total">
                 <p>Prix total : <?php echo $price; ?>&euro;</p>
 
-                <button id="checkout">Check out</button>
+                <button id="checkout"><a href='?action=check-out&id=<?php echo $panier['idMembre']; ?>'>Check out</a> </button>
             </div>
         </div>
 

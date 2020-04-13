@@ -12,8 +12,6 @@ require ROOT_PATH . 'model/panier/Panier.php';
  */
 function basket($id = null)
 {
-
-
     $db = db();
     $produitManager = new ProduitManager($db);
     $panierManager = new PanierManager($db);
@@ -74,8 +72,6 @@ function addToBasket()
 /**
  * DeleteItem
  *
- * @param  mixed $idMember
- * @param  mixed $codeProduit
  * @return void
  * 
  * delete an item to Basket
@@ -130,4 +126,46 @@ function changeQuantity()
 
  
     echo $response;
+}
+
+function checkout($id)
+{
+    if ($id == 0) {
+        $msg = 'lol';
+    } else {
+        $db = db();
+        $produitManager = new ProduitManager($db);
+        $panierManager = new PanierManager($db);
+
+        $paniers = $panierManager->getBasket($id);
+        
+        $price = $panierManager->totalPrice($id);
+        $item = $panierManager->countItem($id);
+    }
+    include_once ROOT_PATH . 'view/panier/checkout.php';
+}
+
+function delivery($id)
+{
+    if ($id == 0) {
+        $msg = 'lol';
+    } else {
+        $db = db();
+        $membreManager = new MembreManager($db);
+        $produitManager = new ProduitManager($db);
+        $panierManager = new PanierManager($db);
+
+        $paniers = $panierManager->getBasket($id);
+        
+        $price = $panierManager->totalPrice($id);
+        $item = $panierManager->countItem($id);
+    
+        $membre = $membreManager->getId($id);
+        $name = $membre->name();
+        $mail = $membre->email();
+        $home = $membre->home();
+        
+
+    }
+    include_once ROOT_PATH . 'view/panier/delivery.php';
 }
