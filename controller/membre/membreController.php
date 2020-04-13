@@ -12,9 +12,9 @@ function account()
     $db = db();
     $membreManager = new MembreManager($db);
 
-    if (isset($_GET['email'])) {
-        $email = $_GET['email'];
-        $membre = $membreManager->get($email);
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $membre = $membreManager->getId($id);
         
         $name = $membre->name();
         $mail = $membre->email();
@@ -55,4 +55,48 @@ function editMember()
     } 
 
     // include_once ROOT_PATH . 'view/membre/account.php';
+}
+
+/**
+ * History
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * get a list of command history
+ */
+function history($id)
+{
+    $db = db();
+    $membreManager = new MembreManager($db);
+    $commandeManager = new CommandeManager($db);
+
+
+    $membre = $membreManager->getId($id);
+
+    $commandes = $commandeManager->getHistory($id);
+    
+    include_once ROOT_PATH . 'view/membre/history.php';
+}
+
+/**
+ * Order
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * Get details of a command
+ */
+function order($id)
+{
+    $db = db();
+    $membreManager = new MembreManager($db);
+    $detailManager = new DetailCommandeManager($db);
+
+    $membre = $membreManager->getId(1);
+    $idMembre = $membre->id();
+
+    $details = $detailManager->getOrder($id);
+    
+    include_once ROOT_PATH . 'view/membre/commande.php';
 }

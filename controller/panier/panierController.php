@@ -220,7 +220,8 @@ function recap($id)
             [   
                 'idMembre' => $id,
                 'date' => $date,
-                'commande' => $numeroCommande
+                'commande' => $numeroCommande,
+                'price' => $price
             ]
         );
 
@@ -228,17 +229,20 @@ function recap($id)
 
 
 
-        foreach($paniers as $panier) {
+        foreach ($paniers as $panier) {
             $detail = new DetailCommande(
                 [
                     'idMembre' => $id,
                     'commande' => $numeroCommande,
-                    'codeProduit' => $panier['codeProduit']
+                    'codeProduit' => $panier['codeProduit'],
+                    'quantity' => $panier['quantity']
                 ]
             );
 
             $detailManager->add($detail);
         }
+
+        $panierManager->deleteBag($id);
         
     
     }

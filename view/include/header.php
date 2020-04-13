@@ -21,10 +21,10 @@
                 <!-- account -->
                 <div class="header-account">
                 
-                 <a href="?action=account&email=<?php echo $_SESSION['email']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
+                 <a href="?action=account&id=<?php echo $_SESSION['id']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
-                    <a href="?action=basket&id=<?php echo $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket&id=<?php echo  $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                    
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <li><a href="?action=product&category=onePiece">Une piece</a></li>
                 <li><a href="?action=product&category=bikini">Bikini</a></li>
                 <li><a href="?action=product&category=accessoire">Accessoires</a></li><br>
-                <li><a href="?action=account&email=<?php echo $_SESSION['email']; ?>" class="account">Mon compte</a></li>
+                <li><a href="?action=account&id=<?php echo $_SESSION['id']; ?>" class="account">Mon compte</a></li>
                 <?php 
                 if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') {
                 ?>

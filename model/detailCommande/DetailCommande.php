@@ -9,6 +9,7 @@ class DetailCommande
     protected $commande;
     protected $idMembre;
     protected $codeProduit = 6;
+    protected $quantity;
 
 
     public function __construct(array $donnees)
@@ -44,6 +45,10 @@ class DetailCommande
         return $this->codeProduit;
     }
 
+    public function quantity() 
+    {
+        return $this->quantity;
+    }
 
     // setters
     public function setCommande($commande) 
@@ -67,7 +72,14 @@ class DetailCommande
         $this->codeProduit = $codeProduit;
     }
 
-
+    public function setQuantity($quantity) 
+    {
+        $quantity = (int) $quantity;
+        if ($quantity > 0) {
+            $this->quantity = $quantity;
+        }
+    }
+    
 }
 
 ?>

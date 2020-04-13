@@ -17,8 +17,8 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 
         <div class="menu">
             <ul>
-                <li><a href="?action=account&email=<?php echo $mail; ?>">Mes informations</a></li>
-                <li><a href="?action=">Mes commandes</a></li>
+            <li><a href="?action=account&id=<?php echo $_SESSION['id']; ?>">Mes informations</a></li>
+                <li><a href="?action=history&id=<?php echo $_SESSION['id'] ?>">Mes commandes</a></li>
             </ul>
         </div>
 

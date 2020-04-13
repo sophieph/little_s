@@ -9,6 +9,7 @@ class Commande
     protected $commande;
     protected $idMembre;
     protected $date;
+    protected $price;
 
 
     public function __construct(array $donnees)
@@ -46,6 +47,11 @@ class Commande
         return $this->commande;
     }
 
+    public function price() 
+    {
+        return $this->price;
+    }
+
 
     // setters
 
@@ -72,6 +78,15 @@ class Commande
             $this->commande = $commande;
         }
     } 
+
+    public function setPrice($price) 
+    {
+        $price = (int) $price;
+            
+        if ($price > 0) {
+            $this->price = $price;
+        }
+    }  
 
 }
 

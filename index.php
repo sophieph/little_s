@@ -61,6 +61,12 @@ try {
             sortProduct();
         } else if ($_GET['action'] == 'account') { // account page for members
             account();
+        } else if ($_GET['action'] == 'history') { // history $page for members
+            $id = $_GET['id'];
+            history($id);
+        } else if ($_GET['action'] == 'order') { // order $page for members
+            $id = $_GET['id'];
+            order($id);
         } else if ($_GET['action'] == 'edit-member') { // modify info of members
             editMember();
         } else if ($_GET['action'] == 'basket') { // Basket
