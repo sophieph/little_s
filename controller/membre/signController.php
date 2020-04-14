@@ -40,12 +40,15 @@ function signinController()
     if (isset($email) && !empty($email) && isset($pass) && !empty($pass)) {
 
         if ($membreManager->exists($email)) {
-            if ($membreManager->signIn($email, $pass)) {
+
+            $membre = $membreManager->get($email);
+            $password_hashed = $membre->password();
+            if (password_verify($pass, $password_hashed)) {
 
                 $response = true;
 
                 $membreConnecte = $membreManager->get($email);
-
+    
                 session_start();
                 $_SESSION['user'] = 'membre';
                 $_SESSION['id'] = $membreConnecte->id();
@@ -53,13 +56,17 @@ function signinController()
                 $_SESSION['name'] = $membreConnecte->name();
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+                
             } else { 
                 $response = "Mot de passe incorrect";
             }
 
+            
+
         } else {
             $response = '<a href="index.php?action=signup">Inscrivez-vous</a> pour vous connecter.';
         }    
+        
     }
 
     echo $response;
@@ -96,15 +103,21 @@ function signupController()
 
     $name = $_GET['name'];
     $email = $_GET['email'];
+
     $pass = $_GET['pass1'];
     $category = $_GET['category'];
 
     if (isset($name) && !empty($name) && isset($email) && !empty($email) && isset($pass) && !empty($pass) && isset($category) && !empty($category)) {
 
+        $options = [
+            'cost' => 12,
+        ];
+        $hashed_password = password_hash($pass, PASSWORD_BCRYPT, $options);
+              
         $membre = new Membre(
             ['name' => $name,
             'email' => $email,
-            'password' => $pass,
+            'password' => $hashed_password,
             'category' => $category]
         );
 
@@ -113,9 +126,16 @@ function signupController()
         } else {
             $membreManager->add($membre);
             $response = 'Vous êtes inscrit. <a href="index.php?action=signin">Connectez-vous</a> !';
-        }       
+        }  
+        
+        
+
+        // $response = $hashed_password;
     }
 
     echo $response;
+
+    // include_once ROOT_PATH . 'view/signing/signupView.php';
+
 }
 

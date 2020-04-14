@@ -29,7 +29,7 @@ class MembreManager
      */
     public function add(Membre $membre) 
     {
-        $q = $this->_db->prepare('INSERT INTO Membre(name, email, pass, category) VALUES(:name, :email, :pass, :category)');
+        $q = $this->_db->prepare('INSERT INTO Membre(name, email, password, category) VALUES(:name, :email, :pass, :category)');
         $q->bindValue(':name', $membre->name());
         $q->bindValue(':email', $membre->email());
         $q->bindValue(':pass', $membre->password());
@@ -123,7 +123,6 @@ class MembreManager
      */
     public function get($email) 
     {
-
         $query = 'SELECT * FROM Membre WHERE email = :email';
         $q = $this->_db->prepare($query);
         $q->execute([':email' => $email]);

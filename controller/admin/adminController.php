@@ -42,16 +42,19 @@ function adminController()
     if (isset($email) && !empty($email) && isset($pass) && !empty($pass)) {
 
         if ($membreManager->exists($email)) {
-            if ($membreManager->signIn($email, $pass)) {
+            $admin = $membreManager->get($email);
+            $password_hashed = $admin->password();
+            if (password_verify($pass, $password_hashed)) {
+            // if ($membreManager->signIn($email, $pass)) {
                 /* verify if it is an admin */
                 if ($membreManager->admin($email)) { 
-                    $membre = $membreManager->get($email);
+                    // $membre = $membreManager->get($email);
                     session_start();
                     
                     $response = true;
-                       $_SESSION['user'] = 'administrateur';
-                       $_SESSION['email'] = $membre->email();
-                       $_SESSION['name'] = $membre->name();
+                    $_SESSION['user'] = 'administrateur';
+                    $_SESSION['email'] = $admin->email();
+                    $_SESSION['name'] = $admin->name();
                     
                 } else {
                     $response = "Vous n'avez pas accès.";
