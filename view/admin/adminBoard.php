@@ -9,8 +9,10 @@ ob_start(); ?>
 
 <?php 
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') { 
+        
 ?>
 
+            
     <div class="admin">
         <ul>
             <li> <a href="?action=admin-newsletter">Gérer la newsletter</a></li>

@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <?php 
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') {
-        header('Location: admin-board.php');
+        header('Location: ?action=admin-board');
     } else {
 ?>
 

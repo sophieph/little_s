@@ -45,7 +45,7 @@ function adminController()
             $admin = $membreManager->get($email);
             $password_hashed = $admin->password();
             if (password_verify($pass, $password_hashed)) {
-            // if ($membreManager->signIn($email, $pass)) {
+            
                 /* verify if it is an admin */
                 if ($membreManager->admin($email)) { 
                     // $membre = $membreManager->get($email);

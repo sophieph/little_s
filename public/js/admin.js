@@ -7,6 +7,8 @@ function adminC() {
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             if (this.responseText) {
+                // document.getElementById("text").innerHTML = 'haaaa';
+
                 document.getElementById("text").innerHTML = this.responseText;
                  window.location = '/little/?action=board';
             } else {
