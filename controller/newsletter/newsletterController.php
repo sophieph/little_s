@@ -8,18 +8,13 @@ require ROOT_PATH . 'model/newsletter/Newsletter.php';
  *
  * @return void
  * 
- * Inscription à la newsletter
+ * Subscribe to newsletter
  */
 function subscribe() 
 {
-    /* Connexion à la bdd pour inscrire l'email dans la newsletter */
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $manager = new NewsletterManager($db);
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
-    }
-
+    $db = db();
+    $manager = new NewsletterManager($db);
+    
     
     if (isset($_GET['emailNewsletter']) && !empty($_GET['emailNewsletter'])) {
         $email = new Newsletter(['email' => $_GET['emailNewsletter']]);

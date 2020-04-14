@@ -1,7 +1,5 @@
 <?php 
 
-
-
 /**
  * Product
  *
@@ -57,6 +55,13 @@ function productCard($id)
     include_once ROOT_PATH . 'view/product/cardProduct.php';
 }
 
+/**
+ * SortProduct
+ *
+ * @return void
+ * 
+ * Sort products
+ */
 function sortProduct()
 {
 
@@ -69,11 +74,7 @@ function sortProduct()
         $produitManager->getListByPrice($sort, $category);
         $produits =  $produitManager->getListByPrice($sort, $category);
         
-    } else {
-        $response = 'nope';
-    }
-
-    echo $response;
+    } 
 
     include_once ROOT_PATH . 'view/product/catalogueProduct.php';
 }

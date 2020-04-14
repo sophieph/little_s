@@ -10,7 +10,7 @@ require ROOT_PATH . 'model/membre/Membre.php';
  *
  * @return void
  * 
- * Formulaire de connexion
+ * form connection 
  */
 function signin() 
 {
@@ -22,17 +22,12 @@ function signin()
  *
  * @return void
  * 
- * Connexion en tant que membre
+ * Log in 
  */
 function signinController() 
 {
-    /* Connexion à la bdd pour inscrire un nouveau membre dans bdd */
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $membreManager = new MembreManager($db);
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
-    }
+    $db = db();
+    $membreManager = new MembreManager($db);
 
     $email = $_GET['email'];
     $pass = $_GET['pass'];
@@ -46,14 +41,13 @@ function signinController()
             if (password_verify($pass, $password_hashed)) {
 
                 $response = true;
-
-                $membreConnecte = $membreManager->get($email);
+                // $membreConnecte = $membreManager->get($email);
     
                 session_start();
                 $_SESSION['user'] = 'membre';
-                $_SESSION['id'] = $membreConnecte->id();
-                $_SESSION['email'] = $membreConnecte->email();
-                $_SESSION['name'] = $membreConnecte->name();
+                $_SESSION['id'] = $membre->id();
+                $_SESSION['email'] = $membre->email();
+                $_SESSION['name'] = $membre->name();
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
                 
@@ -61,12 +55,9 @@ function signinController()
                 $response = "Mot de passe incorrect";
             }
 
-            
-
         } else {
             $response = '<a href="index.php?action=signup">Inscrivez-vous</a> pour vous connecter.';
         }    
-        
     }
 
     echo $response;
@@ -77,7 +68,7 @@ function signinController()
  *
  * @return void
  * 
- * Formulaire d'inscription
+ * Subscribers form
  */
 function signup() 
 {
@@ -89,21 +80,15 @@ function signup()
  *
  * @return void
  * 
- * Inscription du membre dans la bdd
+ * Form to subscribe as a member
  */
 function signupController() 
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $membreManager = new MembreManager($db);
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
-    }
-
+    $db = db();
+    $membreManager = new MembreManager($db);
 
     $name = $_GET['name'];
     $email = $_GET['email'];
-
     $pass = $_GET['pass1'];
     $category = $_GET['category'];
 
@@ -128,14 +113,9 @@ function signupController()
             $response = 'Vous êtes inscrit. <a href="index.php?action=signin">Connectez-vous</a> !';
         }  
         
-        
-
-        // $response = $hashed_password;
     }
 
     echo $response;
-
-    // include_once ROOT_PATH . 'view/signing/signupView.php';
 
 }
 

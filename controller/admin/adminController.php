@@ -14,7 +14,6 @@ require ROOT_PATH . 'model/produit/ImageProduit.php';
  */
 function admin() 
 {
-    // include_once 'view/admin/adminSignIn.php';
     include_once ROOT_PATH . 'view/admin/adminSignIn.php';
 }
 
@@ -28,13 +27,8 @@ function admin()
  */
 function adminController()
 {
-    /* Connexion à la bdd pour inscrire un nouveau membre dans bdd */
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $membreManager = new MembreManager($db);
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
-    }
+    $db = db();
+    $membreManager = new MembreManager($db);
 
     $email = $_GET['email'];
     $pass = $_GET['pass'];
@@ -48,10 +42,9 @@ function adminController()
             
                 /* verify if it is an admin */
                 if ($membreManager->admin($email)) { 
-                    // $membre = $membreManager->get($email);
-                    session_start();
-                    
                     $response = true;
+
+                    session_start();
                     $_SESSION['user'] = 'administrateur';
                     $_SESSION['email'] = $admin->email();
                     $_SESSION['name'] = $admin->name();
@@ -96,14 +89,11 @@ function board()
 function manageNewsletter() 
 {
 
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $newsletterManager = new NewsletterManager($db);
-        
-        $liste = $newsletterManager->getList();
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $db = db();
+    $newsletterManager = new NewsletterManager($db);
+
+    $liste = $newsletterManager->getList();
+    
 
     include_once ROOT_PATH . 'view/admin/adminNewsletter.php';
     
@@ -118,19 +108,12 @@ function manageNewsletter()
  */
 function deleteNewsletter() 
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $newsletterManager = new NewsletterManager($db);
-        
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $db = db();
+    $newsletterManager = new NewsletterManager($db);
 
     if (isset($_GET['id']) && !empty($_GET['id'])) {
-        $response = 'delete';
         try {
             $newsletterManager->deleteEmail($_GET['id']);
-            
         } catch(Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
@@ -157,14 +140,11 @@ function deleteNewsletter()
  */
 function manageMember() 
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $membreManager = new MembreManager($db);
+    $db = db();
+    $membreManager = new MembreManager($db);
 
-        $liste = $membreManager->getList();
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $liste = $membreManager->getList();
+
     include_once ROOT_PATH . 'view/admin/adminMember.php';
 }
 
@@ -177,17 +157,10 @@ function manageMember()
  */
 function manageProduct()
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $produitManager = new ProduitManager($db);
-        $liste = $produitManager->getList();
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $db = db();
+    $produitManager = new ProduitManager($db);
+    $liste = $produitManager->getList();
 
-    // $db = db();
-    // $produitManager = new ProduitManager($db);
-    // $liste = $produitManager->getList();
     include_once ROOT_PATH . 'view/admin/adminListProduct.php';
 }
 
@@ -200,14 +173,8 @@ function manageProduct()
  */
 function addProduct()
 {
-
-    /* Connexion à la bdd pour inscrire l'email dans la newsletter */
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $produitManager = new ProduitManager($db);
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $db = db();
+    $produitManager = new ProduitManager($db);
     
     if (isset($_GET['name']) && !empty($_GET['name'])
         && isset($_GET['date']) && !empty($_GET['date'])
@@ -220,7 +187,7 @@ function addProduct()
         $stock = $_GET['stock'];
         $category = $_GET['category'];
         $price = $_GET['price'];
-        $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category . " "  . $price;
+        // $response = $nameProduct . " " . $dateProduct . " " . $stock . " "  . $category . " "  . $price;
 
         $produit = new Produit(
             [
@@ -241,7 +208,6 @@ function addProduct()
     }
 
     echo $response;
-
 }
 
 /**
@@ -292,7 +258,7 @@ function addImageProduct()
         );
         $response = $image . " " . $codeProduit;
     } else {
-        $response = "non";
+        $response = "Impossible d'upload l'image";
     }
 
     if (isset($produit)) {
@@ -300,8 +266,7 @@ function addImageProduct()
         $response = "L'image a été ajoutée.";
 
     }
-    echo $response;
-    
+    echo $response; 
 }
 
 /**
@@ -313,11 +278,9 @@ function addImageProduct()
  */
 function editProduct()
 {
-
     $db = db();
     $produitManager = new ProduitManager($db); 
     $imageProduitManager = new ImageProduitManager($db);
-
 
     if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit']) 
         && isset($_GET['name']) && !empty($_GET['name']) 
@@ -342,7 +305,6 @@ function editProduct()
             );
 
             $produitManager->edit($produit);
-            $response = "done";
 
     } else if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
             $codeProduit = $_GET['codeProduit'];
@@ -350,11 +312,8 @@ function editProduct()
             $images = $imageProduitManager->getListImage($codeProduit);
             include_once ROOT_PATH . 'view/admin/adminProduct.php';
     } 
-        
-    // }
 
     echo $response;
-
 }
 
 
@@ -367,18 +326,12 @@ function editProduct()
  */
 function deleteProduct() 
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=littles;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $produitManager = new ProduitManager($db);
+    $db = db();
+    $produitManager = new ProduitManager($db);
         
-    } catch(Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-
     if (isset($_GET['codeProduit']) && !empty($_GET['codeProduit'])) {
         try {
             $produitManager->deleteProduct($_GET['codeProduit']);
-            
         } catch(Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }

@@ -25,7 +25,6 @@ function basket($id = null)
     $price = $panierManager->totalPrice($id);
     $item = $panierManager->countItem($id);
 
-    
     include_once ROOT_PATH . 'view/panier/basket.php';
     
 }
@@ -82,7 +81,6 @@ function addToBasket()
  */
 function deleteItem()
 {
-
     $db = db();
     $panierManager = new PanierManager($db);
 
@@ -93,7 +91,6 @@ function deleteItem()
     }
     
     homepage();
-
 }
 
 /**
@@ -117,21 +114,23 @@ function changeQuantity()
 
         if ($quantity == 1 && $change == '-') {
             $panierManager->deleteItem($idMember, $codeProduit);
-            $response = "delete";
         } else if ($quantity > 1 && $change == '-') {
             $panierManager->changeQuantity($idMember, $codeProduit, '-1');
-            $response = "-1";
         } else {
             $panierManager->changeQuantity($idMember, $codeProduit, '+1');
-            $response = "nooon";
         }
         
     }
-
- 
-    echo $response;
 }
 
+/**
+ * Checkout
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * Checkout 
+ */
 function checkout($id)
 {
     if ($id == 0) {
@@ -149,6 +148,13 @@ function checkout($id)
     include_once ROOT_PATH . 'view/panier/checkout.php';
 }
 
+/**
+ * Delivery
+ *
+ * @param  mixed $id
+ * @return void
+ * Delivery
+ */
 function delivery($id)
 {
     if ($id == 0) {
@@ -168,15 +174,21 @@ function delivery($id)
         $name = $membre->name();
         $mail = $membre->email();
         $home = $membre->home();
-        
 
     }
     include_once ROOT_PATH . 'view/panier/delivery.php';
 }
 
+/**
+ * Payment
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * Payment
+ */
 function payment($id)
 {
-
     if ($id == 0) {
         $msg = 'lol';
     } else {
@@ -188,14 +200,19 @@ function payment($id)
         
         $price = $panierManager->totalPrice($id);
         $item = $panierManager->countItem($id);
-
-    
     }
 
     include_once ROOT_PATH . 'view/panier/payment.php';
-
 }
 
+/**
+ * Recap
+ *
+ * @param  mixed $id
+ * @return void
+ * 
+ * Recap when ordered
+ */
 function recap($id) 
 {
 
@@ -251,6 +268,14 @@ function recap($id)
 
 }
 
+/**
+ * generateRandomString
+ *
+ * @param  mixed $length
+ * @return void
+ * 
+ * Generate random string for $numeroCommande
+ */
 function generateRandomString($length = 6) 
 {
     $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';

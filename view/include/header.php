@@ -1,14 +1,4 @@
     <header>
-            <?php 
-            
-            if (isset($_SESSION['user']) && $_SESSION['user'] == 'administrateur') { ?>
-            <div class="mode-admin"> 
-                <p> <?php echo $_SESSION['user'] . " : " . $_SESSION['name'] . " | <a href='?action=board'>Tableau de bord</a> " . " | ". "<a href='?action=logoff'>Log off</a>"; ?> </p>
-            </div>
-
-            <?php } else if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') { 
-                ?>
-            
             <div class="header">
                 <!-- search form -->
                 <div class="header-research">
@@ -18,6 +8,10 @@
                     </form>
                 </div>
 
+                <?php 
+            
+            if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') { 
+                ?>
                 <!-- account -->
                 <div class="header-account">
                 
@@ -27,24 +21,9 @@
                     <a href="?action=basket&id=<?php echo  $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                    
                 </div>
-            </div>
-
-            
-
-
                 <?php
-            }  else{
+            } else { 
                 ?>
-
-            <div class="header">
-                <!-- search form -->
-                <div class="header-research">
-                    <form class="research-items" action="#" method="get">
-                        <input type="text" name="searchItems" placeholder="Rechercher" />
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- sign in/up -->
                 <div class="header-sign">
                     <a href="?action=signin" class="signing-signin">Sign in</a> 
@@ -52,11 +31,11 @@
                     <a href="?action=signup" class="signing-signup">Sign up</a>
                     <a href="?action=basket&id=<?php echo $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
                 </div>
-            </div>
-    
-                <?php 
+                <?php
             }
             ?>
+
+            </div>
 
 
             <a href="#" class="hamburger"> <ion-icon name="menu-outline"></ion-icon></a>
