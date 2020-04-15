@@ -2,7 +2,7 @@
 session_start();
 ob_start(); ?>
 
-<section id="cont">
+<section id="wrapper">
 
 
 <?php 
@@ -15,15 +15,20 @@ if ($id == 0) {
 
     ?>
 
-<p>Check-out <i class="fa fa-angle-double-right"></i> <b>Livraison</b> <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> Commande</p>
 
-
-<div>
-    <p>Livrer à cette adresse</p>
-    <?php echo $name; ?> <br>
-    <?php echo $home; ?>
-</div>
     <div class="check-out">
+        <p>Check-out <i class="fa fa-angle-double-right"></i> <b>Livraison</b> <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> Commande</p>
+            <br>
+            <br>
+            <h2>Livraison</h2>
+            <br>
+            <br>
+            <p>Livrer à cette adresse</p>
+        <?php echo $name; ?> <br>
+        <?php echo $home; ?>
+    </div>
+
+    <div class="list-basket">
 
         <h2>Récapitulatif</h2>
 
@@ -58,11 +63,12 @@ if ($id == 0) {
 
         <div class="total">
             <p>Prix total : <?php echo $price; ?>&euro;</p>
+            <button id="checkout"><a href='?action=payment&id=<?php echo $panier['idMembre']; ?>'>Paiement</a> </button>
+
         </div>
 
-        <button id="checkout"><a href='?action=payment&id=<?php echo $panier['idMembre']; ?>'>Paiement</a> </button>
 
-
+    </div>
     <?php 
 }
 ?>

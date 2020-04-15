@@ -158,7 +158,8 @@ nav ul li a {
 }
 
 #wrapper {
-    /* text-align: center; */
+    width: 100%;
+    text-align: center;
     padding-top: 30px;
 }
 
@@ -274,6 +275,10 @@ select {
 
 /* .card */
 
+.card {
+    text-align:center;
+}
+
 .card-list {
     text-align: left;
     margin: 0;
@@ -286,8 +291,6 @@ select {
 .description {
     margin-top: 5rem;
     padding: 1rem;
-    text-align: center;
-
 }
 
 .description h4 {
@@ -328,6 +331,9 @@ select {
 
 }
 
+.btn-product {
+    text-align:center;
+}
 
 .delivery {
     margin: 5rem 0;
@@ -397,49 +403,49 @@ select {
     width: 10rem;
 }
 
+
 .list-basket {
     width: 100%;
     text-align: left;
-    margin: 10rem 0rem;
+    margin: 10rem 1rem;
+    letter-spacing:1px;
+}
+.list-basket table{
+    width:100%;
+}
+
+.list-basket a {
+    color:var(--color-page);
 }
 
 .list-basket td {
     border-bottom: 1px solid var(--color-list);
     border-top: 1px solid var(--color-list);
+    padding:1rem 1rem;
 }
 
-
-/*admin-list*/
-.admin-list {
-    text-align: left;
-    margin: 10rem 0;
+.total {
+    margin: 3rem 1rem;
+    text-align:right;
 }
 
-.admin-list h3 {
-    font-size: 3rem;
-    font-weight: 100;
-    letter-spacing: 2px;
-    color: var(--color-button);
-
+.check-out {
+    letter-spacing:1px;
+    font-weight:300;
 }
 
-.admin-list th {
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.check-out a {
+    color:var(--color-page);
+}
+
+.check-out h2 {
     color: var(--color-link);
-    font-size: 1.7rem;
-    padding: 1rem;
+    font-weight:500;
+    text-transform: uppercase;
 }
-
-.admin-list tr {
-    padding: 1rem;
-    letter-spacing: 1px;
-    font-size: 1.4rem
-}
-
-.admin-list tr:nth-child(2n+1) {
-    color: #656565;
-    background-color: #fcfcfc;
+.delete {
+    color:var(--color-link);
+    font-weight:700;
 }
 
 /* Slideshow container */
@@ -623,23 +629,6 @@ select {
 
     /* HEADER */
 
-    /* admin */
-
-
-    .mode-admin {
-        background-color: #000;
-        color: #fff;
-    }
-
-    .mode-admin p {
-        background-color: #000;
-    }
-
-    .mode-admin a {
-        color: var(--color-button);
-        letter-spacing: 2px;
-        text-transform: lowercase;
-    }
 
     .hamburger,
     .panier-mobile {
@@ -784,6 +773,7 @@ select {
     #wrapper {
         width: 90%;
         margin: 0 auto;
+        text-align:center;
     }
 
     /* main-image */
@@ -800,47 +790,6 @@ select {
         margin: 0 2.5%;
     }
 
-    /* ADMIN */
-
-    .admin {
-        margin: 100px;
-    }
-
-    .admin ul li {
-        display: inline-block;
-        padding: 20px;
-        margin: 10px;
-        background-color: var(--color-default);
-        letter-spacing: 2px;
-    }
-
-    .admin a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .admin ul li:hover {
-        background-color: var(--color-button);
-        text-decoration: underline;
-    }
-
-    .admin-list {
-        margin: 10rem;
-    }
-
-
-    .admin-list td {
-        padding: 1rem;
-    }
-
-    .admin-list a {
-        text-decoration: none;
-        color: var(--color-link);
-    }
-
-    .admin-list a:hover {
-        text-decoration: underline;
-    }
 
     /* SIGN FORM */
 

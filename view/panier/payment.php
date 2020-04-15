@@ -2,7 +2,7 @@
 session_start();
 ob_start(); ?>
 
-<section id="cont">
+<section id="wrapper">
 
 
 <?php 
@@ -15,24 +15,29 @@ if ($id == 0) {
 
     ?>
 
-<p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> <b>Paiement</b> <i class="fa fa-angle-double-right"></i> Commande</p>
-
-
-<div>
-    <form action="">
-        <label for="number">Numéro de carte:</label>
-        <input type="text"> <br>
-        <label for="ccv">ccv:</label>
-        <input type="text"><br>
-        <label for="date">Date d'expiration:</label>
-        <input type="text"><br>
-        <label for="nom">Nom sur la carte</label>
-        <input type="text"><br>
-    </form>
-    <button id="checkout"><a href='?action=recap&id=<?php echo $id; ?>'>Commander</a> </button>
-
-</div>
     <div class="check-out">
+    <p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> <b>Paiement</b> <i class="fa fa-angle-double-right"></i> Commande</p>
+    <br>
+    <br>
+
+
+
+        <form action="" class="form-sign-up">
+            <label for="number">Numéro de carte:</label><br>
+            <input type="text"> <br>
+            <label for="ccv">ccv:</label><br>
+            <input type="text"><br>
+            <label for="date">Date d'expiration:</label><br>
+            <input type="text"><br>
+            <label for="nom">Nom sur la carte</label><br>
+            <input type="text"><br>
+        </form>
+        <button id="checkout"><a href='?action=recap&id=<?php echo $id; ?>'>Commander</a> </button>
+
+    </div>
+
+
+    <div class="list-basket">
 
         <h2>Récapitulatif</h2>
 
@@ -68,7 +73,7 @@ if ($id == 0) {
         <div class="total">
             <p>Prix total : <?php echo $price; ?>&euro;</p>
         </div>
-
+    </div>
 
 
     <?php 

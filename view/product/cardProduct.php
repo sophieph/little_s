@@ -39,7 +39,10 @@ ob_start(); ?>
                     <p>Delivery & returns - Free on all orders over 100 &euro;</p>
                 </div>
 
-                <a href="?action=product&category=<?php echo $product['category']; ?>"><button class="all-product">Voir tous les produits <?php echo $product['category']; ?> </button></a>
+                <div class="btn-product">
+                    <a href="?action=product&category=<?php echo $product['category']; ?>"><button class="all-product">Voir tous les produits <?php echo $product['category']; ?> </button></a>
+
+                </div>
             </div>
         </div>
 

@@ -12,13 +12,16 @@ if ($id == 0) {
 } else {
 
     ?>
-    <div class="checkout">
+    
 
+    <div class="check-out">
         <p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> <b>Commande<b></p>
        
-        <?php echo $numeroCommande; ?> <br>
-        <?php echo '<pre>' , var_dump($detail) , '</pre>'; ?> <br>
+        <?php echo '<b>Commande numéro : </b>' . $numeroCommande; ?> <br>
+
+    </div>
        
+    <div class="list-basket">
         <h2>Récapitulatif</h2>
 
         <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
@@ -31,8 +34,8 @@ if ($id == 0) {
             <tr>
                 <td class="img-basket">
                     <?php 
-                                $image = $produitManager->getFirstImage($panier['codeProduit']);
-                            ?>
+                        $image = $produitManager->getFirstImage($panier['codeProduit']);
+                        ?>
                     <img class="img-panier" src="<?php echo $image['link'];?>">
 
                 </td>
@@ -54,6 +57,7 @@ if ($id == 0) {
             <p>Prix total : <?php echo $price; ?>&euro;</p>
         </div>
 
+    </div>
 
 
     <?php 

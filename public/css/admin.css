@@ -1,0 +1,101 @@
+
+/*admin-list*/
+.admin-list {
+    text-align: left;
+    margin: 10rem 0;
+}
+
+.admin-list h3 {
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: var(--color-button);
+
+}
+
+.admin-list th {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-link);
+    font-size: 1.7rem;
+    padding: 1rem;
+}
+
+.admin-list tr {
+    padding: 1rem;
+    letter-spacing: 1px;
+    font-size: 1.4rem
+}
+
+.admin-list tr:nth-child(2n+1) {
+    color: #656565;
+    background-color: #fcfcfc;
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    /* admin */
+
+
+    .mode-admin {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .mode-admin p {
+        background-color: #000;
+    }
+
+    .mode-admin a {
+        color: var(--color-button);
+        letter-spacing: 2px;
+        text-transform: lowercase;
+    }
+
+
+
+    /* ADMIN */
+
+    .admin {
+        margin: 100px;
+    }
+
+    .admin ul li {
+        display: inline-block;
+        padding: 20px;
+        margin: 10px;
+        background-color: var(--color-default);
+        letter-spacing: 2px;
+    }
+
+    .admin a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .admin ul li:hover {
+        background-color: var(--color-button);
+        text-decoration: underline;
+    }
+
+    .admin-list {
+        margin: 10rem;
+    }
+
+
+    .admin-list td {
+        padding: 1rem;
+    }
+
+    .admin-list a {
+        text-decoration: none;
+        color: var(--color-link);
+    }
+
+    .admin-list a:hover {
+        text-decoration: underline;
+    }
+
+}

@@ -12,10 +12,14 @@ if ($id == 0) {
 } else {
 
     ?>
-    <div class="checkout">
 
+    <div class="check-out">
         <p><b>Check-out</b> <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> Commande</p>
+        <br>
+        <br>
         <h2>Récapitulatif</h2>
+    </div>
+    <div class="list-basket">
 
         <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
 
@@ -48,10 +52,11 @@ if ($id == 0) {
 
         <div class="total">
             <p>Prix total : <?php echo $price; ?>&euro;</p>
+            <button id="checkout"><a href='?action=delivery&id=<?php echo $id ?>'>Livraison</a> </button>
         </div>
 
-        <button id="checkout"><a href='?action=delivery&id=<?php echo $id ?>'>Livraison</a> </button>
-
+        
+    </div>
 
     <?php 
 }

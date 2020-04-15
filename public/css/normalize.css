@@ -14,7 +14,7 @@ h1,h2,h3,h4,figure,p,ul,ol,form, a {
   margin: 0;
   padding: 0;
   list-style-type: none;
-
+  color: var(--color-default);
   
 }
 

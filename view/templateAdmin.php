@@ -11,6 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="<?php echo BASE_URL;?>public/css/normalize.css">
         <link rel="stylesheet" href="<?php echo BASE_URL;?>public/css/style.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>public/css/admin.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 

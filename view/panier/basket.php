@@ -41,7 +41,7 @@ ob_start(); ?>
                         <i class="fa fa-plus" onClick="changeQty(<?php echo $panier['codeProduit']; ?>, '+')"></i><br>
                         <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
                         
-                        <a href="?action=delete-basket&id=<?php echo $panier['idMembre']; ?>&code=<?php echo $panier['codeProduit']; ?>">Supprimer</a>
+                        <a href="?action=delete-basket&id=<?php echo $panier['idMembre']; ?>&code=<?php echo $panier['codeProduit']; ?>"><span class="delete">Supprimer</a></a>
 
                     </td>
                     </tr>
@@ -53,9 +53,9 @@ ob_start(); ?>
             </table>
 
             <div class="total">
-                <p>Prix total : <?php echo $price; ?>&euro;</p>
+                <p><b>Prix total</b> : <?php echo $price; ?>&euro;</p>
 
-                <button id="checkout"><a href='?action=check-out&id=<?php echo $panier['idMembre']; ?>'>Check out</a> </button>
+                <button id="checkout"><a href='?action=check-out&id=<?php echo $panier['idMembre']; ?>'>Commander</a> </button>
             </div>
         </div>
 
