@@ -204,6 +204,23 @@ class ProduitManager
         return $stock;
     }
     
+    
+    /**
+     * Search
+     *
+     * @param  mixed $str
+     * @return void
+     * 
+     * search product with words
+     */
+    public function search($str)
+    {
+        $query = "SELECT * FROM Produit WHERE name LIKE '%" . $str . "%'";
+        $q = $this->_db->prepare($query);
+        $q->execute();
+
+        return $q->fetchAll();
+    }
 
 }
 

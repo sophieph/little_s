@@ -78,3 +78,24 @@ function sortProduct()
 
     include_once ROOT_PATH . 'view/product/catalogueProduct.php';
 }
+
+/**
+ * SearchProduct
+ *
+ * @return void
+ * 
+ * Search product according to words
+ */
+function searchProduct($str = null)
+{
+
+    $db = db();
+    $produitManager = new ProduitManager($db); 
+
+    if (!empty($str) ) {
+        $produits =  $produitManager->search($str);
+    }
+
+    include_once ROOT_PATH . 'view/product/search.php';
+}
+

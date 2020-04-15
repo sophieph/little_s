@@ -59,6 +59,9 @@ try {
             productCard($id);
         } else if ($_GET['action'] == 'sort') { // filter
             sortProduct();
+        } else if ($_GET['action'] == 'search') { // filter
+            $str = $_GET['str'];
+            searchProduct($str);
         } else if ($_GET['action'] == 'account') { // account page for members
             account();
         } else if ($_GET['action'] == 'history') { // history $page for members

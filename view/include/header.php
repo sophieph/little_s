@@ -2,8 +2,8 @@
             <div class="header">
                 <!-- search form -->
                 <div class="header-research">
-                    <form class="research-items" action="#" method="get">
-                        <input type="text" name="searchItems" placeholder="Rechercher" />
+                    <form id ="research-items" class="research-items" action="#" method="get">
+                        <input type="text" id="searchItems" name="searchItems" placeholder="Rechercher" />
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -18,7 +18,7 @@
                  <a href="?action=account&id=<?php echo $_SESSION['id']; ?>"> <i class="fa fa-user"></i> Mon compte</a> 
 
                     <a href="?action=logoff">Déconnexion</a>
-                    <a href="?action=basket&id=<?php echo  $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i>(0)</a>
+                    <a href="?action=basket&id=<?php echo  $_SESSION['id']; ?>" class="panier"><i class="fa fa-shopping-cart"></i></a>
                    
                 </div>
                 <?php
