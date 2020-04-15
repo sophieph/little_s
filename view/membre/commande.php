@@ -34,9 +34,9 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
             ?>
         <ul>
             <li> <?php echo $detail['nom']; ?></a></li>
-            <li><?php echo $detail['quantity'] ?> </li>
-            <li><?php echo $detail['category'] ?> </li>
-            <li><b><?php echo $detail['price'] ?>&euro;</b> </li>
+            <li>Quantité : <?php echo $detail['quantity'] ?> </li>
+            <li>Catégorie : <?php echo $detail['category'] ?> </li>
+            <li>Prix unique : <b><?php echo $detail['price'] ?>&euro;</b> </li>
             <br>
 
         </ul>

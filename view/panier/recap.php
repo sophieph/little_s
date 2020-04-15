@@ -17,6 +17,9 @@ if ($id == 0) {
     <div class="check-out">
         <p>Check-out <i class="fa fa-angle-double-right"></i> Livraison <i class="fa fa-angle-double-right"></i> Paiement <i class="fa fa-angle-double-right"></i> <b>Commande<b></p>
        
+        <br>
+        <br>
+        <p>Vous allez bientôt recevoir votre commande ! </p> <br>
         <?php echo '<b>Commande numéro : </b>' . $numeroCommande; ?> <br>
 
     </div>
