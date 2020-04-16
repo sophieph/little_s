@@ -23,7 +23,7 @@ function subscribe()
 
     if (isset($email)) {
         if ($manager->exists($email->email())) {
-            $response = "Le mail existe déjà.";
+            $response = "Le mail existe déjà. <br> Vous êtes déjà inscrit.";
         } else {
             $manager->add($email);
             $response = "Vous êtes inscrit à la newsletter.";

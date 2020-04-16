@@ -7,10 +7,7 @@ function adminC() {
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             if (this.responseText) {
-                // document.getElementById("text").innerHTML = 'haaaa';
-
-                document.getElementById("text").innerHTML = this.responseText;
-                 window.location = '/little/?action=board';
+                window.location = '/little/?action=board';
             } else {
                 document.getElementById("text").innerHTML = this.responseText;
             }
@@ -90,12 +87,8 @@ function addP() {
 
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            document.getElementById("text-product").innerHTML = this.responseText;
             window.location = "/little/?action=admin-product";
-		} else {
-            document.getElementById("text-product").innerHTML = 'Could not make it.';
-
-        }
+		}
 	};
     xhr.open("GET", "index.php?action=add-product&name=" + name + "&date=" + date + "&stock=" + stock + "&price=" + price + "&category=" + category  , true);
     xhr.send(null);
@@ -118,12 +111,8 @@ function addImage() {
 
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            document.getElementById("image-text").innerHTML = this.responseText;
             window.location = "/little/?action=image-product&codeProduit=" + code;
-		} else {
-            document.getElementById("image-text").innerHTML = 'Could not make it.';
-
-        }
+		} 
 	};
     xhr.open("GET", "index.php?action=add-image&image=" + path + "&codeProduit=" + code   , true);
     xhr.send(null);
@@ -142,12 +131,8 @@ function edit() {
 
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            document.getElementById("text-product").innerHTML = this.responseText;
             window.location = "/little/?action=edit-product&codeProduit=" + codeProduit;
-		} else {
-            document.getElementById("text-product").innerHTML = 'Could not make it.';
-
-        }
+		} 
 	};
     xhr.open("GET", "index.php?action=edit-product&codeProduit=" + codeProduit + "&name=" + name + "&stock=" + stock + "&price=" + price + "&category=" + category  , true);
     xhr.send(null);

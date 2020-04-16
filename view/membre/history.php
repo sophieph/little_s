@@ -9,8 +9,6 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 }
 ?>
 
-
-
 <section id="wrapper">
 
     <div class="member">
@@ -37,21 +35,21 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
         } else {
             ?> 
             
-        <?php 
-        foreach ($commandes as $commande) {
-            ?>
-        <ul>
-            <li><i>Numéro de commande :</i><a href="?action=order&id=<?php echo $commande['commande']; ?>"> <b><?php echo $commande['commande']; ?></b></a>
-            <br>
-            <i>Commandé le :</i><?php echo $commande['date'] ?> 
-            <br>
-            <b><i>Prix total :</i><?php echo $commande['total'] ?>&euro;</b> </li>
-            <br>
+            <?php 
+            foreach ($commandes as $commande) {
+                ?>
+            <ul>
+                <li><i>Numéro de commande :</i><a href="?action=order&id=<?php echo $commande['commande']; ?>"> <b><?php echo $commande['commande']; ?></b></a>
+                <br>
+                <i>Commandé le :</i><?php echo $commande['date'] ?> 
+                <br>
+                <b><i>Prix total :</i><?php echo $commande['total'] ?>&euro;</b> </li>
+                <br>
 
-        </ul>
-            <?php
-        }
-        ?>
+            </ul>
+                <?php
+            }
+            ?>
 
             <?php 
         }

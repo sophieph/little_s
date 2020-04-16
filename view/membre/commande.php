@@ -23,8 +23,6 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
             </ul>
         </div>
 
-
-
         
         <div class="info">
         <h2>Ma commande  : <?php echo $id; ?></h2>

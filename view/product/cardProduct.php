@@ -20,7 +20,6 @@ ob_start(); ?>
                 }
                 ?>
                 </ul>
-                <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
@@ -30,13 +29,13 @@ ob_start(); ?>
 
                 <h4><?php echo $product['name']; ?></h4>
                 <p><?php echo $product['price']; ?>&euro;</p>
-                <button class="size"> Unique size</button> 
+                <button class="size"> Taille unique</button> 
                 <br>
-                <button id="add-to-bag" value="<?php echo $product['codeProduit']; ?>">Add to bag</button> 
+                <button id="add-to-bag" value="<?php echo $product['codeProduit']; ?>">Ajouter au panier</button> 
                 <br>
 
                 <div class="delivery">
-                    <p>Delivery & returns - Free on all orders over 100 &euro;</p>
+                    <p>Livraison & retours - Livraison gratuite à partir de 100&euro;</p>
                 </div>
 
                 <div class="btn-product">

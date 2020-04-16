@@ -269,7 +269,7 @@ function recap($id)
 }
 
 /**
- * generateRandomString
+ * GenerateRandomString
  *
  * @param  mixed $length
  * @return void

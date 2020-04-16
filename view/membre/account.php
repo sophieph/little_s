@@ -9,8 +9,6 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 }
 ?>
 
-
-
 <section id="wrapper">
 
     <div class="member">

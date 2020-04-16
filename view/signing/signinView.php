@@ -17,6 +17,7 @@ ob_start(); ?>
         <p id="text-sign-in"> </p>
     </form>
 
+    <p id="text-sign-up">Vous n'avez pas de compte? <a href="?action=signup" >Inscrivez-vous</a>!</p>
 </div>
 
 </section>

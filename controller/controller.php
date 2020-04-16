@@ -1,6 +1,5 @@
 <?php 
 
-require 'model/model.php';
 /**
  * Db
  *
@@ -34,7 +33,7 @@ function homepage()
  *
  * @return void
  * 
- * Supprime session
+ * log the member off
  */
 function logoff()
 {

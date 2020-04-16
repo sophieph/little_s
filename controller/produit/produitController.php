@@ -72,8 +72,7 @@ function sortProduct()
         $sort = $_GET['sort'];
         $category = $_GET['category'];
         $produitManager->getListByPrice($sort, $category);
-        $produits =  $produitManager->getListByPrice($sort, $category);
-        
+        $produits =  $produitManager->getListByPrice($sort, $category);  
     } 
 
     include_once ROOT_PATH . 'view/product/catalogueProduct.php';

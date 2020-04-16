@@ -6,7 +6,6 @@ ob_start(); ?>
 
 <p>Connectez-vous pour ajouter un produit au panier.</p>
 
-
 </section>
 
 <?php $content = ob_get_clean(); ?>

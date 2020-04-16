@@ -25,7 +25,6 @@ ob_start(); ?>
     
     } else {
         http_response_code(404);
-        echo 'NOOO';
         include_once ROOT_PATH . 'view/include/error404.php';
     }
 

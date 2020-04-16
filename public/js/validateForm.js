@@ -1,5 +1,5 @@
 
-// verification d'email
+// check if value is an email
 function email(mail) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var val = re.test(mail);
@@ -7,14 +7,14 @@ function email(mail) {
     return val;
 }
 
-// si le champ est nul
+// check if value is empty
 function empty(mail) {
     if (mail == "") {
         return false;
     }
 }
 
-// verification du mot de passe
+// checking password
 function passwordMatched(pass) {
     var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     var val = re.test(pass);
@@ -22,7 +22,7 @@ function passwordMatched(pass) {
     return val;
 }
 
-// verification mail
+// checking email
 function validateNews(mail) {
     
     if (empty(mail) == false) {
@@ -40,7 +40,7 @@ function validateNews(mail) {
     document.getElementById("messageNewsletter").innerHTML="";
 }
 
-// inscription de l'email dans la bdd
+// subscribe to a newsletter
 function validateNewsletter() {
     
     var mail = document.newsletterForm.emailNewsletter.value;
@@ -67,7 +67,7 @@ function validateSignUp() {
     var password2 = document.getElementById("sign-up-pass2").value;
     var category = document.getElementById("sign-up-category").value;
 
-    // condition sur name
+
     if (empty(name) == false) {
         message = "Entrez un nom <br>";
         document.getElementById("text-sign-up").innerHTML = message;
@@ -75,7 +75,7 @@ function validateSignUp() {
         return false;
     }
 
-    // condition sur email
+
     if (empty(mail) == false) {
         message = "Entrez un email !<br>";
         document.getElementById("text-sign-up").innerHTML = message;
@@ -90,7 +90,7 @@ function validateSignUp() {
         return false;
     }
 
-    // condition sur password 1
+
     if (passwordMatched(password1) == false) {
         message = "Votre mot de passe doit contenir : <br> " + 
         " - au moins 8 caractères <br>" +
@@ -100,7 +100,7 @@ function validateSignUp() {
         return false;
     }
 
-    // condition sur password 2
+
     if (password1 != password2) {
         message = "Tapez le même mot de passe !"
         document.getElementById("text-sign-up").innerHTML = message;
@@ -113,12 +113,9 @@ function validateSignUp() {
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             document.getElementById("text-sign-up").innerHTML = this.responseText;
-		} else {
-            document.getElementById("text-sign-up").innerHTML = 'lol';
-        }
+		}
 	};
     xhr.open("GET", "index.php?action=signupC&name=" + name + "&email=" + mail + "&pass1=" + password1 + "&category=" + category, true);
-    // xhr.open("GET", "index.php?action=signupC&name=" + name+ "&email=" + mail + "&pass1=" + password1, true);
 
     xhr.send(null);
 

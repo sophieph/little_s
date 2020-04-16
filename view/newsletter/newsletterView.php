@@ -1,6 +1,6 @@
 <div class="newsletter">
     <p>Besoin de rester connecter sur les nouvelles tendances?<br>
-    <span class="subscribe-newsletter">Subcribe on our newsletter !</span>
+    <span class="subscribe-newsletter">Inscrivez-vous à la newsletter !</span>
     </p>
     <!-- newsletter form -->
     <form method="POST" action="" class="form-newsletter"  name="newsletterForm" > 

@@ -14,7 +14,7 @@
     
                 <div class="footer">
                     <div class="footer-infos">
-                        <h2>Get some help</h2>
+                        <h2>Assistance</h2>
                         <a href="">Assistance</a> <br>
                         <a href="">Retours</a><br>
                         <a href="">Guide des tailles</a><br>

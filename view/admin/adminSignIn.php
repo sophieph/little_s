@@ -14,7 +14,7 @@ ob_start(); ?>
         <h3> Compte admin </h3>
 
         <form  action="" class="form-sign-up" >
-            <label for="email"> Email : </label> <br>
+            <label for="email"> Email  </label> <br>
             <input type="text" name="email" id="email"> <br>
             <label for="pass"> Mot de passe  </label> <br>
             <input type="password" name="pass" id="pass"> <br>

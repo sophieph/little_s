@@ -8,13 +8,9 @@ function editM() {
 
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            document.getElementById("f").innerHTML = this.responseText;
-            window.location = "/little/?action=account&email=" + email;
+            window.location = "/little/?action=account&id=" + id_member;
 
-		} else {
-            // document.getElementById("f").innerHTML = 'Could not make it.';
-
-        }
+		}
 	};
     xhr.open("GET", "index.php?action=edit-member&name=" + name + "&email=" + email + "&home=" + home, true);
     xhr.send(null);

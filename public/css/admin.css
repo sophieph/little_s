@@ -1,4 +1,3 @@
-
 /*admin-list*/
 .admin-list {
     text-align: left;
@@ -32,30 +31,27 @@
     background-color: #fcfcfc;
 }
 
+/* admin */
 
+
+.mode-admin {
+    background-color: #000;
+    color: var(--color-page);
+}
+
+.mode-admin p {
+    background-color: #000;
+    color: var(--color-page);
+}
+
+.mode-admin a {
+    color: var(--color-button);
+    letter-spacing: 2px;
+    text-transform: lowercase;
+
+}
 
 @media screen and (min-width:768px) {
-
-    /* admin */
-
-
-    .mode-admin {
-        background-color: #000;
-        color:var(--color-page);
-    }
-
-    .mode-admin p {
-        background-color: #000;
-        color: var(--color-page);
-    }
-
-    .mode-admin a {
-        color: var(--color-button);
-        letter-spacing: 2px;
-        text-transform: lowercase;
-        
-    }
-
 
 
     /* ADMIN */
