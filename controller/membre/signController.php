@@ -41,7 +41,6 @@ function signinController()
             if (password_verify($pass, $password_hashed)) {
 
                 $response = true;
-                // $membreConnecte = $membreManager->get($email);
     
                 session_start();
                 $_SESSION['user'] = 'membre';
@@ -59,7 +58,6 @@ function signinController()
             $response = '<a href="index.php?action=signup">Inscrivez-vous</a> pour vous connecter.';
         }    
     }
-
     echo $response;
 }
 

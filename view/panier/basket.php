@@ -15,6 +15,17 @@ ob_start(); ?>
         ?>
         <div class="list-basket">
         <h2>Mon panier</h2>
+        <br>
+
+        <?php if (empty($paniers)) {
+
+            ?>
+            <p>Ajouter un produit au panier.</p>
+            <a href="?action=product"><button class="all-product">Accèdez aux nouveaux produits </button></a>
+            
+            <?php
+
+        } else { ?>
         <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
 
             <table>
@@ -58,6 +69,11 @@ ob_start(); ?>
                 <button id="checkout"><a href='?action=check-out&id=<?php echo $panier['idMembre']; ?>'>Commander</a> </button>
             </div>
         </div>
+
+            <?php 
+
+        }
+        ?>
 
         <?php 
     }

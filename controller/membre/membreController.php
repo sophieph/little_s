@@ -92,6 +92,7 @@ function order($id)
     $db = db();
     $membreManager = new MembreManager($db);
     $detailManager = new DetailCommandeManager($db);
+    $produitManager = new ProduitManager($db);
 
     $membre = $membreManager->getId(1);
     $idMembre = $membre->id();

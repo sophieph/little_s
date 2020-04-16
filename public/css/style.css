@@ -331,6 +331,12 @@ select {
 
 }
 
+#checkout button:hover{
+    border: 1px solid var(--color-link);
+    background-color: var(--color-page);
+    color: var(--color-default);
+}
+
 .btn-product {
     text-align:center;
 }
@@ -378,6 +384,15 @@ select {
     text-align: left;
     margin: 2rem;
 }
+
+/* .info img {
+    width:20%;
+}
+
+.info-image {
+    
+    display:inline-flex;
+} */
 
 .info h2,
 .info h3 {

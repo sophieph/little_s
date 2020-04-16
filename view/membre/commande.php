@@ -1,3 +1,4 @@
+
 <?php 
 session_start();
 ob_start(); ?>
@@ -17,8 +18,8 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 
         <div class="menu">
             <ul>
-                <li><a href="?action=account&id=<?php echo $_SESSION['id']; ?>">Mes informations</a></li>
-                <li><a href="?action=history&id=<?php echo $_SESSION['id'] ?>">Mes commandes</a></li>
+            <li><a href="?action=account&id=<?php echo $_SESSION['id']; ?>">Mes informations</a></li>
+            <li><a href="?action=history&id=<?php echo $_SESSION['id'] ?>">Mes commandes</a></li>
             </ul>
         </div>
 
@@ -26,25 +27,29 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 
         
         <div class="info">
-        <h2>Ma commande : <?php echo $id; ?></h2>
-
+        <h2>Ma commande  : <?php echo $id; ?></h2>
 
         <?php 
         foreach ($details as $detail) {
             ?>
         <ul>
-            <li> <?php echo $detail['nom']; ?></a></li>
+            <li>Nom :  <b><?php echo $detail['name']; ?></b></li>
             <li>Quantité : <?php echo $detail['quantity'] ?> </li>
             <li>Catégorie : <?php echo $detail['category'] ?> </li>
             <li>Prix unique : <b><?php echo $detail['price'] ?>&euro;</b> </li>
+            <li class="info-image"> Image : 
+            <?php 
+            $image = $produitManager->getFirstImage($detail['codeProduit']);
+            $link = $image['link'];
+            ?>
+
+            </li>
             <br>
 
         </ul>
             <?php
         }
         ?>
-
-
 
             
         </div>
@@ -59,3 +64,5 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
 <?php $content = ob_get_clean(); ?>
 
 <?php require ROOT_PATH . 'view/template.php'; ?>
+
+

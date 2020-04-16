@@ -46,6 +46,7 @@
 
     .mode-admin p {
         background-color: #000;
+        color: var(--color-page);
     }
 
     .mode-admin a {
