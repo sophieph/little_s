@@ -25,7 +25,25 @@ if ($id == 0) {
             <br>
             <p>Livrer à cette adresse</p>
         <?php echo $name; ?> <br>
-        <?php echo $home; ?>
+        
+        <?php 
+        if (empty($home)) {
+            echo 'Ajouter une nouvelle adresse : <br><br><br><br>';
+        } else {
+            echo $home; 
+            echo "<br><br><br><br>Changez l'adresse de livraison : <br><br>";
+        }
+        ?>
+
+            <form action="" class="form-sign-up" id="edit_member" >
+                
+                
+                <label for="home">Adresse de domicile</label><br>
+                <input type="text" name="home" id="home" value="<?php echo $home; ?>"><br>
+
+                
+                <input type="submit" id="modify" onclick="editHome()">
+            </form>
     </div>
 
     <div class="list-basket">

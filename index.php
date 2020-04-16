@@ -74,6 +74,8 @@ try {
             order($id);
         } else if ($_GET['action'] == 'edit-member') { // modify info of members
             editMember();
+        } else if ($_GET['action'] == 'edit-home') { // modify info of members
+            editHome();
         } else if ($_GET['action'] == 'basket') { // Basket
             $id = $_GET['id'];
             if (empty($id)) {

@@ -54,6 +54,26 @@ function editMember()
     } 
 }
 
+function editHome()
+{
+    $db = db();
+    $membreManager = new MembreManager($db);
+
+    if (isset($_GET['home'])) {
+        $id = $_GET['id'];
+        $home = $_GET['home'];
+        
+        $membre = new Membre(
+            [
+            'id' => $id,
+            'home' => $home
+            ]
+        );
+
+        $membreManager->editHome($membre);
+    } 
+}
+
 /**
  * History
  *

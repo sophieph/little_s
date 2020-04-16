@@ -60,7 +60,23 @@ class MembreManager
         
         $q->execute();
     }
-
+    
+    /**
+     * editHome
+     *
+     * @param  mixed $membre
+     * @return void
+     * 
+     * change adress of a member
+     */
+    public function editHome(Membre $membre)
+    {
+        $q = $this->_db->prepare('UPDATE membre SET home = :home WHERE id = :id');
+        $q->bindValue(':id', $membre->id());
+        $q->bindValue(':home', $membre->home());
+        
+        $q->execute();
+    }
 
      
      /**

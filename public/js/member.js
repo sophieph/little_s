@@ -17,3 +17,20 @@ function editM() {
 
     return false;
 }
+
+function editHome() {
+
+    var home = document.getElementById("home").value;
+    
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            window.location = "/little/?action=delivery&id=" + id_member;
+		}
+	};
+    xhr.open("GET", "index.php?action=edit-home&id=" + id_member + "&home=" + home, true);
+    xhr.send(null);
+
+    return false;
+}

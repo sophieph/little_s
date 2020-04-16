@@ -11,8 +11,11 @@ ob_start(); ?>
 
     <div id="catalogue">
 
+
+
         <ul>    
         <?php 
+
         foreach ($produits as $produit) {
             ?>
             <li>
