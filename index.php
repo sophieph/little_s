@@ -61,7 +61,7 @@ try {
             productCard($id);
         } else if ($_GET['action'] == 'sort') { // filter
             sortProduct();
-        } else if ($_GET['action'] == 'search') { // filter
+        } else if ($_GET['action'] == 'search') { // search bar
 
             searchProduct();
         } else if ($_GET['action'] == 'account') { // account page for members

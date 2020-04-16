@@ -13,6 +13,13 @@ ob_start(); ?>
 
     <div id="catalogue">
 
+        <?php
+        if (empty($produits)) {
+            ?>
+            Aucun produit ne correspond à la recherche.
+            <?php 
+        }
+        ?>
         <ul>    
         <?php 
         foreach ($produits as $produit) {

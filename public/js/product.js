@@ -32,7 +32,8 @@ function sortProduct(value) {
 function search(value) {
 
     var xhr = new XMLHttpRequest();
-
+    
+    
     xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             document.getElementById("content").innerHTML = this.responseText;
