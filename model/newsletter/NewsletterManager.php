@@ -65,7 +65,7 @@ class NewsletterManager
      */
     public function getList() 
     {
-        $q = $this->_db->prepare('SELECT * FROM Newsletter');
+        $q = $this->_db->prepare('SELECT id, email FROM Newsletter');
         $q->execute();
 
         return $q->fetchAll();

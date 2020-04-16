@@ -85,15 +85,23 @@ function sortProduct()
  * 
  * Search product according to words
  */
-function searchProduct($str = null)
+function searchProduct()
 {
-
     $db = db();
     $produitManager = new ProduitManager($db); 
 
-    if (!empty($str) ) {
+    if (isset($_GET['str']) && !empty($_GET['str'])) {
+        $str = $_GET['str'];
         $produits =  $produitManager->search($str);
+
+        if ($produits) {
+            $test = 'oui';
+        } else {
+            $test = 'non';
+        }
+
     }
+
 
     include_once ROOT_PATH . 'view/product/search.php';
 }

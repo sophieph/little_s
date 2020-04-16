@@ -28,3 +28,18 @@ function sortProduct(value) {
 
     return false;
 }
+
+function search(value) {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            document.getElementById("content").innerHTML = this.responseText;
+		} 
+	};
+    xhr.open("GET", "index.php?action=search&ajax=true&str=" + value, true);
+    xhr.send(null);
+
+    return false;
+}

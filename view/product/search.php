@@ -3,11 +3,13 @@ session_start();
 ob_start(); ?>
 <?php if (!isset($_GET['ajax'])) :  ?>
 <section id="wrapper">
+<?php endif; ?>
     <?php 
         include_once ROOT_PATH . 'view/include/filter.php';
     ?>
 
-<?php endif; ?>
+
+
 
     <div id="catalogue">
 

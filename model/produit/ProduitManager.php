@@ -238,6 +238,10 @@ class ProduitManager
         return $q->fetchAll();
     }
 
+
+
+
+
 }
 
 

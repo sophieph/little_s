@@ -38,15 +38,15 @@ class DetailCommandeManager
      * 
      * info about an order
      */
-    public function getDetails(DetailCommande $id)
-    {
-        $query = 'SELECT * FROM DetailCommande WHERE commande="' . $id . '"';
-        $q = $this->_db->prepare($query);
-        $q->execute();
-        $commande = $q->fetchAll(); 
+    // public function getDetails(DetailCommande $id)
+    // {
+    //     $query = 'SELECT * FROM DetailCommande WHERE commande="' . $id . '"';
+    //     $q = $this->_db->prepare($query);
+    //     $q->execute();
+    //     $commande = $q->fetchAll(); 
 
-        return $commande;
-    }
+    //     return $commande;
+    // }
 
     /**
      * GetOrder
@@ -58,7 +58,7 @@ class DetailCommandeManager
      */
     public function getOrder($id)
     {
-        $query = 'SELECT * FROM DetailCommande d, Produit p WHERE d.codeProduit = p.codeProduit AND d. commande = "' . $id . '"';
+        $query = 'SELECT p.name, p.category, p.price, d.commande, d.idMembre, d.quantity FROM DetailCommande d, Produit p WHERE d.codeProduit = p.codeProduit AND d. commande = "' . $id . '"';
         $q = $this->_db->prepare($query);
         $q->execute();
         $commande = $q->fetchAll(); 

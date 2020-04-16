@@ -52,7 +52,7 @@ class CommandeManager
      */
     public function getHistory($id)
     {
-        $query = 'SELECT * from Commande WHERE idMembre = ' . $id;
+        $query = 'SELECT commande, idMembre, date, total from Commande WHERE idMembre = ' . $id;
         $q = $this->_db->prepare($query);
         $q->execute();
         $commande = $q->fetchAll(); 
