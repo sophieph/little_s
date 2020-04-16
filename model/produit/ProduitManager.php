@@ -204,6 +204,22 @@ class ProduitManager
         return $stock;
     }
     
+    /**
+     * UpdateStock
+     *
+     * @param  mixed $codeProduit
+     * @param  mixed $quantity
+     * @return void
+     * 
+     * update stock after ordering
+     */
+    public function updateStock($codeProduit, $quantity) 
+    {
+        $query ='UPDATE Produit SET stock = stock - ' .$quantity . ' WHERE codeProduit = ' . $codeProduit;
+        $q = $this->_db->prepare($query);
+        $q->execute();
+    }
+    
     
     /**
      * Search

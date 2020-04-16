@@ -19,7 +19,15 @@
 
     <body>
             <div class="mode-admin"> 
+                
+                <?php if (isset($_SESSION['user'])) {
+                    ?>
                 <p> <?php echo $_SESSION['user'] . " : " . $_SESSION['name'] . " | <a href='?action=board'>Tableau de bord</a> " . " | ". "<a href='?action=logoff'>Log off</a>"; ?> </p>
+
+                    <?php
+                }
+                ?>
+            
             </div>
     
         <main id="content">

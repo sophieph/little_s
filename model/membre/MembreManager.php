@@ -166,5 +166,19 @@ class MembreManager
         return $q->fetchAll();
     }
 
-
+    
+    /**
+     * DeleteMember
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * delete a member
+     */
+    public function deleteMember($id) 
+    {
+        $q = $this->_db->prepare('DELETE FROM Membre WHERE id = :id');
+        $q->bindValue(':id', $id);
+        $q->execute();
+    }
 }

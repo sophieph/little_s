@@ -26,9 +26,15 @@ function basket($id = null)
     $item = $panierManager->countItem($id);
 
     include_once ROOT_PATH . 'view/panier/basket.php';
-    
 }
 
+/**
+ * Bask
+ *
+ * @return void
+ * 
+ * Show basket when not logged in
+ */
 function bask()
 {
     include_once ROOT_PATH . 'view/panier/bask.php';
@@ -157,9 +163,7 @@ function checkout($id)
  */
 function delivery($id)
 {
-    if ($id == 0) {
-        $msg = 'lol';
-    } else {
+    if ($id != 0) {
         $db = db();
         $membreManager = new MembreManager($db);
         $produitManager = new ProduitManager($db);
@@ -174,7 +178,6 @@ function delivery($id)
         $name = $membre->name();
         $mail = $membre->email();
         $home = $membre->home();
-
     }
     include_once ROOT_PATH . 'view/panier/delivery.php';
 }
@@ -189,9 +192,7 @@ function delivery($id)
  */
 function payment($id)
 {
-    if ($id == 0) {
-        $msg = 'lol';
-    } else {
+    if ($id != 0) {
         $db = db();
         $produitManager = new ProduitManager($db);
         $panierManager = new PanierManager($db);
@@ -216,9 +217,7 @@ function payment($id)
 function recap($id) 
 {
 
-    if ($id == 0) {
-        $msg = 'lol';
-    } else {
+    if ($id != 0) {
         $db = db();
         $produitManager = new ProduitManager($db);
         $panierManager = new PanierManager($db);
@@ -244,8 +243,6 @@ function recap($id)
 
         $commandeManager->add($commande);
 
-
-
         foreach ($paniers as $panier) {
             $detail = new DetailCommande(
                 [
@@ -257,11 +254,14 @@ function recap($id)
             );
 
             $detailManager->add($detail);
+
+            $quantity = $detail->quantity();
+            $codeProduit = $detail->codeProduit();
+            $produitManager->updateStock($codeProduit, $quantity);
         }
 
         $panierManager->deleteBag($id);
-        
-    
+
     }
 
     include_once ROOT_PATH . 'view/panier/recap.php';

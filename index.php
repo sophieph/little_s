@@ -33,10 +33,12 @@ try {
             board();
         } else if ($_GET['action'] == 'admin-newsletter') { // manage newsletter
             manageNewsletter();
-        } else if ($_GET['action'] == 'delete-newsletter') { // delete newsleter
+        } else if ($_GET['action'] == 'delete-newsletter') { // delete newsletter
             deleteNewsletter();
         } else if ($_GET['action'] == 'admin-member') { // manage member
             manageMember();
+        } else if ($_GET['action'] == 'delete-member') { // delete member
+            deleteMember();
         } else if ($_GET['action'] == 'admin-product') { // manage product
             manageProduct();
         } else if ($_GET['action'] == 'add-product') { // add a product

@@ -28,6 +28,15 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
         <div class="info">
         <h2>Mes commandes</h2>
 
+
+        <?php 
+        if (empty($commandes)) {
+            ?>
+            <p>Vous n'avez encore rien commandé.</p>
+            <?php 
+        } else {
+            ?> 
+            
         <?php 
         foreach ($commandes as $commande) {
             ?>
@@ -44,6 +53,9 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
         }
         ?>
 
+            <?php 
+        }
+        ?>
             
         </div>
     </div>

@@ -29,7 +29,24 @@ class DetailCommandeManager
         $q->execute();
 
     }
+    
+    /**
+     * GetDetails
+     *
+     * @param  mixed $id
+     * @return void
+     * 
+     * info about an order
+     */
+    public function getDetails(DetailCommande $id)
+    {
+        $query = 'SELECT * FROM DetailCommande WHERE commande="' . $id . '"';
+        $q = $this->_db->prepare($query);
+        $q->execute();
+        $commande = $q->fetchAll(); 
 
+        return $commande;
+    }
 
     /**
      * GetOrder

@@ -51,10 +51,7 @@ function editMember()
         );
 
         $membreManager->edit($membre);
-
     } 
-
-    // include_once ROOT_PATH . 'view/membre/account.php';
 }
 
 /**
@@ -70,7 +67,6 @@ function history($id)
     $db = db();
     $membreManager = new MembreManager($db);
     $commandeManager = new CommandeManager($db);
-
 
     $membre = $membreManager->getId($id);
 

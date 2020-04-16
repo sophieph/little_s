@@ -15,7 +15,6 @@ function subscribe()
     $db = db();
     $manager = new NewsletterManager($db);
     
-    
     if (isset($_GET['emailNewsletter']) && !empty($_GET['emailNewsletter'])) {
         $email = new Newsletter(['email' => $_GET['emailNewsletter']]);
     } else {

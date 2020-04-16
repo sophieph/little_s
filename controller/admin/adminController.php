@@ -119,13 +119,6 @@ function deleteNewsletter()
         }
 
         manageNewsletter();
-        /* revoir la redirection */
-        try {
-            header('Location : /little/?action=admin-newsletter');
-        }catch(Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
-
     }
 
     include_once ROOT_PATH . 'view/admin/adminNewsletter.php';
@@ -144,6 +137,31 @@ function manageMember()
     $membreManager = new MembreManager($db);
 
     $liste = $membreManager->getList();
+
+    include_once ROOT_PATH . 'view/admin/adminMember.php';
+}
+
+/**
+ * DeleteMember
+ *
+ * @return void
+ * 
+ * delete member from admin board
+ */
+function deleteMember() 
+{
+    $db = db();
+    $membreManager = new MembreManager($db);
+
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        try {
+            $membreManager->deleteMember($_GET['id']);
+        } catch(Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        manageMember();
+    }
 
     include_once ROOT_PATH . 'view/admin/adminMember.php';
 }
