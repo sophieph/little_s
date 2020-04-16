@@ -20,8 +20,6 @@ if ($id == 0) {
     <br>
     <br>
 
-
-
         <form action="" class="form-sign-up">
             <label for="number">Numéro de carte:</label><br>
             <input type="text"> <br>
@@ -36,44 +34,6 @@ if ($id == 0) {
 
     </div>
 
-
-    <div class="list-basket">
-
-        <h2>Récapitulatif</h2>
-
-        <h3>Nombre d'articles : <?php echo $item; ?> articles</h3>
-
-        <table>
-
-            <?php 
-            foreach ($paniers as $panier){
-                ?>
-            <tr>
-                <td class="img-basket">
-                    <?php 
-                                $image = $produitManager->getFirstImage($panier['codeProduit']);
-                            ?>
-                    <img class="img-panier" src="<?php echo $image['link'];?>">
-
-                </td>
-                <td>
-                    <b>Nom :</b> <?php echo $panier['name']; ?> | <?php echo $panier['codeProduit']; ?><br>
-                    <b>Catégorie :</b> <?php echo $panier['category']; ?><br>
-                    <b>Quantité :</b> <?php echo $panier['quantity']; ?> <br>
-                    <b>Prix : </b><?php echo $panier['price']; ?> &euro;<br>
-
-                </td>
-            </tr>
-                <?php 
-            }
-            ?>
-
-        </table>
-
-        <div class="total">
-            <p>Prix total : <?php echo $price; ?>&euro;</p>
-        </div>
-    </div>
 
 
     <?php 

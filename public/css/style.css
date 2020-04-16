@@ -144,7 +144,7 @@ nav ul li a {
 .button-shop:hover {
     background: var(--color-page);
     color: var(--color-link);
-    opacity:0.7;
+    opacity: 0.7;
 }
 
 .images {
@@ -276,7 +276,7 @@ select {
 /* .card */
 
 .card {
-    text-align:center;
+    text-align: center;
 }
 
 .card-list {
@@ -312,7 +312,8 @@ select {
     padding: 0 1.5rem;
 }
 
-#add-to-bag, #checkout {
+#add-to-bag,
+#checkout {
     margin-top: 3rem;
     height: 4rem;
     border: 1px solid var(--color-link);
@@ -324,21 +325,22 @@ select {
     padding: 0 3.5rem;
 }
 
-#add-to-bag:hover, #checkout:hover {
+#add-to-bag:hover,
+#checkout:hover {
     border: 1px solid var(--color-link);
     background-color: var(--color-page);
     color: var(--color-default);
 
 }
 
-#checkout button:hover{
+#checkout button:hover {
     border: 1px solid var(--color-link);
     background-color: var(--color-page);
     color: var(--color-default);
 }
 
 .btn-product {
-    text-align:center;
+    text-align: center;
 }
 
 .delivery {
@@ -423,50 +425,54 @@ select {
     width: 100%;
     text-align: left;
     margin: 10rem 1rem;
-    letter-spacing:1px;
+    letter-spacing: 1px;
 }
-.list-basket table{
-    width:100%;
+
+.list-basket table {
+    width: 100%;
 }
 
 .list-basket a {
-    color:var(--color-page);
+    color: var(--color-page);
 }
 
 .list-basket a:hover {
-    color:var(--color-default);
+    color: var(--color-default);
 }
 
 .list-basket td {
     border-bottom: 1px solid var(--color-list);
     border-top: 1px solid var(--color-list);
-    padding:1rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .total {
     margin: 3rem 1rem;
-    text-align:right;
+    text-align: right;
 }
 
 .check-out {
-    letter-spacing:1px;
-    font-weight:300;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 .check-out a {
-    color:var(--color-page);
+    color: var(--color-page);
 }
+
 .check-out a:hover {
-    color:var(--color-default);
+    color: var(--color-default);
 }
+
 .check-out h2 {
     color: var(--color-link);
-    font-weight:500;
+    font-weight: 500;
     text-transform: uppercase;
 }
+
 .delete {
-    color:var(--color-link);
-    font-weight:700;
+    color: var(--color-link);
+    font-weight: 700;
 }
 
 /* Slideshow container */
@@ -794,7 +800,7 @@ select {
     #wrapper {
         width: 90%;
         margin: 0 auto;
-        text-align:center;
+        text-align: center;
     }
 
     /* main-image */
@@ -935,10 +941,47 @@ select {
     }
 
     .total {
-        padding-top:2rem;
+        padding-top: 2rem;
         margin: auto;
         width: 60%;
         text-align: right;
+    }
+
+    .check-dev {
+
+        display: flex;
+    }
+
+    .check-out-dev {
+        width: 70%;
+    }
+
+    .check-dev >.list-basket {
+        width: 30%;
+        border-left: 1px solid var(--color-list);
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        padding-left: 30px;
+    }
+
+    .check-dev>.list-basket>table {
+        margin: auto;
+        width: 100%;
+        text-align: left;
+    }
+
+    .check-dev>.list-basket td {
+        padding: 0;
+        border: none;
+        border-bottom: 1px solid var(--color-list);
+
+    }
+
+
+
+    .check>.img-basket img {
+        height: 0;
+        width: 0;
     }
 
     /* FOOTER */
@@ -981,7 +1024,4 @@ select {
 
 }
 
-@media screen and (min-width:1024px) {
-
-
-}
+@media screen and (min-width:1024px) {}

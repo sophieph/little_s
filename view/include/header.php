@@ -55,7 +55,7 @@
                 <li><a href="?action=product&category=onePiece">Une piece</a></li>
                 <li><a href="?action=product&category=bikini">Bikini</a></li>
                 <li><a href="?action=product&category=accessoire">Accessoires</a></li><br>
-                <li><a href="?action=signin" class="account">Mon compte</a></li>
+                
                 <?php 
                 if (isset($_SESSION['user']) && $_SESSION['user'] == 'membre') {
                 ?>
@@ -63,6 +63,10 @@
                 <li><a href="?action=logoff" class="account">Déconnexion</a></li>
 
                 <?php
+                } else {
+                    ?>
+                <li><a href="?action=signin" class="account">Mon compte</a></li>
+                    <?php
                 }
                 ?>
 

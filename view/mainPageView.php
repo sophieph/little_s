@@ -14,9 +14,7 @@ ob_start(); ?>
 <!-- sorting items -->
 <section id="sort-items">
     <div class="images">
-        <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
-        <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
-        <img src="<?php echo BASE_URL; ?>public/images/img-1.png">
+        
     </div>
 
 </section>
