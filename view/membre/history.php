@@ -39,11 +39,11 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
             foreach ($commandes as $commande) {
                 ?>
             <ul>
-                <li><i>Numéro de commande :</i><a href="?action=order&id=<?php echo $commande['commande']; ?>"> <b><?php echo $commande['commande']; ?></b></a>
+                <li><i>Numéro de commande : </i><a href="?action=order&id=<?php echo $commande['commande']; ?>"> <b><?php echo $commande['commande']; ?></b></a>
                 <br>
-                <i>Commandé le :</i><?php echo $commande['date'] ?> 
+                <i>Commandé le : </i><?php echo $commande['date'] ?> 
                 <br>
-                <b><i>Prix total :</i><?php echo $commande['total'] ?>&euro;</b> </li>
+                <b><i>Prix total : </i><?php echo $commande['total'] ?>&euro;</b> </li>
                 <br>
 
             </ul>

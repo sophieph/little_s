@@ -35,13 +35,7 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'membre')) {
             <li>Quantité : <?php echo $detail['quantity'] ?> </li>
             <li>Catégorie : <?php echo $detail['category'] ?> </li>
             <li>Prix unique : <b><?php echo $detail['price'] ?>&euro;</b> </li>
-            <li class="info-image"> Image : 
-            <?php 
-            $image = $produitManager->getFirstImage($detail['codeProduit']);
-            $link = $image['link'];
-            ?>
 
-            </li>
             <br>
 
         </ul>
