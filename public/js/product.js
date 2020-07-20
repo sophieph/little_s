@@ -31,6 +31,10 @@ function sortProduct(value) {
 
 function search(value) {
 
+    if (value == '') {
+        window.location = "/";
+    }
+
     var xhr = new XMLHttpRequest();
     
     

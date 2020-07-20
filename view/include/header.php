@@ -3,7 +3,7 @@
                 <!-- search form -->
                 <div class="header-research">
                     <form  class="research-items" action="#" method="get">
-                        <input type="text" id="searchItems" name="searchItems" placeholder="Rechercher" onKeyUp="search(this.value)" onKeyDown="search(this.value)" onKeyPress="search(this.value)/>
+                        <input type="text" id="searchItems" name="searchItems" placeholder="Rechercher" onKeyUp="search(this.value)" onKeyDown="search(this.value)" onKeyPress="search(this.value)"/>
                         <button id="research-items"><i class="fa fa-search"></i></button>
                     </form>
 
